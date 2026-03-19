@@ -5,7 +5,97 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Furry Freight Thrift — Bend, Oregon</title>
 <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-<style>
+</head>
+<body>
+<script>
+/* ============================================================
+   FURRY FREIGHT THRIFT — EDITABLE CONTENT
+   ============================================================
+   HOW TO EDIT:
+   • Change any text between the quote marks " "
+   • For events: edit the events[] array — copy a block to add one,
+     delete a block to remove one
+   • Set showEvents: false to hide the events section entirely
+   • Don't change anything outside this CONFIG block
+   ============================================================ */
+
+const CONFIG = {
+
+  /* ── STORE INFO ── */
+  storeName:   "Furry Freight Thrift",
+  tagline:     "Second Hand. First Rate.",
+  heroDesc:    "A big, well-stocked thrift warehouse in Bend where every dollar saves shelter animals — transports, surgeries, second chances.",
+  city:        "Bend, Oregon",
+  address:     "123 Example Street",
+  addressLine2:"Bend, OR 97701",
+  email:       "info@furryfreight.org",
+  ein:         "82-4423390",
+  poBox:       "PO Box 93, Bend OR 97709",
+
+  /* ── HOURS ──────────────────────────────────────────────
+     Change the time strings to update hours.
+     Set a day to "Closed" if you are not open that day.
+  ──────────────────────────────────────────────────────── */
+  hours: [
+    { day: "Monday",    time: "10am – 6pm", best: false },
+    { day: "Tuesday",   time: "10am – 6pm", best: false },
+    { day: "Wednesday", time: "10am – 6pm", best: false },
+    { day: "Thursday",  time: "10am – 6pm", best: false },
+    { day: "Friday",    time: "10am – 6pm", best: false },
+    { day: "Saturday",  time: "9am – 5pm",  best: true  },
+    { day: "Sunday",    time: "11am – 4pm", best: false },
+  ],
+
+  /* ── EVENTS ─────────────────────────────────────────────
+     Set showEvents: false to hide the events section.
+     Each event needs: month, day, title, meta, link
+     Leave link as "" to hide the Details button.
+  ──────────────────────────────────────────────────────── */
+  showEvents: true,
+  events: [
+    { month: "Apr", day: "12", title: "Spring Yard Sale",  meta: "10am – 3pm · Outdoor lot · Free entry",          link: "" },
+    { month: "May", day: "3",  title: "Bingo Night",       meta: "6pm – 9pm · Location TBA · Tickets at door",     link: "" },
+    { month: "Jun", day: "21", title: "Egg My House",      meta: "Morning · Central Oregon · Sign up required",    link: "" },
+  ],
+
+  /* ── DONATION POLICY CARDS ───────────────────────────────
+     accepted: true = green card, false = grey/no card
+  ──────────────────────────────────────────────────────── */
+  donationItems: [
+    { title: "Clothing",       desc: "All seasons, all sizes. Clean and wearable — gently used is great.",          accepted: true  },
+    { title: "Outdoor Gear",   desc: "Jackets, packs, boots, tents, sleeping bags. Bend loves this.",              accepted: true  },
+    { title: "Housewares",     desc: "Kitchen items, décor, small appliances, glassware, linens.",                  accepted: true  },
+    { title: "Books & Media",  desc: "Books, vinyl, DVDs, games. Very popular with regulars.",                      accepted: true  },
+    { title: "Toys & Kids",    desc: "Toys, kids clothing, gear — clean and in working condition.",                 accepted: true  },
+    { title: "Large Furniture",desc: "We can't take sofas, mattresses, or oversized items right now.",              accepted: false },
+  ],
+
+  /* ── ABOUT / MISSION STATS ── */
+  stat1Number: "1,709+",  stat1Label: "Animals Saved",
+  stat2Number: "100%",    stat2Label: "Volunteer Run",
+  stat3Number: "$70",     stat3Label: "Sponsors a Spay/Neuter Surgery",
+  stat4Number: "Since '18", stat4Label: "On the Road",
+
+  aboutBody1: "Furry Freight Thrift is the retail arm of Furry Freight Shelter Transport — an all-volunteer 501(c)(3) based in Bend that moves at-risk shelter animals to Pacific Northwest adoption partners.",
+  aboutBody2: "When you shop here or drop off a donation, you are directly funding transport trips and spay/neuter surgeries for animals who need it most.",
+
+  /* ── SHOP / POSHMARK ── */
+  poshmarkLink: "https://poshmark.com/closet/ffthriftstore",
+  shopDesc:     "Browse our curated Poshmark store for handpicked finds shipped anywhere in the US. Updated regularly with the best of what comes through the door.",
+
+  /* ── SOCIAL LINKS ── */
+  instagramLink: "https://www.instagram.com/furry.freight/",
+  facebookLink:  "https://facebook.com",
+  tiktokLink:    "https://www.tiktok.com/@furryfreight",
+  mainSiteLink:  "https://furryfreight.org",
+
+};
+
+/* ============================================================
+   STOP HERE — design code lives below. No need to edit.
+   ============================================================ */
+
+const css = `
   :root{
     --orange:#E8622A;
     --orange-dk:#C44E1E;
@@ -21,472 +111,127 @@
   }
   *{margin:0;padding:0;box-sizing:border-box;}
   html{scroll-behavior:smooth;}
-  body{
-    font-family:'Nunito',sans-serif;
-    background:var(--white);
-    color:var(--black);
-    overflow-x:hidden;
-  }
+  body{font-family:'Nunito',sans-serif;background:var(--white);color:var(--black);overflow-x:hidden;}
 
-  /* ── NAV ── */
-  nav{
-    position:fixed;top:0;left:0;right:0;z-index:200;
-    height:58px;
-    background:var(--orange);
-    display:flex;align-items:center;justify-content:space-between;
-    padding:0 2.5rem;
-    border-bottom:3px solid var(--black);
-  }
-  .nav-logo{
-    font-family:'Fredoka One',cursive;
-    font-size:1.3rem;
-    color:#fff;
-    text-decoration:none;
-    letter-spacing:.02em;
-  }
+  nav{position:fixed;top:0;left:0;right:0;z-index:200;height:58px;background:var(--orange);display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;border-bottom:3px solid var(--black);}
+  .nav-logo{font-family:'Fredoka One',cursive;font-size:1.3rem;color:#fff;text-decoration:none;letter-spacing:.02em;}
   .nav-links{display:flex;gap:.15rem;list-style:none;}
-  .nav-links a{
-    font-size:.75rem;font-weight:800;
-    letter-spacing:.08em;text-transform:uppercase;
-    color:rgba(255,255,255,.75);
-    text-decoration:none;
-    padding:.35rem .75rem;
-    border-radius:20px;
-    transition:background .2s,color .2s;
-  }
+  .nav-links a{font-size:.75rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.75);text-decoration:none;padding:.35rem .75rem;border-radius:20px;transition:background .2s,color .2s;}
   .nav-links a:hover{background:rgba(255,255,255,.2);color:#fff;}
 
-  /* ── HERO ── */
-  #hero{
-    min-height:100vh;
-    background:var(--orange);
-    border-bottom:3px solid var(--black);
-    padding:100px 3rem 5rem;
-    position:relative;
-    overflow:hidden;
-    display:flex;flex-direction:column;justify-content:center;
-  }
-
-  /* floating blobs */
-  .blob{
-    position:absolute;
-    border-radius:50%;
-    border:3px solid var(--black);
-    pointer-events:none;
-  }
+  #hero{min-height:100vh;background:var(--orange);border-bottom:3px solid var(--black);padding:100px 3rem 5rem;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:center;}
+  .blob{position:absolute;border-radius:50%;border:3px solid var(--black);pointer-events:none;}
   .blob-1{width:180px;height:180px;background:var(--yellow);top:80px;right:10%;animation:float1 6s ease-in-out infinite;}
   .blob-2{width:120px;height:120px;background:var(--mint);bottom:120px;right:20%;animation:float2 5s ease-in-out infinite;}
   .blob-3{width:80px;height:80px;background:var(--pink);top:200px;right:30%;animation:float1 7s ease-in-out infinite 1s;}
   .blob-4{width:60px;height:60px;background:var(--sky);bottom:200px;left:5%;animation:float2 4.5s ease-in-out infinite .5s;}
   .blob-5{width:140px;height:140px;background:var(--lavender);top:60%;right:5%;animation:float1 8s ease-in-out infinite 2s;}
-
   @keyframes float1{0%,100%{transform:translateY(0) rotate(0deg);}50%{transform:translateY(-22px) rotate(5deg);}}
   @keyframes float2{0%,100%{transform:translateY(0) rotate(0deg);}50%{transform:translateY(-16px) rotate(-6deg);}}
-
-  /* spinning star */
-  .spin-star{
-    position:absolute;
-    top:120px;left:5%;
-    width:70px;height:70px;
-    animation:spin 12s linear infinite;
-  }
+  .spin-star{position:absolute;top:120px;left:5%;width:70px;height:70px;animation:spin 12s linear infinite;}
   @keyframes spin{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
-
-  .hero-tag{
-    display:inline-flex;align-items:center;gap:.5rem;
-    background:#fff;color:var(--black);
-    border:2.5px solid var(--black);
-    border-radius:30px;
-    font-size:.75rem;font-weight:800;
-    letter-spacing:.1em;text-transform:uppercase;
-    padding:.4rem 1.1rem;
-    width:fit-content;
-    margin-bottom:1.5rem;
-    animation:wiggle 3s ease-in-out infinite;
-  }
+  .hero-tag{display:inline-flex;align-items:center;gap:.5rem;background:#fff;color:var(--black);border:2.5px solid var(--black);border-radius:30px;font-size:.75rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:.4rem 1.1rem;width:fit-content;margin-bottom:1.5rem;animation:wiggle 3s ease-in-out infinite;}
   @keyframes wiggle{0%,100%{transform:rotate(-1deg);}50%{transform:rotate(1.5deg);}}
-  .tag-dot{
-    width:8px;height:8px;border-radius:50%;
-    background:var(--orange);
-    animation:pulse 1.5s ease-in-out infinite;
-  }
+  .tag-dot{width:8px;height:8px;border-radius:50%;background:var(--orange);animation:pulse 1.5s ease-in-out infinite;}
   @keyframes pulse{0%,100%{transform:scale(1);}50%{transform:scale(1.4);}}
-
-  .hero-h1{
-    font-family:'Fredoka One',cursive;
-    font-size:clamp(4rem,12vw,11rem);
-    line-height:.9;
-    color:#fff;
-    letter-spacing:-.01em;
-    position:relative;z-index:1;
-    margin-bottom:2rem;
-  }
-  .hero-h1 .outline{
-    -webkit-text-stroke:3px #fff;
-    color:transparent;
-  }
-  .hero-h1 .yellow-word{
-    color:var(--yellow);
-    display:inline-block;
-    animation:bounce-word 2s ease-in-out infinite;
-  }
+  .hero-h1{font-family:'Fredoka One',cursive;font-size:clamp(4rem,12vw,11rem);line-height:.9;color:#fff;letter-spacing:-.01em;position:relative;z-index:1;margin-bottom:2rem;}
+  .hero-h1 .outline{-webkit-text-stroke:3px #fff;color:transparent;}
+  .hero-h1 .yellow-word{color:var(--yellow);display:inline-block;animation:bounce-word 2s ease-in-out infinite;}
   @keyframes bounce-word{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
-
-  .hero-sub{
-    font-size:1.1rem;font-weight:700;
-    color:rgba(255,255,255,.85);
-    max-width:480px;line-height:1.75;
-    position:relative;z-index:1;
-    margin-bottom:2.5rem;
-  }
+  .hero-sub{font-size:1.1rem;font-weight:700;color:rgba(255,255,255,.85);max-width:480px;line-height:1.75;position:relative;z-index:1;margin-bottom:2.5rem;}
   .hero-sub strong{color:#fff;}
-
   .hero-btns{display:flex;gap:1rem;flex-wrap:wrap;position:relative;z-index:1;}
-  .btn{
-    font-family:'Nunito',sans-serif;
-    font-weight:800;font-size:.88rem;
-    letter-spacing:.06em;text-transform:uppercase;
-    text-decoration:none;
-    padding:.75rem 1.8rem;
-    border:2.5px solid var(--black);
-    border-radius:30px;
-    transition:transform .2s,box-shadow .2s;
-    display:inline-block;
-    cursor:pointer;
-  }
+
+  .btn{font-family:'Nunito',sans-serif;font-weight:800;font-size:.88rem;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;padding:.75rem 1.8rem;border:2.5px solid var(--black);border-radius:30px;transition:transform .2s,box-shadow .2s;display:inline-block;}
   .btn:hover{transform:translateY(-3px);box-shadow:4px 4px 0 var(--black);}
   .btn-white{background:#fff;color:var(--black);}
   .btn-dark{background:var(--black);color:#fff;}
 
-  /* ── MARQUEE ── */
-  .marquee-wrap{
-    overflow:hidden;
-    background:var(--yellow);
-    border-top:3px solid var(--black);
-    border-bottom:3px solid var(--black);
-    padding:.65rem 0;
-  }
-  .marquee-track{
-    display:flex;
-    width:max-content;
-    animation:marquee 18s linear infinite;
-  }
-  .marquee-item{
-    font-family:'Fredoka One',cursive;
-    font-size:1.1rem;
-    letter-spacing:.06em;
-    color:var(--black);
-    white-space:nowrap;
-    padding:0 1.5rem;
-  }
+  .marquee-wrap{overflow:hidden;background:var(--yellow);border-top:3px solid var(--black);border-bottom:3px solid var(--black);padding:.65rem 0;}
+  .marquee-track{display:flex;width:max-content;animation:marquee 18s linear infinite;}
+  .marquee-item{font-family:'Fredoka One',cursive;font-size:1.1rem;letter-spacing:.06em;color:var(--black);white-space:nowrap;padding:0 1.5rem;}
   .marquee-sep{color:var(--orange);margin:0 .25rem;}
   @keyframes marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
 
-  /* ── HOURS ── */
-  #hours{
-    background:var(--white);
-    padding:6rem 3rem;
-    position:relative;overflow:hidden;
-  }
-  .hours-inner{
-    max-width:1100px;margin:0 auto;
-    display:grid;grid-template-columns:1fr 1.3fr;
-    gap:5rem;align-items:start;
-  }
-  .section-eyebrow{
-    font-size:.7rem;font-weight:800;
-    letter-spacing:.18em;text-transform:uppercase;
-    display:inline-flex;align-items:center;gap:.5rem;
-    margin-bottom:1rem;
-  }
-  .eyebrow-pill{
-    background:var(--orange);color:#fff;
-    border:2px solid var(--black);
-    border-radius:20px;
-    padding:.2rem .75rem;
-    font-family:'Fredoka One',cursive;
-    font-size:.8rem;letter-spacing:.05em;
-  }
-  .section-h2{
-    font-family:'Fredoka One',cursive;
-    font-size:clamp(2.5rem,5vw,4.5rem);
-    line-height:.95;color:var(--black);
-    margin-bottom:1rem;letter-spacing:-.01em;
-  }
-  .section-h2 em{font-style:normal;color:var(--orange);}
-  .section-desc{
-    font-size:.97rem;color:#666;
-    line-height:1.85;font-weight:600;
-    margin-bottom:2rem;max-width:340px;
-  }
+  .marquee-wrap-2{overflow:hidden;background:var(--orange);border-top:3px solid var(--black);border-bottom:3px solid var(--black);padding:.65rem 0;}
+  .marquee-track-2{display:flex;width:max-content;animation:marquee 22s linear infinite reverse;}
 
-  .location-card{
-    background:var(--mint);
-    border:2.5px solid var(--black);
-    border-radius:18px;
-    padding:1.5rem 1.75rem;
-    position:relative;
-    box-shadow:5px 5px 0 var(--black);
-  }
+  #hours{background:var(--white);padding:6rem 3rem;position:relative;overflow:hidden;}
+  .hours-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1.3fr;gap:5rem;align-items:start;}
+  .section-eyebrow{font-size:.7rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;display:inline-flex;align-items:center;gap:.5rem;margin-bottom:1rem;}
+  .eyebrow-pill{background:var(--orange);color:#fff;border:2px solid var(--black);border-radius:20px;padding:.2rem .75rem;font-family:'Fredoka One',cursive;font-size:.8rem;letter-spacing:.05em;}
+  .section-h2{font-family:'Fredoka One',cursive;font-size:clamp(2.5rem,5vw,4.5rem);line-height:.95;color:var(--black);margin-bottom:1rem;letter-spacing:-.01em;}
+  .section-h2 em{font-style:normal;color:var(--orange);}
+  .section-desc{font-size:.97rem;color:#666;line-height:1.85;font-weight:600;margin-bottom:2rem;max-width:340px;}
+  .location-card{background:var(--mint);border:2.5px solid var(--black);border-radius:18px;padding:1.5rem 1.75rem;position:relative;box-shadow:5px 5px 0 var(--black);}
   .location-card p{font-size:.92rem;font-weight:700;line-height:2;color:var(--black);}
   .location-card a{color:var(--orange);text-decoration:none;}
-
   .hours-rows{display:flex;flex-direction:column;}
-  .hour-row{
-    display:flex;justify-content:space-between;align-items:center;
-    padding:1.1rem 0;
-    border-bottom:2px solid #eee;
-  }
+  .hour-row{display:flex;justify-content:space-between;align-items:center;padding:1.1rem 0;border-bottom:2px solid #eee;}
   .hour-row:first-child{border-top:2px solid #eee;}
   .hour-day{font-size:.85rem;font-weight:800;color:#888;letter-spacing:.04em;text-transform:uppercase;}
-  .hour-time{
-    font-family:'Fredoka One',cursive;
-    font-size:1.6rem;color:var(--black);
-    display:flex;align-items:center;gap:.75rem;
-  }
-  .best-pill{
-    font-family:'Nunito',sans-serif;
-    font-size:.58rem;font-weight:800;
-    letter-spacing:.1em;text-transform:uppercase;
-    background:var(--orange);color:#fff;
-    border:1.5px solid var(--black);
-    border-radius:20px;padding:.2rem .6rem;
-  }
+  .hour-time{font-family:'Fredoka One',cursive;font-size:1.6rem;color:var(--black);display:flex;align-items:center;gap:.75rem;}
+  .best-pill{font-family:'Nunito',sans-serif;font-size:.58rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;background:var(--orange);color:#fff;border:1.5px solid var(--black);border-radius:20px;padding:.2rem .6rem;}
+  .shape-blob{position:absolute;border-radius:50%;border:3px solid var(--black);pointer-events:none;}
 
-  /* decorative shape */
-  .shape-blob{
-    position:absolute;
-    border-radius:50%;border:3px solid var(--black);
-    pointer-events:none;
-  }
-
-  /* ── CALLOUT BAND ── */
-  .callout-band{
-    background:var(--black);
-    border-top:3px solid var(--black);
-    border-bottom:3px solid var(--black);
-    padding:5rem 3rem;
-    position:relative;overflow:hidden;
-  }
-  .callout-band-inner{
-    max-width:1100px;margin:0 auto;
-    display:grid;grid-template-columns:1fr 1fr;
-    gap:4rem;align-items:center;
-  }
-  .callout-band h2{
-    font-family:'Fredoka One',cursive;
-    font-size:clamp(3rem,6vw,6rem);
-    line-height:.92;color:#fff;
-  }
+  .callout-band{background:var(--black);border-top:3px solid var(--black);border-bottom:3px solid var(--black);padding:5rem 3rem;position:relative;overflow:hidden;}
+  .callout-band-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;}
+  .callout-band h2{font-family:'Fredoka One',cursive;font-size:clamp(3rem,6vw,6rem);line-height:.92;color:#fff;}
   .callout-band h2 em{font-style:normal;color:var(--yellow);}
   .callout-band p{font-size:1rem;color:rgba(255,255,255,.7);line-height:1.85;font-weight:600;}
+  .callout-float{position:absolute;border-radius:50%;border:2.5px solid rgba(255,255,255,.15);}
 
-  /* floating shapes inside callout */
-  .callout-float{
-    position:absolute;border-radius:50%;
-    border:2.5px solid rgba(255,255,255,.15);
-  }
-  .cf1{width:200px;height:200px;background:var(--orange);opacity:.15;top:-60px;right:-40px;animation:float1 7s ease-in-out infinite;}
-  .cf2{width:100px;height:100px;background:var(--yellow);opacity:.12;bottom:-30px;right:40%;animation:float2 5s ease-in-out infinite 1s;}
-
-  /* ── DONATIONS ── */
-  #donations{
-    background:var(--sky);
-    border-top:3px solid var(--black);
-    padding:6rem 3rem;
-    position:relative;overflow:hidden;
-  }
+  #donations{background:var(--sky);border-top:3px solid var(--black);padding:6rem 3rem;position:relative;overflow:hidden;}
   .donations-inner{max-width:1100px;margin:0 auto;}
-  .donations-top{
-    display:flex;align-items:flex-end;justify-content:space-between;
-    margin-bottom:3.5rem;flex-wrap:wrap;gap:2rem;
-  }
+  .donations-top{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:3.5rem;flex-wrap:wrap;gap:2rem;}
   .donations-top p{max-width:340px;font-size:.95rem;color:#444;line-height:1.8;font-weight:600;}
-
   .accept-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;}
-  .accept-card{
-    background:#fff;
-    border:2.5px solid var(--black);
-    border-radius:18px;
-    padding:1.8rem;
-    box-shadow:4px 4px 0 var(--black);
-    transition:transform .2s,box-shadow .2s;
-    position:relative;overflow:hidden;
-  }
+  .accept-card{background:#fff;border:2.5px solid var(--black);border-radius:18px;padding:1.8rem;box-shadow:4px 4px 0 var(--black);transition:transform .2s,box-shadow .2s;position:relative;overflow:hidden;}
   .accept-card:hover{transform:translateY(-4px) translateX(-2px);box-shadow:6px 6px 0 var(--black);}
-  .accept-card.no{
-    background:#f5f5f5;box-shadow:none;
-    border-color:#ccc;opacity:.55;
-  }
-  .card-status{
-    font-size:.62rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;
-    margin-bottom:.75rem;display:flex;align-items:center;gap:.4rem;
-  }
+  .accept-card.no{background:#f5f5f5;box-shadow:none;border-color:#ccc;opacity:.55;}
+  .card-status{font-size:.62rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;margin-bottom:.75rem;display:flex;align-items:center;gap:.4rem;}
   .card-status.yes{color:var(--orange);}
   .card-status.no-txt{color:#aaa;}
-  .accept-card h4{
-    font-family:'Fredoka One',cursive;
-    font-size:1.5rem;color:var(--black);margin-bottom:.4rem;
-  }
+  .accept-card h4{font-family:'Fredoka One',cursive;font-size:1.5rem;color:var(--black);margin-bottom:.4rem;}
   .accept-card p{font-size:.85rem;color:#666;line-height:1.7;font-weight:600;}
-  /* corner colour accent */
-  .card-corner{
-    position:absolute;bottom:-16px;right:-16px;
-    width:60px;height:60px;border-radius:50%;
-    border:2.5px solid var(--black);
-    opacity:.2;
-  }
+  .card-corner{position:absolute;bottom:-16px;right:-16px;width:60px;height:60px;border-radius:50%;border:2.5px solid var(--black);opacity:.2;}
 
-  /* ── MARQUEE 2 ── */
-  .marquee-wrap-2{
-    overflow:hidden;
-    background:var(--orange);
-    border-top:3px solid var(--black);
-    border-bottom:3px solid var(--black);
-    padding:.65rem 0;
-  }
-  .marquee-track-2{
-    display:flex;width:max-content;
-    animation:marquee 22s linear infinite reverse;
-  }
-
-  /* ── EVENTS ── */
-  #events{
-    background:var(--white);
-    padding:6rem 3rem;
-    position:relative;overflow:hidden;
-  }
+  #events{background:var(--white);padding:6rem 3rem;position:relative;overflow:hidden;}
   .events-inner{max-width:1100px;margin:0 auto;}
-  .events-top{
-    display:flex;align-items:baseline;justify-content:space-between;
-    margin-bottom:3.5rem;flex-wrap:wrap;gap:1rem;
-  }
-  .events-follow{
-    font-size:.78rem;font-weight:800;
-    letter-spacing:.1em;text-transform:uppercase;
-    color:#888;text-decoration:none;
-    border-bottom:2px solid #ddd;padding-bottom:.15rem;
-    transition:color .2s,border-color .2s;
-  }
+  .events-top{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:3.5rem;flex-wrap:wrap;gap:1rem;}
+  .events-follow{font-size:.78rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#888;text-decoration:none;border-bottom:2px solid #ddd;padding-bottom:.15rem;transition:color .2s,border-color .2s;}
   .events-follow:hover{color:var(--orange);border-color:var(--orange);}
-
   .events-grid{display:flex;flex-direction:column;gap:1px;background:#eee;}
-  .event-row{
-    background:var(--white);
-    display:grid;grid-template-columns:auto 1fr auto;
-    gap:2rem;align-items:center;padding:1.8rem 2rem;
-    transition:background .2s;
-  }
+  .event-row{background:var(--white);display:grid;grid-template-columns:auto 1fr auto;gap:2rem;align-items:center;padding:1.8rem 2rem;transition:background .2s;}
   .event-row:hover{background:#FFF5F0;}
-  .event-badge{
-    width:64px;height:64px;
-    background:var(--orange);
-    border:2.5px solid var(--black);
-    border-radius:14px;
-    box-shadow:3px 3px 0 var(--black);
-    display:flex;flex-direction:column;
-    align-items:center;justify-content:center;
-    flex-shrink:0;
-  }
+  .event-badge{width:64px;height:64px;background:var(--orange);border:2.5px solid var(--black);border-radius:14px;box-shadow:3px 3px 0 var(--black);display:flex;flex-direction:column;align-items:center;justify-content:center;flex-shrink:0;}
   .event-badge .mo{font-size:.55rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.8);line-height:1;margin-bottom:2px;}
   .event-badge .dy{font-family:'Fredoka One',cursive;font-size:1.9rem;color:#fff;line-height:1;}
   .event-info h4{font-family:'Fredoka One',cursive;font-size:1.2rem;color:var(--black);margin-bottom:.2rem;}
   .event-info span{font-size:.82rem;color:#888;font-weight:700;}
-  .event-caret{
-    font-size:.72rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;
-    color:#ddd;transition:color .2s;
-  }
+  .event-caret{font-size:.72rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#ddd;transition:color .2s;}
   .event-row:hover .event-caret{color:var(--orange);}
 
-  /* ── ABOUT ── */
-  #about{
-    background:var(--lavender);
-    border-top:3px solid var(--black);
-    padding:6rem 3rem;
-    position:relative;overflow:hidden;
-  }
-  .about-inner{
-    max-width:1100px;margin:0 auto;
-    display:grid;grid-template-columns:1fr 1fr;
-    gap:6rem;align-items:center;
-  }
+  #about{background:var(--lavender);border-top:3px solid var(--black);padding:6rem 3rem;position:relative;overflow:hidden;}
+  .about-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center;}
   .about-text p{font-size:.97rem;color:#444;line-height:1.9;font-weight:600;margin-bottom:1rem;}
-  .about-text a{
-    font-size:.8rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;
-    color:var(--orange);text-decoration:none;
-    border-bottom:2px solid var(--orange);padding-bottom:.15rem;
-    display:inline-block;margin-top:1rem;
-    transition:opacity .2s;
-  }
+  .about-text a{font-size:.8rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--orange);text-decoration:none;border-bottom:2px solid var(--orange);padding-bottom:.15rem;display:inline-block;margin-top:1rem;transition:opacity .2s;}
   .about-text a:hover{opacity:.65;}
-
   .stats-grid{display:flex;flex-direction:column;gap:1rem;}
-  .stat-card{
-    background:#fff;
-    border:2.5px solid var(--black);
-    border-radius:16px;
-    padding:1.4rem 1.6rem;
-    box-shadow:4px 4px 0 var(--black);
-    display:flex;align-items:center;gap:1.25rem;
-    transition:transform .2s;
-  }
+  .stat-card{background:#fff;border:2.5px solid var(--black);border-radius:16px;padding:1.4rem 1.6rem;box-shadow:4px 4px 0 var(--black);display:flex;align-items:center;gap:1.25rem;transition:transform .2s;}
   .stat-card:hover{transform:translateX(4px);}
-  .stat-num{
-    font-family:'Fredoka One',cursive;
-    font-size:2.5rem;color:var(--orange);
-    line-height:1;flex-shrink:0;
-  }
+  .stat-num{font-family:'Fredoka One',cursive;font-size:2.5rem;color:var(--orange);line-height:1;flex-shrink:0;}
   .stat-lbl{font-size:.82rem;font-weight:800;color:#666;line-height:1.4;}
 
-  /* ── SHOP ── */
-  #shop{
-    background:var(--lime);
-    border-top:3px solid var(--black);
-    border-bottom:3px solid var(--black);
-    padding:6rem 3rem;
-    position:relative;overflow:hidden;
-  }
-  .shop-inner{
-    max-width:1100px;margin:0 auto;
-    display:grid;grid-template-columns:1fr 1fr;
-    gap:5rem;align-items:center;
-  }
-  .shop-visual{
-    aspect-ratio:1;
-    background:var(--white);
-    border:2.5px solid var(--black);
-    border-radius:24px;
-    box-shadow:6px 6px 0 var(--black);
-    display:flex;align-items:center;justify-content:center;
-    position:relative;overflow:hidden;
-  }
-  .shop-paw{
-    position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:.06;
-  }
-  .shop-label{
-    font-family:'Fredoka One',cursive;
-    font-size:2rem;color:var(--orange);
-    text-align:center;line-height:1.3;
-    position:relative;z-index:1;
-  }
+  #shop{background:var(--lime);border-top:3px solid var(--black);border-bottom:3px solid var(--black);padding:6rem 3rem;position:relative;overflow:hidden;}
+  .shop-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;}
+  .shop-visual{aspect-ratio:1;background:var(--white);border:2.5px solid var(--black);border-radius:24px;box-shadow:6px 6px 0 var(--black);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
+  .shop-paw{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:.06;}
+  .shop-label{font-family:'Fredoka One',cursive;font-size:2rem;color:var(--orange);text-align:center;line-height:1.3;position:relative;z-index:1;}
 
-  /* ── FOOTER ── */
-  footer{
-    background:var(--black);
-    padding:4rem 3rem 2.5rem;
-  }
-  .foot-top{
-    max-width:1100px;margin:0 auto;
-    display:grid;grid-template-columns:2fr 1fr 1fr;
-    gap:4rem;padding-bottom:3rem;
-    border-bottom:1px solid rgba(255,255,255,.08);
-    margin-bottom:2rem;
-  }
-  .foot-brand-name{
-    font-family:'Fredoka One',cursive;
-    font-size:1.6rem;color:#fff;
-    display:block;margin-bottom:.75rem;
-  }
+  footer{background:var(--black);padding:4rem 3rem 2.5rem;}
+  .foot-top{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:4rem;padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:2rem;}
+  .foot-brand-name{font-family:'Fredoka One',cursive;font-size:1.6rem;color:#fff;display:block;margin-bottom:.75rem;}
   .foot-brand-name span{color:var(--orange);}
   .foot-brand p{font-size:.82rem;color:rgba(255,255,255,.35);line-height:1.9;}
   .foot-brand a{color:var(--orange);text-decoration:none;}
@@ -495,23 +240,12 @@
   .foot-col li{margin-bottom:.5rem;}
   .foot-col a{font-size:.88rem;color:rgba(255,255,255,.5);text-decoration:none;font-weight:700;transition:color .2s;}
   .foot-col a:hover{color:#fff;}
-  .foot-bottom{
-    max-width:1100px;margin:0 auto;
-    display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;
-  }
+  .foot-bottom{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
   .foot-bottom p{font-size:.75rem;color:rgba(255,255,255,.2);}
   .foot-social{display:flex;gap:.5rem;}
-  .foot-social a{
-    width:34px;height:34px;
-    border:1px solid rgba(255,255,255,.12);border-radius:8px;
-    display:flex;align-items:center;justify-content:center;
-    font-size:.65rem;font-weight:800;
-    color:rgba(255,255,255,.4);text-decoration:none;
-    transition:background .2s,color .2s,border-color .2s;
-  }
+  .foot-social a{width:34px;height:34px;border:1px solid rgba(255,255,255,.12);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.65rem;font-weight:800;color:rgba(255,255,255,.4);text-decoration:none;transition:background .2s,color .2s,border-color .2s;}
   .foot-social a:hover{background:var(--orange);color:#fff;border-color:var(--orange);}
 
-  /* ── SCROLL REVEAL ── */
   .reveal{opacity:0;transform:translateY(28px);transition:opacity .65s ease,transform .65s ease;}
   .reveal.on{opacity:1;transform:none;}
   .r1{transition-delay:.1s;}.r2{transition-delay:.2s;}.r3{transition-delay:.3s;}
@@ -534,69 +268,87 @@
     .accept-grid{grid-template-columns:1fr;}
     .nav-links{display:none;}
   }
-</style>
-</head>
-<body>
+`;
 
-<!-- NAV -->
+document.head.insertAdjacentHTML('beforeend', `<style>${css}</style>`);
+document.title = CONFIG.storeName + ' — Bend, Oregon';
+
+// Build hours rows
+const hoursHTML = CONFIG.hours.map(h => `
+  <div class="hour-row">
+    <span class="hour-day">${h.day}</span>
+    <span class="hour-time">${h.time}${h.best ? ' <span class="best-pill">Best Day</span>' : ''}</span>
+  </div>`).join('');
+
+// Build donation cards — accent colours cycle through the palette
+const cardAccents = ['var(--yellow)','var(--orange)','var(--mint)','var(--pink)','var(--lavender)','var(--sky)'];
+const donationHTML = CONFIG.donationItems.map((item, i) => `
+  <div class="accept-card${item.accepted ? '' : ' no'} reveal r${(i%3)+1}">
+    <div class="card-status ${item.accepted ? 'yes' : 'no-txt'}">${item.accepted ? '✦ Accepted' : '✕ Not Accepted'}</div>
+    <h4>${item.title}</h4>
+    <p>${item.desc}</p>
+    ${item.accepted ? `<div class="card-corner" style="background:${cardAccents[i % cardAccents.length]};"></div>` : ''}
+  </div>`).join('');
+
+// Build events rows
+const eventsHTML = CONFIG.events.map((e, i) => `
+  <div class="event-row">
+    <div class="event-badge"><span class="mo">${e.month}</span><span class="dy">${e.day}</span></div>
+    <div class="event-info"><h4>${e.title}</h4><span>${e.meta}</span></div>
+    <span class="event-caret">${e.link ? `<a href="${e.link}" target="_blank" style="color:inherit;text-decoration:none;">Details →</a>` : 'Details →'}</span>
+  </div>`).join('');
+
+// Build marquee 2 with event names
+const marquee2Items = CONFIG.events.map(e =>
+  `<span class="marquee-item" style="color:#fff;">${e.title} — ${e.month} ${e.day} <span class="marquee-sep" style="color:var(--yellow);">✦</span></span>`
+).join('') .repeat(4);
+
+document.body.innerHTML = `
 <nav>
-  <a href="#" class="nav-logo">Furry Freight Thrift</a>
+  <a href="#" class="nav-logo">${CONFIG.storeName}</a>
   <ul class="nav-links">
     <li><a href="#hours">Hours</a></li>
     <li><a href="#donations">Donate</a></li>
-    <li><a href="#events">Events</a></li>
+    ${CONFIG.showEvents ? '<li><a href="#events">Events</a></li>' : ''}
     <li><a href="#about">Mission</a></li>
     <li><a href="#shop">Shop Online</a></li>
   </ul>
 </nav>
 
-<!-- HERO -->
 <section id="hero">
   <div class="blob blob-1"></div>
   <div class="blob blob-2"></div>
   <div class="blob blob-3"></div>
   <div class="blob blob-4"></div>
   <div class="blob blob-5"></div>
-
-  <!-- spinning star SVG -->
   <svg class="spin-star" viewBox="0 0 70 70" fill="none">
     <path d="M35 5 L38 28 L60 15 L45 33 L68 35 L45 37 L60 55 L38 42 L35 65 L32 42 L10 55 L25 37 L2 35 L25 33 L10 15 L32 28 Z" fill="#fff" stroke="var(--black)" stroke-width="2"/>
   </svg>
-
-  <div class="hero-tag">
-    <span class="tag-dot"></span>
-    Open Now · Bend, Oregon
-  </div>
-
+  <div class="hero-tag"><span class="tag-dot"></span>Open Now · ${CONFIG.city}</div>
   <div class="hero-h1">
     <span class="outline">Second</span><br>
     Hand.<br>
     <span class="yellow-word">First</span><br>
     Rate.
   </div>
-
-  <p class="hero-sub">
-    A big, well-stocked thrift warehouse in Bend where <strong>every dollar saves shelter animals</strong> — transports, surgeries, second chances.
-  </p>
-
+  <p class="hero-sub">${CONFIG.heroDesc.replace('every dollar', '<strong>every dollar</strong>')}</p>
   <div class="hero-btns">
     <a href="#shop" class="btn btn-white">Shop Poshmark →</a>
     <a href="#hours" class="btn btn-dark">Hours &amp; Info</a>
   </div>
 </section>
 
-<!-- MARQUEE 1 -->
 <div class="marquee-wrap">
   <div class="marquee-track">
     <span class="marquee-item">Open 7 Days <span class="marquee-sep">✦</span></span>
-    <span class="marquee-item">Bend, Oregon <span class="marquee-sep">✦</span></span>
+    <span class="marquee-item">${CONFIG.city} <span class="marquee-sep">✦</span></span>
     <span class="marquee-item">Every Dollar Saves Animals <span class="marquee-sep">✦</span></span>
     <span class="marquee-item">Drop Off Donations Anytime <span class="marquee-sep">✦</span></span>
     <span class="marquee-item">Shop Our Poshmark <span class="marquee-sep">✦</span></span>
     <span class="marquee-item">100% Volunteer Run <span class="marquee-sep">✦</span></span>
     <span class="marquee-item">501(c)(3) Nonprofit <span class="marquee-sep">✦</span></span>
     <span class="marquee-item">Open 7 Days <span class="marquee-sep">✦</span></span>
-    <span class="marquee-item">Bend, Oregon <span class="marquee-sep">✦</span></span>
+    <span class="marquee-item">${CONFIG.city} <span class="marquee-sep">✦</span></span>
     <span class="marquee-item">Every Dollar Saves Animals <span class="marquee-sep">✦</span></span>
     <span class="marquee-item">Drop Off Donations Anytime <span class="marquee-sep">✦</span></span>
     <span class="marquee-item">Shop Our Poshmark <span class="marquee-sep">✦</span></span>
@@ -605,12 +357,9 @@
   </div>
 </div>
 
-<!-- HOURS -->
 <section id="hours">
-  <!-- decorative blobs -->
   <div class="shape-blob" style="width:200px;height:200px;background:var(--yellow);opacity:.25;top:-60px;right:-40px;animation:float1 8s ease-in-out infinite;"></div>
   <div class="shape-blob" style="width:100px;height:100px;background:var(--pink);opacity:.3;bottom:60px;left:5%;animation:float2 6s ease-in-out infinite 1s;"></div>
-
   <div class="hours-inner">
     <div class="reveal">
       <div class="section-eyebrow"><span class="eyebrow-pill">Store Hours</span></div>
@@ -618,39 +367,28 @@
       <p class="section-desc">No appointment needed. Pop in to browse, shop, or drop off donations any day of the week.</p>
       <div class="location-card">
         <p>
-          <strong>123 Example Street</strong><br>
-          Bend, OR 97701<br><br>
-          <a href="mailto:info@furryfreight.org">info@furryfreight.org</a><br>
-          <a href="https://www.instagram.com/furry.freight/" target="_blank">@furry.freight</a>
+          <strong>${CONFIG.address}</strong><br>
+          ${CONFIG.addressLine2}<br><br>
+          <a href="mailto:${CONFIG.email}">${CONFIG.email}</a><br>
+          <a href="${CONFIG.instagramLink}" target="_blank">@furry.freight</a>
         </p>
       </div>
     </div>
-    <div class="hours-rows reveal r1">
-      <div class="hour-row"><span class="hour-day">Monday</span><span class="hour-time">10am – 6pm</span></div>
-      <div class="hour-row"><span class="hour-day">Tuesday</span><span class="hour-time">10am – 6pm</span></div>
-      <div class="hour-row"><span class="hour-day">Wednesday</span><span class="hour-time">10am – 6pm</span></div>
-      <div class="hour-row"><span class="hour-day">Thursday</span><span class="hour-time">10am – 6pm</span></div>
-      <div class="hour-row"><span class="hour-day">Friday</span><span class="hour-time">10am – 6pm</span></div>
-      <div class="hour-row"><span class="hour-day">Saturday</span><span class="hour-time">9am – 5pm <span class="best-pill">Best Day</span></span></div>
-      <div class="hour-row"><span class="hour-day">Sunday</span><span class="hour-time">11am – 4pm</span></div>
-    </div>
+    <div class="hours-rows reveal r1">${hoursHTML}</div>
   </div>
 </section>
 
-<!-- CALLOUT -->
 <div class="callout-band">
-  <div class="callout-float cf1"></div>
-  <div class="callout-float cf2"></div>
+  <div class="callout-float" style="width:200px;height:200px;background:var(--orange);opacity:.15;top:-60px;right:-40px;animation:float1 7s ease-in-out infinite;"></div>
+  <div class="callout-float" style="width:100px;height:100px;background:var(--yellow);opacity:.12;bottom:-30px;right:40%;animation:float2 5s ease-in-out infinite 1s;"></div>
   <div class="callout-band-inner">
     <h2 class="reveal">Your stuff<br><em>saves lives.</em></h2>
     <p class="reveal r1">Every item you donate, every purchase you make goes directly to Furry Freight transport runs and spay/neuter surgeries. Zero overhead. 100% volunteer run. Every single dollar counts.</p>
   </div>
 </div>
 
-<!-- DONATIONS -->
 <section id="donations">
   <div class="shape-blob" style="width:160px;height:160px;background:var(--orange);opacity:.15;top:40px;right:5%;animation:float1 7s ease-in-out infinite;"></div>
-
   <div class="donations-inner">
     <div class="donations-top reveal">
       <div>
@@ -659,118 +397,50 @@
       </div>
       <p>Drop-offs welcome any time during store hours. Items should be clean and in sellable condition. We're a big warehouse — we can take a lot.</p>
     </div>
-    <div class="accept-grid">
-      <div class="accept-card reveal r1">
-        <div class="card-status yes">✦ Accepted</div>
-        <h4>Clothing</h4>
-        <p>All seasons, all sizes. Clean and wearable — gently used is great.</p>
-        <div class="card-corner" style="background:var(--yellow);"></div>
-      </div>
-      <div class="accept-card reveal r2">
-        <div class="card-status yes">✦ Accepted</div>
-        <h4>Outdoor Gear</h4>
-        <p>Jackets, packs, boots, tents, sleeping bags. Bend loves this.</p>
-        <div class="card-corner" style="background:var(--orange);"></div>
-      </div>
-      <div class="accept-card reveal r3">
-        <div class="card-status yes">✦ Accepted</div>
-        <h4>Housewares</h4>
-        <p>Kitchen items, décor, small appliances, glassware, linens.</p>
-        <div class="card-corner" style="background:var(--mint);"></div>
-      </div>
-      <div class="accept-card reveal r1">
-        <div class="card-status yes">✦ Accepted</div>
-        <h4>Books &amp; Media</h4>
-        <p>Books, vinyl, DVDs, games. Very popular with regulars.</p>
-        <div class="card-corner" style="background:var(--pink);"></div>
-      </div>
-      <div class="accept-card reveal r2">
-        <div class="card-status yes">✦ Accepted</div>
-        <h4>Toys &amp; Kids</h4>
-        <p>Toys, kids clothing, gear — clean and in working condition.</p>
-        <div class="card-corner" style="background:var(--lavender);"></div>
-      </div>
-      <div class="accept-card no reveal r3">
-        <div class="card-status no-txt">✕ Not Accepted</div>
-        <h4>Large Furniture</h4>
-        <p>We can't take sofas, mattresses, or oversized items right now.</p>
-      </div>
-    </div>
+    <div class="accept-grid">${donationHTML}</div>
   </div>
 </section>
 
-<!-- MARQUEE 2 -->
+${CONFIG.showEvents ? `
 <div class="marquee-wrap-2">
-  <div class="marquee-track-2">
-    <span class="marquee-item" style="color:#fff;">Spring Yard Sale — April 12 <span class="marquee-sep" style="color:var(--yellow);">✦</span></span>
-    <span class="marquee-item" style="color:#fff;">Bingo Night — May 3 <span class="marquee-sep" style="color:var(--yellow);">✦</span></span>
-    <span class="marquee-item" style="color:#fff;">Egg My House — June 21 <span class="marquee-sep" style="color:var(--yellow);">✦</span></span>
-    <span class="marquee-item" style="color:#fff;">Spring Yard Sale — April 12 <span class="marquee-sep" style="color:var(--yellow);">✦</span></span>
-    <span class="marquee-item" style="color:#fff;">Bingo Night — May 3 <span class="marquee-sep" style="color:var(--yellow);">✦</span></span>
-    <span class="marquee-item" style="color:#fff;">Egg My House — June 21 <span class="marquee-sep" style="color:var(--yellow);">✦</span></span>
-    <span class="marquee-item" style="color:#fff;">Spring Yard Sale — April 12 <span class="marquee-sep" style="color:var(--yellow);">✦</span></span>
-    <span class="marquee-item" style="color:#fff;">Bingo Night — May 3 <span class="marquee-sep" style="color:var(--yellow);">✦</span></span>
-    <span class="marquee-item" style="color:#fff;">Egg My House — June 21 <span class="marquee-sep" style="color:var(--yellow);">✦</span></span>
-  </div>
+  <div class="marquee-track-2">${marquee2Items}</div>
 </div>
 
-<!-- EVENTS -->
 <section id="events">
   <div class="shape-blob" style="width:140px;height:140px;background:var(--coral);opacity:.2;top:60px;right:8%;animation:float2 6s ease-in-out infinite;"></div>
-
   <div class="events-inner">
     <div class="events-top reveal">
       <div>
         <div class="section-eyebrow"><span class="eyebrow-pill">Upcoming Events</span></div>
         <h2 class="section-h2">Come hang <em>out.</em></h2>
       </div>
-      <a href="https://www.instagram.com/furry.freight/" target="_blank" class="events-follow">Follow for updates →</a>
+      <a href="${CONFIG.instagramLink}" target="_blank" class="events-follow">Follow for updates →</a>
     </div>
-    <div class="events-grid reveal r1">
-      <div class="event-row">
-        <div class="event-badge"><span class="mo">Apr</span><span class="dy">12</span></div>
-        <div class="event-info"><h4>Spring Yard Sale</h4><span>10am – 3pm · Outdoor lot · Free entry</span></div>
-        <span class="event-caret">Details →</span>
-      </div>
-      <div class="event-row">
-        <div class="event-badge"><span class="mo">May</span><span class="dy">3</span></div>
-        <div class="event-info"><h4>Bingo Night</h4><span>6pm – 9pm · Location TBA · Tickets at door</span></div>
-        <span class="event-caret">Details →</span>
-      </div>
-      <div class="event-row">
-        <div class="event-badge"><span class="mo">Jun</span><span class="dy">21</span></div>
-        <div class="event-info"><h4>Egg My House</h4><span>Morning · Central Oregon · Sign up required</span></div>
-        <span class="event-caret">Details →</span>
-      </div>
-    </div>
+    <div class="events-grid reveal r1">${eventsHTML}</div>
   </div>
-</section>
+</section>` : ''}
 
-<!-- ABOUT -->
 <section id="about">
   <div class="shape-blob" style="width:180px;height:180px;background:var(--orange);opacity:.15;bottom:-40px;right:-30px;animation:float1 9s ease-in-out infinite;"></div>
-
   <div class="about-inner">
     <div class="about-text reveal">
       <div class="section-eyebrow" style="margin-bottom:1rem;"><span class="eyebrow-pill">The Mission</span></div>
       <h2 class="section-h2">Saving shelter pets.<br><em>One sale at a time.</em></h2>
-      <p>Furry Freight Thrift is the retail arm of Furry Freight Shelter Transport — an all-volunteer 501(c)(3) based in Bend that moves at-risk shelter animals to Pacific Northwest adoption partners.</p>
-      <p>When you shop here or drop off a donation, you are directly funding transport trips and spay/neuter surgeries for animals who need it most.</p>
-      <a href="https://furryfreight.org" target="_blank">Visit furryfreight.org →</a>
+      <p>${CONFIG.aboutBody1}</p>
+      <p>${CONFIG.aboutBody2}</p>
+      <a href="${CONFIG.mainSiteLink}" target="_blank">Visit furryfreight.org →</a>
     </div>
     <div class="stats-grid reveal r1">
-      <div class="stat-card"><span class="stat-num">1,709+</span><span class="stat-lbl">Animals Saved</span></div>
-      <div class="stat-card"><span class="stat-num">100%</span><span class="stat-lbl">Volunteer Run</span></div>
-      <div class="stat-card"><span class="stat-num">$70</span><span class="stat-lbl">Sponsors a Spay/Neuter Surgery</span></div>
-      <div class="stat-card"><span class="stat-num">Since '18</span><span class="stat-lbl">On the Road</span></div>
+      <div class="stat-card"><span class="stat-num">${CONFIG.stat1Number}</span><span class="stat-lbl">${CONFIG.stat1Label}</span></div>
+      <div class="stat-card"><span class="stat-num">${CONFIG.stat2Number}</span><span class="stat-lbl">${CONFIG.stat2Label}</span></div>
+      <div class="stat-card"><span class="stat-num">${CONFIG.stat3Number}</span><span class="stat-lbl">${CONFIG.stat3Label}</span></div>
+      <div class="stat-card"><span class="stat-num">${CONFIG.stat4Number}</span><span class="stat-lbl">${CONFIG.stat4Label}</span></div>
     </div>
   </div>
 </section>
 
-<!-- SHOP -->
 <section id="shop">
   <div class="shape-blob" style="width:120px;height:120px;background:var(--orange);opacity:.2;top:40px;left:5%;animation:float2 5s ease-in-out infinite;"></div>
-
   <div class="shop-inner">
     <div class="shop-visual reveal">
       <div class="shop-paw">
@@ -787,22 +457,21 @@
     <div class="reveal r1">
       <div class="section-eyebrow" style="margin-bottom:1rem;"><span class="eyebrow-pill">Online Store</span></div>
       <h2 class="section-h2">Can't make<br><em>it in?</em></h2>
-      <p class="section-desc">Browse our curated Poshmark store for handpicked finds shipped anywhere in the US. Updated regularly with the best of what comes through the door.</p>
-      <a href="https://poshmark.com/closet/ffthriftstore" target="_blank" class="btn btn-dark">Shop Poshmark →</a>
+      <p class="section-desc">${CONFIG.shopDesc}</p>
+      <a href="${CONFIG.poshmarkLink}" target="_blank" class="btn btn-dark">Shop Poshmark →</a>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <div class="foot-top">
     <div class="foot-brand">
       <span class="foot-brand-name">Furry Freight <span>Thrift</span></span>
       <p>
-        A thrift store with a mission. Located in Bend, Oregon.<br>
+        A thrift store with a mission. Located in ${CONFIG.city}.<br>
         All proceeds benefit Furry Freight Shelter Transport.<br>
-        Oregon-registered 501(c)(3) · EIN: 82-4423390<br>
-        PO Box 93, Bend OR 97709 · <a href="mailto:info@furryfreight.org">info@furryfreight.org</a>
+        Oregon-registered 501(c)(3) · EIN: ${CONFIG.ein}<br>
+        ${CONFIG.poBox} · <a href="mailto:${CONFIG.email}">${CONFIG.email}</a>
       </p>
     </div>
     <div class="foot-col">
@@ -810,7 +479,7 @@
       <ul>
         <li><a href="#hours">Hours &amp; Location</a></li>
         <li><a href="#donations">Donation Policy</a></li>
-        <li><a href="#events">Upcoming Events</a></li>
+        ${CONFIG.showEvents ? '<li><a href="#events">Upcoming Events</a></li>' : ''}
         <li><a href="#about">About the Mission</a></li>
         <li><a href="#shop">Shop Poshmark</a></li>
       </ul>
@@ -818,31 +487,31 @@
     <div class="foot-col">
       <h5>Furry Freight</h5>
       <ul>
-        <li><a href="https://furryfreight.org" target="_blank">Main Website</a></li>
-        <li><a href="https://www.instagram.com/furry.freight/" target="_blank">Instagram</a></li>
-        <li><a href="https://www.tiktok.com/@furryfreight" target="_blank">TikTok</a></li>
-        <li><a href="https://facebook.com" target="_blank">Facebook</a></li>
+        <li><a href="${CONFIG.mainSiteLink}" target="_blank">Main Website</a></li>
+        <li><a href="${CONFIG.instagramLink}" target="_blank">Instagram</a></li>
+        <li><a href="${CONFIG.tiktokLink}" target="_blank">TikTok</a></li>
+        <li><a href="${CONFIG.facebookLink}" target="_blank">Facebook</a></li>
       </ul>
     </div>
   </div>
   <div class="foot-bottom">
     <p>© 2018–2026 Furry Freight Shelter Transport. Saving shelter pets, one road trip at a time.</p>
     <div class="foot-social">
-      <a href="https://facebook.com" target="_blank">FB</a>
-      <a href="https://www.instagram.com/furry.freight/" target="_blank">IG</a>
-      <a href="https://www.tiktok.com/@furryfreight" target="_blank">TT</a>
+      <a href="${CONFIG.facebookLink}" target="_blank">FB</a>
+      <a href="${CONFIG.instagramLink}" target="_blank">IG</a>
+      <a href="${CONFIG.tiktokLink}" target="_blank">TT</a>
     </div>
   </div>
 </footer>
+`;
 
-<script>
-  const revs = document.querySelectorAll('.reveal');
-  function check(){
-    const vh = window.innerHeight;
-    revs.forEach(el => { if(el.getBoundingClientRect().top < vh - 60) el.classList.add('on'); });
-  }
-  window.addEventListener('scroll', check, {passive:true});
-  check();
+const revs = document.querySelectorAll('.reveal');
+function check(){
+  const vh = window.innerHeight;
+  revs.forEach(el => { if(el.getBoundingClientRect().top < vh - 60) el.classList.add('on'); });
+}
+window.addEventListener('scroll', check, {passive:true});
+check();
 </script>
 </body>
 </html>
