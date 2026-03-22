@@ -63,11 +63,11 @@ const CONFIG = {
   ──────────────────────────────────────────────────────── */
   donationItems: [
     { title: "Clothing",       desc: "All seasons, all sizes. CLEAN and wearable - gently used is great.",          accepted: true  },
-    { title: "Outdoor Gear",   desc: "Jackets, packs, boots, tents, sleeping bags. Bend loves this.",              accepted: true  },
+    { title: "Outdoor Gear",   desc: "Jackets, packs, boots, small camp gear.",              accepted: true  },
     { title: "Housewares",     desc: "Kitchen items, décor, small appliances, glassware, linens.",                  accepted: true  },
-    { title: "Books & Media",  desc: "Books, vinyl, DVDs, games. Very popular with regulars.",                      accepted: true  },
-    { title: "Toys & Kids",    desc: "Toys, kids clothing, gear — clean and in working condition.",                 accepted: true  },
-    { title: "Large Furniture",desc: "We can't take sofas, mattresses, or oversized items right now.",              accepted: false },
+    { title: "Books & Media",  desc: "Books, vinyl, DVDs, games + puzzles.",                      accepted: true  },
+    { title: "Toys & Kids",    desc: "Toys, baby/kid accessorties  — clean and in working condition.",                 accepted: true  },
+    { title: "Large Furniture",desc: "We can't take sofas, mattresses, or upohlstered items right now.",              accepted: false },
   ],
 
   /* ── ABOUT / MISSION STATS ── */
@@ -76,7 +76,7 @@ const CONFIG = {
   stat3Number: "$70",     stat3Label: "Sponsors a Spay/Neuter Surgery",
   stat4Number: "Since '18", stat4Label: "On the Road",
 
-  aboutBody1: "Furry Freight Thrift is the retail arm of Furry Freight Shelter Transport — an all-volunteer 501(c)(3) based in Bend that moves at-risk shelter animals to Pacific Northwest adoption partners.",
+  aboutBody1: "Furry Freight Thrift is the retail arm of Furry Freight Shelter Transport — a volunteer run 501(c)(3) based in Bend that moves at-risk shelter animals in low resource, overpopulated shelters to Pacific Northwest adoption partners.",
   aboutBody2: "When you shop here or drop off a donation, you are directly funding transport trips and spay/neuter surgeries for animals who need it most.",
 
   /* ── SHOP / POSHMARK ── */
@@ -121,14 +121,14 @@ const css = `
 
   #hero{min-height:100vh;background:var(--orange);border-bottom:3px solid var(--black);padding:80px 3rem 3rem;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:center;}
   .blob{position:absolute;border-radius:50%;border:3px solid var(--black);pointer-events:none;}
-  .blob-1{width:180px;height:180px;background:var(--yellow);top:80px;right:10%;animation:float1 6s ease-in-out infinite;}
-  .blob-2{width:120px;height:120px;background:var(--mint);bottom:120px;right:20%;animation:float2 5s ease-in-out infinite;}
-  .blob-3{width:80px;height:80px;background:var(--pink);top:200px;right:30%;animation:float1 7s ease-in-out infinite 1s;}
-  .blob-4{width:60px;height:60px;background:var(--sky);bottom:200px;left:5%;animation:float2 4.5s ease-in-out infinite .5s;}
-  .blob-5{width:140px;height:140px;background:var(--lavender);top:60%;right:5%;animation:float1 8s ease-in-out infinite 2s;}
+  .blob-1{width:180px;height:180px;background:var(--yellow);top:70px;right:6%;animation:float1 6s ease-in-out infinite;}
+  .blob-2{width:130px;height:130px;background:var(--mint);bottom:80px;right:18%;animation:float2 5s ease-in-out infinite;}
+  .blob-3{width:90px;height:90px;background:var(--pink);top:55%;right:32%;animation:float1 7s ease-in-out infinite 1s;}
+  .blob-4{width:70px;height:70px;background:var(--sky);bottom:160px;right:42%;animation:float2 4.5s ease-in-out infinite .5s;}
+  .blob-5{width:150px;height:150px;background:var(--lavender);bottom:40px;right:3%;animation:float1 8s ease-in-out infinite 2s;}
   @keyframes float1{0%,100%{transform:translateY(0) rotate(0deg);}50%{transform:translateY(-22px) rotate(5deg);}}
   @keyframes float2{0%,100%{transform:translateY(0) rotate(0deg);}50%{transform:translateY(-16px) rotate(-6deg);}}
-  .spin-star{position:absolute;top:120px;left:5%;width:70px;height:70px;animation:spin 12s linear infinite;}
+  .spin-star{position:absolute;top:75px;right:4%;width:65px;height:65px;animation:spin 12s linear infinite;}
   @keyframes spin{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
   .hero-tag{display:inline-flex;align-items:center;gap:.5rem;background:#fff;color:var(--black);border:2.5px solid var(--black);border-radius:30px;font-size:.75rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:.4rem 1.1rem;width:fit-content;margin-bottom:1.5rem;animation:wiggle 3s ease-in-out infinite;}
   @keyframes wiggle{0%,100%{transform:rotate(-1deg);}50%{transform:rotate(1.5deg);}}
@@ -263,6 +263,7 @@ const css = `
     .event-row{grid-template-columns:auto 1fr;}.event-caret{display:none;}
     .hero-h1{font-size:clamp(2.4rem,10vw,4rem);}
     .blob-3,.blob-4,.blob-5{display:none;}
+    .spin-star{display:none;}
   }
   @media(max-width:560px){
     .accept-grid{grid-template-columns:1fr;}
@@ -448,7 +449,7 @@ ${CONFIG.showEvents ? `
           <ellipse cx="76" cy="42" rx="9" ry="11"/>
         </svg>
       </div>
-      <div class="shop-label">Shop our<br>Poshmark<br>store!</div>
+      <div class="shop-label">Shop our<br>online<br>store!</div>
     </div>
     <div class="reveal r1">
       <div class="section-eyebrow" style="margin-bottom:1rem;"><span class="eyebrow-pill">Online Store</span></div>
