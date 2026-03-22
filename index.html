@@ -13,8 +13,8 @@
    ============================================================
    HOW TO EDIT:
    • Change any text between the quote marks " "
-   • For events: edit the events[] array — copy a block to add one,
-     delete a block to remove one
+   • Every button label, subtext, and section heading is here
+   • For events: copy a block to add one, delete to remove one
    • Set showEvents: false to hide the events section entirely
    • Don't change anything outside this CONFIG block
    ============================================================ */
@@ -24,7 +24,6 @@ const CONFIG = {
   /* ── STORE INFO ── */
   storeName:   "Furry Freight Thrift",
   tagline:     "Second Hand. Four Paws.",
-  heroDesc:    "We are a well-stocked thrift store in Bend where every dollar goes towards shelter pets - life saving transports, spay + neuter programs, and second chances.",
   city:        "Bend, Oregon",
   address:     "62971 Plateau Drive",
   addressLine2:"Bend, OR 97701",
@@ -32,10 +31,32 @@ const CONFIG = {
   ein:         "82-4423390",
   poBox:       "PO Box 93, Bend OR 97709",
 
+  /* ── HERO ── */
+  heroOpenLabel: "Open Now",
+  heroDesc:    "We are a well-stocked thrift store in Bend where every dollar goes towards shelter pets - life saving transports, spay + neuter programs, and second chances.",
+  heroBtnShop: "Shop Online  →",
+  heroBtnHours:"Hours & Info",
+
+  /* ── MARQUEE (yellow ticker) ─────────────────────────────
+     Edit any of the items in the scrolling banner.
+  ──────────────────────────────────────────────────────── */
+  marqueeItems: [
+    "Open 5 Days",
+    "Bend, Oregon",
+    "Every Dollar Saves At-risk Shelter Pets",
+    "Drop Off Donations Anytime",
+    "Shop Online",
+    "Volunteer Based",
+    "501(c)(3) Nonprofit",
+  ],
+
   /* ── HOURS ──────────────────────────────────────────────
      Change the time strings to update hours.
      Set a day to "Closed" if you are not open that day.
+     Set best: true to add the "Best Day" badge.
   ──────────────────────────────────────────────────────── */
+  hoursHeadline: "Here We Are!",
+  hoursDesc:     "Pop in to shop, or drop off donations any day we are open.",
   hours: [
     { day: "Monday",    time: "CLOSED",     best: false },
     { day: "Tuesday",   time: "CLOSED",     best: false },
@@ -46,42 +67,60 @@ const CONFIG = {
     { day: "Sunday",    time: "11am – 5pm", best: false },
   ],
 
-  /* ── EVENTS ─────────────────────────────────────────────
-     Set showEvents: false to hide the events section.
-     Each event needs: month, day, title, meta, link
-     Leave link as "" to hide the Details button.
-  ──────────────────────────────────────────────────────── */
-  showEvents: true,
-  events: [
-    { month: "Apr", day: "12", title: "Spring Yard Sale",  meta: "10am – 3pm · Outdoor lot · Free entry",          link: "" },
-    { month: "May", day: "3",  title: "Bingo Night",       meta: "6pm – 9pm · Location TBA · Tickets at door",     link: "" },
-    { month: "Jun", day: "21", title: "Egg My House",      meta: "Morning · Central Oregon · Sign up required",    link: "" },
-  ],
+  /* ── CALLOUT BAND (black section) ── */
+  calloutHeadline: "Your stuff saves lives.",
+  calloutBody:     "Every item you donate, every purchase you make goes directly to Furry Freight transport runs and spay/neuter surgeries. Every dollar makes a positive impact in the animal welfare space.",
+
+  /* ── DONATIONS ── */
+  donationsHeadline: "What we accept.",
+  donationsDesc:     "Drop-offs welcome any time during store hours. Items should be clean and in sellable condition. Please don't use us at your waste service, thank you!",
 
   /* ── DONATION POLICY CARDS ───────────────────────────────
-     accepted: true = green card, false = grey/no card
+     accepted: true = coloured card, false = greyed out
   ──────────────────────────────────────────────────────── */
   donationItems: [
-    { title: "Clothing",       desc: "All seasons, all sizes. CLEAN and wearable - gently used is great.",          accepted: true  },
-    { title: "Outdoor Gear",   desc: "Jackets, packs, boots, small camp accessories.",              accepted: true  },
-    { title: "Housewares",     desc: "Kitchen items, décor, small appliances, glassware, linens.",                  accepted: true  },
-    { title: "Books & Media",  desc: "Books, vinyl, DVDs, games + puzzles.",                      accepted: true  },
-    { title: "Toys & Kids",    desc: "Toys, gear, accessories — clean and in working condition.",                 accepted: true  },
-    { title: "Large Furniture + Fitness ",desc: "We can't take sofas, mattresses, upholstered or large fitness items right now.",              accepted: false },
+    { title: "Clothing",                desc: "All seasons, all sizes. CLEAN and wearable - gently used is great.",                                         accepted: true  },
+    { title: "Outdoor Gear",            desc: "Jackets, packs, boots, small camp accessories.",                                                             accepted: true  },
+    { title: "Housewares",              desc: "Kitchen items, décor, small appliances, glassware, linens.",                                                 accepted: true  },
+    { title: "Books & Media",           desc: "Books, vinyl, DVDs, games + puzzles.",                                                                       accepted: true  },
+    { title: "Toys & Kids",             desc: "Toys, gear, accessories — clean and in working condition.",                                                  accepted: true  },
+    { title: "Large Furniture + Fitness", desc: "We can't take sofas, mattresses, upholstered or large fitness items right now.",                           accepted: false },
   ],
 
-  /* ── ABOUT / MISSION STATS ── */
+  /* ── EVENTS ─────────────────────────────────────────────
+     Set showEvents: false to hide the events section.
+     Leave link as "" to hide the Details button.
+  ──────────────────────────────────────────────────────── */
+  showEvents:       true,
+  eventsHeadline:   "Come hang out.",
+  eventsFollowText: "Follow for updates →",
+  events: [
+    { month: "Apr", day: "12", title: "Spring Yard Sale", meta: "10am – 3pm · Outdoor lot · Free entry",        link: "" },
+    { month: "May", day: "3",  title: "Bingo Night",      meta: "6pm – 9pm · Location TBA · Tickets at door",  link: "" },
+    { month: "Jun", day: "21", title: "Egg My House",     meta: "Morning · Central Oregon · Sign up required",  link: "" },
+  ],
+
+  /* ── ABOUT / MISSION ── */
+  aboutHeadline: "Saving shelter pets. One sale at a time.",
+  aboutBody1:    "Furry Freight Thrift is the retail arm of Furry Freight Shelter Transport — a volunteer run 501(c)(3) based in Bend that moves at-risk shelter animals from under resourced, overpopulated shelters to Pacific Northwest adoption partners.",
+  aboutBody2:    "When you shop here or drop off a donation, you are directly funding life saving transport trips and spay/neuter surgeries for animals who need it most.",
+  aboutLinkText: "Visit furryfreight.org →",
+
   stat1Number: "1,709+",  stat1Label: "Animals Saved",
   stat2Number: "100%",    stat2Label: "Volunteer Run",
   stat3Number: "$70",     stat3Label: "Sponsors a Spay/Neuter Surgery",
   stat4Number: "Since '18", stat4Label: "On the Road",
 
-  aboutBody1: "Furry Freight Thrift is the retail arm of Furry Freight Shelter Transport — a volunteer run 501(c)(3) based in Bend that moves at-risk shelter animals from under resourced, overpopulated shelters to Pacific Northwest adoption partners.",
-  aboutBody2: "When you shop here or drop off a donation, you are directly funding transport trips and spay/neuter surgeries for animals who need it most.",
-
   /* ── SHOP / POSHMARK ── */
-  poshmarkLink: "https://poshmark.com/closet/ffthriftstore",
-  shopDesc:     "Browse our curated Poshmark store for handpicked finds shipped anywhere in the US. Updated regularly with the best of what comes through the door.",
+  shopHeadline:  "Can't make it in?",
+  shopDesc:      "Browse our curated Poshmark store for handpicked finds shipped anywhere in the US. Updated regularly with the best of what comes through the door.",
+  shopBtnText:   "Shop Poshmark →",
+  shopVisualLabel: "Shop our online store!",
+  poshmarkLink:  "https://poshmark.com/closet/ffthriftstore",
+
+  /* ── FOOTER ── */
+  footerTagline: "A thrift store with a mission.",
+  footerCopyright: "© 2018–2026 Furry Freight Shelter Transport. Saving shelter pets, one road trip at a time.",
 
   /* ── SOCIAL LINKS ── */
   instagramLink: "https://www.instagram.com/furry.freight/",
@@ -274,6 +313,8 @@ const css = `
 document.head.insertAdjacentHTML('beforeend', `<style>${css}</style>`);
 document.title = CONFIG.storeName + ' — Bend, Oregon';
 
+/* ── Build HTML from CONFIG ── */
+
 const hoursHTML = CONFIG.hours.map(h => `
   <div class="hour-row">
     <span class="hour-day">${h.day}</span>
@@ -289,16 +330,41 @@ const donationHTML = CONFIG.donationItems.map((item, i) => `
     ${item.accepted ? `<div class="card-corner" style="background:${cardAccents[i % cardAccents.length]};"></div>` : ''}
   </div>`).join('');
 
-const eventsHTML = CONFIG.events.map((e, i) => `
+const eventsHTML = CONFIG.events.map(e => `
   <div class="event-row">
     <div class="event-badge"><span class="mo">${e.month}</span><span class="dy">${e.day}</span></div>
     <div class="event-info"><h4>${e.title}</h4><span>${e.meta}</span></div>
     <span class="event-caret">${e.link ? `<a href="${e.link}" target="_blank" style="color:inherit;text-decoration:none;">Details →</a>` : 'Details →'}</span>
   </div>`).join('');
 
+const marqueeItems = [...CONFIG.marqueeItems, ...CONFIG.marqueeItems].map(item =>
+  `<span class="marquee-item">${item} <span class="marquee-sep">✦</span></span>`).join('');
+
 const marquee2Items = CONFIG.events.map(e =>
   `<span class="marquee-item" style="color:#fff;">${e.title} — ${e.month} ${e.day} <span class="marquee-sep" style="color:var(--yellow);">✦</span></span>`
 ).join('').repeat(4);
+
+/* split callout headline — last word gets yellow em treatment */
+const calloutWords = CONFIG.calloutHeadline.split(' ');
+const calloutLast = calloutWords.pop();
+const calloutRest = calloutWords.join(' ');
+const calloutH2 = `${calloutRest}<br><em>${calloutLast}</em>`;
+
+/* split hours headline — last word gets orange em treatment */
+const hoursWords = CONFIG.hoursHeadline.split(' ');
+const hoursLast = hoursWords.pop();
+const hoursRest = hoursWords.join(' ');
+const hoursH2 = `${hoursRest}<br><em>${hoursLast}</em>`;
+
+/* split about headline */
+const aboutParts = CONFIG.aboutHeadline.split('.');
+const aboutH2 = aboutParts.filter(p => p.trim()).map((p, i) =>
+  i === 0 ? p.trim() + '.' : `<em>${p.trim()}.</em>`).join('<br>');
+
+/* split shop headline — last word gets em */
+const shopWords = CONFIG.shopHeadline.split(' ');
+const shopLast = shopWords.pop();
+const shopH2 = `${shopWords.join(' ')}<br><em>${shopLast}</em>`;
 
 document.body.innerHTML = `
 <nav>
@@ -321,7 +387,7 @@ document.body.innerHTML = `
   <svg class="spin-star" viewBox="0 0 70 70" fill="none">
     <path d="M35 5 L38 28 L60 15 L45 33 L68 35 L45 37 L60 55 L38 42 L35 65 L32 42 L10 55 L25 37 L2 35 L25 33 L10 15 L32 28 Z" fill="#fff" stroke="var(--black)" stroke-width="2"/>
   </svg>
-  <div class="hero-tag"><span class="tag-dot"></span>Open Now · ${CONFIG.city}</div>
+  <div class="hero-tag"><span class="tag-dot"></span>${CONFIG.heroOpenLabel} · ${CONFIG.city}</div>
   <div class="hero-h1">
     <span class="outline">Second</span><br>
     Hand,<br>
@@ -330,28 +396,13 @@ document.body.innerHTML = `
   </div>
   <p class="hero-sub">${CONFIG.heroDesc.replace('every dollar', '<strong>every dollar</strong>')}</p>
   <div class="hero-btns">
-    <a href="#shop" class="btn btn-white">Shop Poshmark →</a>
-    <a href="#hours" class="btn btn-dark">Hours &amp; Info</a>
+    <a href="#shop" class="btn btn-white">${CONFIG.heroBtnShop}</a>
+    <a href="#hours" class="btn btn-dark">${CONFIG.heroBtnHours}</a>
   </div>
 </section>
 
 <div class="marquee-wrap">
-  <div class="marquee-track">
-    <span class="marquee-item">Open 5 Days <span class="marquee-sep">✦</span></span>
-    <span class="marquee-item">${CONFIG.city} <span class="marquee-sep">✦</span></span>
-    <span class="marquee-item">Every Dollar Saves Animals <span class="marquee-sep">✦</span></span>
-    <span class="marquee-item">Drop Off Donations Anytime <span class="marquee-sep">✦</span></span>
-    <span class="marquee-item">Shop Our Poshmark <span class="marquee-sep">✦</span></span>
-    <span class="marquee-item">100% Volunteer Run <span class="marquee-sep">✦</span></span>
-    <span class="marquee-item">501(c)(3) Nonprofit <span class="marquee-sep">✦</span></span>
-    <span class="marquee-item">Open 5 Days <span class="marquee-sep">✦</span></span>
-    <span class="marquee-item">${CONFIG.city} <span class="marquee-sep">✦</span></span>
-    <span class="marquee-item">Every Dollar Saves Animals <span class="marquee-sep">✦</span></span>
-    <span class="marquee-item">Drop Off Donations Anytime <span class="marquee-sep">✦</span></span>
-    <span class="marquee-item">Shop Our Poshmark <span class="marquee-sep">✦</span></span>
-    <span class="marquee-item">100% Volunteer Run <span class="marquee-sep">✦</span></span>
-    <span class="marquee-item">501(c)(3) Nonprofit <span class="marquee-sep">✦</span></span>
-  </div>
+  <div class="marquee-track">${marqueeItems}</div>
 </div>
 
 <section id="hours">
@@ -360,8 +411,8 @@ document.body.innerHTML = `
   <div class="hours-inner">
     <div class="reveal">
       <div class="section-eyebrow"><span class="eyebrow-pill">Store Hours</span></div>
-      <h2 class="section-h2">Come<br>find <em>us.</em></h2>
-      <p class="section-desc">No appointment needed. Pop in to browse, shop, or drop off donations any day we are open.</p>
+      <h2 class="section-h2">${hoursH2}</h2>
+      <p class="section-desc">${CONFIG.hoursDesc}</p>
       <div class="location-card">
         <p>
           <strong>${CONFIG.address}</strong><br>
@@ -379,8 +430,8 @@ document.body.innerHTML = `
   <div class="callout-float" style="width:200px;height:200px;background:var(--orange);opacity:.15;top:-60px;right:-40px;animation:float1 7s ease-in-out infinite;"></div>
   <div class="callout-float" style="width:100px;height:100px;background:var(--yellow);opacity:.12;bottom:-30px;right:40%;animation:float2 5s ease-in-out infinite 1s;"></div>
   <div class="callout-band-inner">
-    <h2 class="reveal">Your stuff<br><em>saves lives.</em></h2>
-    <p class="reveal r1">Every item you donate, every purchase you make goes directly to Furry Freight transport runs and spay/neuter surgeries. Zero overhead. 100% volunteer run. Every single dollar counts.</p>
+    <h2 class="reveal">${calloutH2}</h2>
+    <p class="reveal r1">${CONFIG.calloutBody}</p>
   </div>
 </div>
 
@@ -390,9 +441,9 @@ document.body.innerHTML = `
     <div class="donations-top reveal">
       <div>
         <div class="section-eyebrow"><span class="eyebrow-pill">Donation Policy</span></div>
-        <h2 class="section-h2">What we<br><em>accept.</em></h2>
+        <h2 class="section-h2">${CONFIG.donationsHeadline.replace('.', '.<br>').replace('accept', '<em>accept</em>')}</h2>
       </div>
-      <p>Drop-offs welcome any time during store hours. Items should be clean and in sellable condition. We are a big warehouse — we can take a lot.</p>
+      <p>${CONFIG.donationsDesc}</p>
     </div>
     <div class="accept-grid">${donationHTML}</div>
   </div>
@@ -409,9 +460,9 @@ ${CONFIG.showEvents ? `
     <div class="events-top reveal">
       <div>
         <div class="section-eyebrow"><span class="eyebrow-pill">Upcoming Events</span></div>
-        <h2 class="section-h2">Come hang <em>out.</em></h2>
+        <h2 class="section-h2">${CONFIG.eventsHeadline.replace('out', '<em>out.</em>').replace('.', '')}</h2>
       </div>
-      <a href="${CONFIG.instagramLink}" target="_blank" class="events-follow">Follow for updates →</a>
+      <a href="${CONFIG.instagramLink}" target="_blank" class="events-follow">${CONFIG.eventsFollowText}</a>
     </div>
     <div class="events-grid reveal r1">${eventsHTML}</div>
   </div>
@@ -422,10 +473,10 @@ ${CONFIG.showEvents ? `
   <div class="about-inner">
     <div class="about-text reveal">
       <div class="section-eyebrow" style="margin-bottom:1rem;"><span class="eyebrow-pill">The Mission</span></div>
-      <h2 class="section-h2">Saving shelter pets.<br><em>One sale at a time.</em></h2>
+      <h2 class="section-h2">${aboutH2}</h2>
       <p>${CONFIG.aboutBody1}</p>
       <p>${CONFIG.aboutBody2}</p>
-      <a href="${CONFIG.mainSiteLink}" target="_blank">Visit furryfreight.org →</a>
+      <a href="${CONFIG.mainSiteLink}" target="_blank">${CONFIG.aboutLinkText}</a>
     </div>
     <div class="stats-grid reveal r1">
       <div class="stat-card"><span class="stat-num">${CONFIG.stat1Number}</span><span class="stat-lbl">${CONFIG.stat1Label}</span></div>
@@ -449,13 +500,13 @@ ${CONFIG.showEvents ? `
           <ellipse cx="76" cy="42" rx="9" ry="11"/>
         </svg>
       </div>
-      <div class="shop-label">Shop our<br>Poshmark<br>store!</div>
+      <div class="shop-label">${CONFIG.shopVisualLabel}</div>
     </div>
     <div class="reveal r1">
       <div class="section-eyebrow" style="margin-bottom:1rem;"><span class="eyebrow-pill">Online Store</span></div>
-      <h2 class="section-h2">Can't make<br><em>it in?</em></h2>
+      <h2 class="section-h2">${shopH2}</h2>
       <p class="section-desc">${CONFIG.shopDesc}</p>
-      <a href="${CONFIG.poshmarkLink}" target="_blank" class="btn btn-dark">Shop Poshmark →</a>
+      <a href="${CONFIG.poshmarkLink}" target="_blank" class="btn btn-dark">${CONFIG.shopBtnText}</a>
     </div>
   </div>
 </section>
@@ -465,7 +516,7 @@ ${CONFIG.showEvents ? `
     <div class="foot-brand">
       <span class="foot-brand-name">Furry Freight <span>Thrift</span></span>
       <p>
-        A thrift store with a mission. Located in ${CONFIG.city}.<br>
+        ${CONFIG.footerTagline} Located in ${CONFIG.city}.<br>
         All proceeds benefit Furry Freight Shelter Transport.<br>
         Oregon-registered 501(c)(3) · EIN: ${CONFIG.ein}<br>
         ${CONFIG.poBox} · <a href="mailto:${CONFIG.email}">${CONFIG.email}</a>
@@ -492,7 +543,7 @@ ${CONFIG.showEvents ? `
     </div>
   </div>
   <div class="foot-bottom">
-    <p>© 2018–2026 Furry Freight Shelter Transport. Saving shelter pets, one road trip at a time.</p>
+    <p>${CONFIG.footerCopyright}</p>
     <div class="foot-social">
       <a href="${CONFIG.facebookLink}" target="_blank">FB</a>
       <a href="${CONFIG.instagramLink}" target="_blank">IG</a>
