@@ -8,20 +8,7 @@
 </head>
 <body>
 <script>
-/* ============================================================
-   FURRY FREIGHT THRIFT — EDITABLE CONTENT
-   ============================================================
-   HOW TO EDIT:
-   • Change any text between the quote marks " "
-   • Every button label, subtext, and section heading is here
-   • For events: copy a block to add one, delete to remove one
-   • Set showEvents: false to hide the events section entirely
-   • Don't change anything outside this CONFIG block
-   ============================================================ */
-
 const CONFIG = {
-
-  /* ── STORE INFO ── */
   storeName:   "Furry Freight Thrift",
   tagline:     "Second Hand. Four Paws.",
   city:        "Bend, Oregon",
@@ -30,31 +17,14 @@ const CONFIG = {
   email:       "info" + "@" + "furryfreight.org",
   ein:         "82-4423390",
   poBox:       "PO Box 93, Bend OR 97709",
-
-  /* ── HERO ── */
   heroOpenLabel: "Open Now",
   heroDesc:    "We are a well-stocked thrift store in Bend where every dollar goes towards shelter pets - life saving transports, spay + neuter programs, and second chances.",
   heroBtnShop: "Shop Online  →",
   heroBtnHours:"Hours & Info",
-
-  /* ── MARQUEE (yellow ticker) ─────────────────────────────
-     Edit any of the items in the scrolling banner.
-  ──────────────────────────────────────────────────────── */
   marqueeItems: [
-    "Open 5 Days",
-    "Bend, Oregon",
-    "Every Dollar Saves At-risk Shelter Pets",
-    "Drop Off Donations Anytime During Open Hours",
-    "Shop Online",
-    "Volunteer Based",
-    "501(c)(3) Nonprofit",
+    "Open 5 Days","Bend, Oregon","Every Dollar Saves At-risk Shelter Pets",
+    "Drop Off Donations Anytime During Open Hours","Shop Online","Volunteer Based","501(c)(3) Nonprofit",
   ],
-
-  /* ── HOURS ──────────────────────────────────────────────
-     Change the time strings to update hours.
-     Set a day to "Closed" if you are not open that day.
-     Set best: true to add the "Best Day" badge.
-  ──────────────────────────────────────────────────────── */
   hoursHeadline: "Here We Are!",
   hoursDesc:     "Find us on Greenwood Ave - A few doors down from Planet Fitness. Pop in to shop, or drop off donations any day we are open.",
   hours: [
@@ -66,246 +36,204 @@ const CONFIG = {
     { day: "Saturday",  time: "9am – 5pm",  best: true  },
     { day: "Sunday",    time: "11am – 5pm", best: false },
   ],
-
-  /* ── CALLOUT BAND (black section) ── */
   calloutHeadline: "Your stuff saves lives.",
   calloutBody:     "Every item you donate, every purchase you make goes directly to Furry Freight transport runs and spay/neuter surgeries. Every dollar makes a positive impact in the animal welfare space.",
-
-  /* ── DONATIONS ── */
   donationsHeadline: "What we accept.",
   donationsDesc:     "Drop-offs welcome any time during store hours. Items should be clean and in sellable condition. Please don't use us at your waste service, thank you!",
-
-  /* ── DONATION POLICY CARDS ───────────────────────────────
-     accepted: true = coloured card, false = greyed out
-  ──────────────────────────────────────────────────────── */
   donationItems: [
-    { title: "Clothing",                desc: "All seasons, all sizes. CLEAN and wearable - gently used is great.",                                         accepted: true  },
-    { title: "Outdoor Gear",            desc: "Jackets, packs, boots, small camp accessories.",                                                             accepted: true  },
-    { title: "Housewares",              desc: "Kitchen items, décor, small appliances, glassware, linens.",                                                 accepted: true  },
-    { title: "Books & Media",           desc: "Books, vinyl, DVDs, games + puzzles.",                                                                       accepted: true  },
-    { title: "Toys & Kids",             desc: "Toys, gear, accessories — clean and in working condition.",                                                  accepted: true  },
-    { title: "Large Furniture + Fitness", desc: "We can't take sofas, mattresses, upholstered or large fitness items at this time.",                        accepted: false },
+    { title: "Clothing",                  desc: "All seasons, all sizes. CLEAN and wearable - gently used is great.",                 accepted: true  },
+    { title: "Outdoor Gear",              desc: "Jackets, packs, boots, small camp accessories.",                                     accepted: true  },
+    { title: "Housewares",                desc: "Kitchen items, décor, small appliances, glassware, linens.",                         accepted: true  },
+    { title: "Books & Media",             desc: "Books, vinyl, DVDs, games + puzzles.",                                               accepted: true  },
+    { title: "Toys & Kids",               desc: "Toys, gear, accessories — clean and in working condition.",                          accepted: true  },
+    { title: "Large Furniture + Fitness", desc: "We can't take sofas, mattresses, upholstered or large fitness items at this time.",  accepted: false },
   ],
-
-  /* ── EVENTS ─────────────────────────────────────────────
-     Set showEvents: false to hide the events section.
-     Leave link as "" to hide the Details button.
-  ──────────────────────────────────────────────────────── */
-  showEvents:       false,
-  eventsHeadline:   "Come hang out.",
-  eventsFollowText: "Follow for updates →",
-  events: [
-    { month: "Apr", day: "12", title: "Spring Yard Sale", meta: "10am – 3pm · Outdoor lot · Free entry",        link: "" },
-    { month: "May", day: "3",  title: "Bingo Night",      meta: "6pm – 9pm · Location TBA · Tickets at door",  link: "" },
-    { month: "Jun", day: "21", title: "Egg My House",     meta: "Morning · Central Oregon · Sign up required",  link: "" },
-  ],
-
-  /* ── ABOUT / MISSION ── */
+  showEvents: false,
+  events: [],
   aboutHeadline: "Saving shelter pets. One sale at a time.",
   aboutBody1:    "Furry Freight Thrift is the retail arm of Furry Freight Shelter Transport — a volunteer run 501(c)(3) based in Bend that moves at-risk shelter animals from under resourced, overpopulated shelters to Pacific Northwest adoption partners.",
   aboutBody2:    "When you shop here or drop off a donation, you are directly funding life saving transport trips and spay/neuter surgeries for animals who need it most.",
   aboutLinkText: "Visit furryfreight.org →",
-
-  stat1Number: "1,709+",  stat1Label: "Animals Saved",
-  stat2Number: "100%",    stat2Label: "Volunteer Run",
-  stat3Number: "$70",     stat3Label: "Sponsors a Spay/Neuter Surgery",
+  stat1Number: "1,709+",    stat1Label: "Animals Saved",
+  stat2Number: "100%",      stat2Label: "Volunteer Run",
+  stat3Number: "$70",       stat3Label: "Sponsors a Spay/Neuter Surgery",
   stat4Number: "Since '18", stat4Label: "On the Road",
-
-  /* ── SHOP / POSHMARK ── */
-  shopHeadline:  "Can't make it in?",
-  shopDesc:      "Browse our curated Poshmark store for handpicked finds shipped anywhere in the US. Updated regularly with the best of what comes through the door.",
-  shopBtnText:   "Shop Poshmark →",
-
-  /* ── SHOP PHOTO ─────────────────────────────────────────
-     To swap the photo: replace the URL below with your own
-     image URL (or a relative path like "images/shop.jpg").
-     Set shopPhoto to "" to show the decorative paw instead.
-  ──────────────────────────────────────────────────────── */
-  shopPhoto:       "",
-  shopPhotoAlt:    "Inside the Furry Freight Thrift store",
-
-  poshmarkLink:  "https://poshmark.com/closet/ffthriftstore",
-
-  /* ── SOCIAL LINKS ── */
+  shopHeadline: "Can't make it in?",
+  shopDesc:     "Browse our curated Poshmark store for handpicked finds shipped anywhere in the US. Updated regularly with the best of what comes through the door.",
+  shopBtnText:  "Shop Poshmark →",
+  shopPhoto:    "",
+  shopPhotoAlt: "Inside the Furry Freight Thrift store",
+  poshmarkLink: "https://poshmark.com/closet/ffthriftstore",
   instagramHandle: "@furryfreightthrift",
-  instagramLink: "https://www.instagram.com/furryfreightthrift/",
-  facebookLink:  "https://facebook.com",
-  tiktokLink:    "https://www.tiktok.com/@furryfreight",
-  mainSiteLink:  "https://furryfreight.org",
-
-  /* ── FOOTER ── */
-  footerTagline: "A thrift store with a mission.",
+  instagramLink:   "https://www.instagram.com/furryfreightthrift/",
+  facebookLink:    "https://facebook.com",
+  tiktokLink:      "https://www.tiktok.com/@furryfreight",
+  mainSiteLink:    "https://furryfreight.org",
+  footerTagline:   "A thrift store with a mission.",
   footerCopyright: "© 2018–2026 Furry Freight Shelter Transport. Saving shelter pets, one road trip at a time.",
-
 };
 
-/* ============================================================
-   STOP HERE — design code lives below. No need to edit.
-   ============================================================ */
-
+/* ── PALETTE
+   Orange  #E8642B  from logo shield body
+   Blue    #2E5F8A  from logo header band
+   Green   #4E7D62  sage complement
+   Ink     #1C3349  deep navy (replaces all black)
+   Stone neutrals: no black anywhere
+── */
 const css = `
   :root{
-    --orange:#E8622A;
-    --orange-dk:#C44E1E;
-    --yellow:#F9D949;
-    --mint:#7ECFB3;
-    --sky:#A8D8EA;
-    --pink:#F4A7B9;
-    --lavender:#C5B8E8;
-    --coral:#F4826A;
-    --lime:#B5E48C;
-    --black:#1A1A1A;
-    --white:#FFFDF9;
+    --orange:    #E8642B;
+    --orange-dk: #C9521E;
+    --orange-lt: #FAEBE2;
+    --blue:      #2E5F8A;
+    --blue-dk:   #1E4264;
+    --blue-lt:   #DBE9F5;
+    --green:     #4E7D62;
+    --green-dk:  #315040;
+    --green-lt:  #D9ECE3;
+    --ink:       #1C3349;
+    --white:     #FAF8F5;
+    --stone:     #F0EDE8;
+    --stone-md:  #E2DDD6;
+    --stone-dk:  #C0BAB1;
+    --muted:     #7A7267;
   }
   *{margin:0;padding:0;box-sizing:border-box;}
   html{scroll-behavior:smooth;}
-  body{font-family:'Nunito',sans-serif;background:var(--white);color:var(--black);overflow-x:hidden;}
+  body{font-family:'Nunito',sans-serif;background:var(--white);color:var(--ink);overflow-x:hidden;}
 
-  nav{position:fixed;top:0;left:0;right:0;z-index:200;height:58px;background:var(--orange);display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;border-bottom:3px solid var(--black);}
+  nav{position:fixed;top:0;left:0;right:0;z-index:200;height:58px;background:var(--orange);display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;border-bottom:3px solid var(--orange-dk);}
   .nav-logo{font-family:'Fredoka One',cursive;font-size:1.3rem;color:#fff;text-decoration:none;letter-spacing:.02em;}
   .nav-links{display:flex;gap:.15rem;list-style:none;}
-  .nav-links a{font-size:.75rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.75);text-decoration:none;padding:.35rem .75rem;border-radius:20px;transition:background .2s,color .2s;}
+  .nav-links a{font-size:.75rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.8);text-decoration:none;padding:.35rem .75rem;border-radius:20px;transition:background .2s,color .2s;}
   .nav-links a:hover{background:rgba(255,255,255,.2);color:#fff;}
 
-  #hero{min-height:100vh;background:var(--orange);border-bottom:3px solid var(--black);padding:80px 3rem 3rem;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:center;}
-  .blob{position:absolute;border-radius:50%;border:3px solid var(--black);pointer-events:none;}
-  .blob-1{width:180px;height:180px;background:var(--yellow);top:70px;right:6%;animation:float1 6s ease-in-out infinite;}
-  .blob-2{width:130px;height:130px;background:var(--mint);bottom:80px;right:18%;animation:float2 5s ease-in-out infinite;}
-  .blob-3{width:90px;height:90px;background:var(--pink);top:55%;right:32%;animation:float1 7s ease-in-out infinite 1s;}
-  .blob-4{width:70px;height:70px;background:var(--sky);bottom:160px;right:42%;animation:float2 4.5s ease-in-out infinite .5s;}
-  .blob-5{width:150px;height:150px;background:var(--lavender);bottom:40px;right:3%;animation:float1 8s ease-in-out infinite 2s;}
+  #hero{min-height:100vh;background:var(--orange);border-bottom:3px solid var(--orange-dk);padding:80px 3rem 3rem;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:center;}
+  .blob{position:absolute;border-radius:50%;pointer-events:none;}
+  .blob-1{width:180px;height:180px;background:rgba(255,255,255,.16);border:3px solid rgba(255,255,255,.28);top:70px;right:6%;animation:float1 6s ease-in-out infinite;}
+  .blob-2{width:130px;height:130px;background:var(--blue);border:3px solid var(--blue-dk);opacity:.6;bottom:80px;right:18%;animation:float2 5s ease-in-out infinite;}
+  .blob-3{width:90px;height:90px;background:var(--green);border:3px solid var(--green-dk);opacity:.55;top:55%;right:32%;animation:float1 7s ease-in-out infinite 1s;}
+  .blob-4{width:70px;height:70px;background:rgba(255,255,255,.14);border:3px solid rgba(255,255,255,.22);bottom:160px;right:42%;animation:float2 4.5s ease-in-out infinite .5s;}
+  .blob-5{width:150px;height:150px;background:var(--blue-dk);border:3px solid var(--blue-dk);opacity:.45;bottom:40px;right:3%;animation:float1 8s ease-in-out infinite 2s;}
   @keyframes float1{0%,100%{transform:translateY(0) rotate(0deg);}50%{transform:translateY(-22px) rotate(5deg);}}
   @keyframes float2{0%,100%{transform:translateY(0) rotate(0deg);}50%{transform:translateY(-16px) rotate(-6deg);}}
   .spin-star{position:absolute;top:75px;right:4%;width:65px;height:65px;animation:spin 12s linear infinite;}
   @keyframes spin{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
-  .hero-tag{display:inline-flex;align-items:center;gap:.5rem;background:#fff;color:var(--black);border:2.5px solid var(--black);border-radius:30px;font-size:.75rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:.4rem 1.1rem;width:fit-content;margin-bottom:1.5rem;animation:wiggle 3s ease-in-out infinite;}
+  .hero-tag{display:inline-flex;align-items:center;gap:.5rem;background:rgba(255,255,255,.18);color:#fff;border:2px solid rgba(255,255,255,.38);border-radius:30px;font-size:.75rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:.4rem 1.1rem;width:fit-content;margin-bottom:1.5rem;animation:wiggle 3s ease-in-out infinite;}
   @keyframes wiggle{0%,100%{transform:rotate(-1deg);}50%{transform:rotate(1.5deg);}}
-  .tag-dot{width:8px;height:8px;border-radius:50%;background:var(--orange);animation:pulse 1.5s ease-in-out infinite;}
+  .tag-dot{width:8px;height:8px;border-radius:50%;background:#fff;animation:pulse 1.5s ease-in-out infinite;}
   @keyframes pulse{0%,100%{transform:scale(1);}50%{transform:scale(1.4);}}
   .hero-h1{font-family:'Fredoka One',cursive;font-size:clamp(2.8rem,7vw,6.5rem);line-height:.92;color:#fff;letter-spacing:-.01em;position:relative;z-index:1;margin-bottom:1.5rem;}
-  .hero-h1 .outline{-webkit-text-stroke:3px #fff;color:transparent;}
-  .hero-h1 .yellow-word{color:var(--yellow);display:inline-block;animation:bounce-word 2s ease-in-out infinite;}
+  .hero-h1 .outline{-webkit-text-stroke:3px rgba(255,255,255,.55);color:transparent;}
+  .hero-h1 .blue-word{color:var(--blue-lt);display:inline-block;animation:bounce-word 2s ease-in-out infinite;}
   @keyframes bounce-word{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
-  .hero-sub{font-size:1rem;font-weight:700;color:rgba(255,255,255,.85);max-width:480px;line-height:1.7;position:relative;z-index:1;margin-bottom:1.5rem;}
+  .hero-sub{font-size:1rem;font-weight:700;color:rgba(255,255,255,.88);max-width:480px;line-height:1.7;position:relative;z-index:1;margin-bottom:1.5rem;}
   .hero-sub strong{color:#fff;}
   .hero-btns{display:flex;gap:1rem;flex-wrap:wrap;position:relative;z-index:1;}
 
-  .btn{font-family:'Nunito',sans-serif;font-weight:800;font-size:.88rem;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;padding:.75rem 1.8rem;border:2.5px solid var(--black);border-radius:30px;transition:transform .2s,box-shadow .2s;display:inline-block;}
-  .btn:hover{transform:translateY(-3px);box-shadow:4px 4px 0 var(--black);}
-  .btn-white{background:#fff;color:var(--black);}
-  .btn-dark{background:var(--black);color:#fff;}
+  .btn{font-family:'Nunito',sans-serif;font-weight:800;font-size:.88rem;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;padding:.75rem 1.8rem;border-radius:30px;transition:transform .2s,box-shadow .2s;display:inline-block;}
+  .btn:hover{transform:translateY(-3px);}
+  .btn-white{background:#fff;color:var(--ink);border:2.5px solid var(--stone-dk);}
+  .btn-white:hover{box-shadow:4px 4px 0 var(--stone-dk);}
+  .btn-blue{background:var(--blue);color:#fff;border:2.5px solid var(--blue-dk);}
+  .btn-blue:hover{box-shadow:4px 4px 0 var(--blue-dk);}
+  .btn-ink{background:var(--ink);color:#fff;border:2.5px solid var(--blue-dk);}
+  .btn-ink:hover{box-shadow:4px 4px 0 var(--blue-dk);}
 
-  .marquee-wrap{overflow:hidden;background:var(--yellow);border-top:3px solid var(--black);border-bottom:3px solid var(--black);padding:.65rem 0;}
-  .marquee-track{display:flex;width:max-content;animation:marquee 18s linear infinite;}
-  .marquee-item{font-family:'Fredoka One',cursive;font-size:1.1rem;letter-spacing:.06em;color:var(--black);white-space:nowrap;padding:0 1.5rem;}
+  .marquee-wrap{overflow:hidden;background:var(--blue);border-top:3px solid var(--blue-dk);border-bottom:3px solid var(--blue-dk);padding:.65rem 0;}
+  .marquee-track{display:flex;width:max-content;animation:marquee 20s linear infinite;}
+  .marquee-item{font-family:'Fredoka One',cursive;font-size:1.1rem;letter-spacing:.06em;color:#fff;white-space:nowrap;padding:0 1.5rem;}
   .marquee-sep{color:var(--orange);margin:0 .25rem;}
   @keyframes marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
-
-  .marquee-wrap-2{overflow:hidden;background:var(--orange);border-top:3px solid var(--black);border-bottom:3px solid var(--black);padding:.65rem 0;}
-  .marquee-track-2{display:flex;width:max-content;animation:marquee 22s linear infinite reverse;}
 
   #hours{background:var(--white);padding:6rem 3rem;position:relative;overflow:hidden;}
   .hours-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1.3fr;gap:5rem;align-items:start;}
   .section-eyebrow{font-size:.7rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;display:inline-flex;align-items:center;gap:.5rem;margin-bottom:1rem;}
-  .eyebrow-pill{background:var(--orange);color:#fff;border:2px solid var(--black);border-radius:20px;padding:.2rem .75rem;font-family:'Fredoka One',cursive;font-size:.8rem;letter-spacing:.05em;}
-  .section-h2{font-family:'Fredoka One',cursive;font-size:clamp(2.5rem,5vw,4.5rem);line-height:.95;color:var(--black);margin-bottom:1rem;letter-spacing:-.01em;}
+  .pill{color:#fff;border-radius:20px;padding:.2rem .75rem;font-family:'Fredoka One',cursive;font-size:.8rem;letter-spacing:.05em;}
+  .pill-orange{background:var(--orange);border:2px solid var(--orange-dk);}
+  .pill-blue  {background:var(--blue);  border:2px solid var(--blue-dk);}
+  .pill-green {background:var(--green); border:2px solid var(--green-dk);}
+  .section-h2{font-family:'Fredoka One',cursive;font-size:clamp(2.5rem,5vw,4.5rem);line-height:.95;color:var(--ink);margin-bottom:1rem;letter-spacing:-.01em;}
   .section-h2 em{font-style:normal;color:var(--orange);}
-  .section-desc{font-size:.97rem;color:#666;line-height:1.85;font-weight:600;margin-bottom:2rem;max-width:340px;}
-  .location-card{background:var(--mint);border:2.5px solid var(--black);border-radius:18px;padding:1.5rem 1.75rem;position:relative;box-shadow:5px 5px 0 var(--black);}
-  .location-card p{font-size:.92rem;font-weight:700;line-height:2;color:var(--black);}
-  .location-card a{color:var(--orange);text-decoration:none;}
+  .section-h2 em.blue {color:var(--blue);}
+  .section-h2 em.green{color:var(--green);}
+  .section-desc{font-size:.97rem;color:var(--muted);line-height:1.85;font-weight:600;margin-bottom:2rem;max-width:340px;}
+  .location-card{background:var(--blue-lt);border:2.5px solid var(--blue);border-radius:18px;padding:1.5rem 1.75rem;box-shadow:5px 5px 0 var(--blue);}
+  .location-card p{font-size:.92rem;font-weight:700;line-height:2;color:var(--ink);}
+  .location-card a{color:var(--blue);text-decoration:none;}
   .hours-rows{display:flex;flex-direction:column;}
-  .hour-row{display:flex;justify-content:space-between;align-items:center;padding:1.1rem 0;border-bottom:2px solid #eee;}
-  .hour-row:first-child{border-top:2px solid #eee;}
-  .hour-day{font-size:.85rem;font-weight:800;color:#888;letter-spacing:.04em;text-transform:uppercase;}
-  .hour-time{font-family:'Fredoka One',cursive;font-size:1.6rem;color:var(--black);display:flex;align-items:center;gap:.75rem;}
-  .best-pill{font-family:'Nunito',sans-serif;font-size:.58rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;background:var(--orange);color:#fff;border:1.5px solid var(--black);border-radius:20px;padding:.2rem .6rem;}
-  .shape-blob{position:absolute;border-radius:50%;border:3px solid var(--black);pointer-events:none;}
+  .hour-row{display:flex;justify-content:space-between;align-items:center;padding:1.1rem 0;border-bottom:2px solid var(--stone-md);}
+  .hour-row:first-child{border-top:2px solid var(--stone-md);}
+  .hour-day{font-size:.85rem;font-weight:800;color:var(--muted);letter-spacing:.04em;text-transform:uppercase;}
+  .hour-time{font-family:'Fredoka One',cursive;font-size:1.6rem;color:var(--ink);display:flex;align-items:center;gap:.75rem;}
+  .best-pill{font-family:'Nunito',sans-serif;font-size:.58rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;background:var(--orange);color:#fff;border:1.5px solid var(--orange-dk);border-radius:20px;padding:.2rem .6rem;}
+  .shape-blob{position:absolute;border-radius:50%;pointer-events:none;}
 
-  .callout-band{background:var(--black);border-top:3px solid var(--black);border-bottom:3px solid var(--black);padding:5rem 3rem;position:relative;overflow:hidden;}
+  .callout-band{background:var(--blue);border-top:3px solid var(--blue-dk);border-bottom:3px solid var(--blue-dk);padding:5rem 3rem;position:relative;overflow:hidden;}
   .callout-band-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;}
   .callout-band h2{font-family:'Fredoka One',cursive;font-size:clamp(3rem,6vw,6rem);line-height:.92;color:#fff;}
-  .callout-band h2 em{font-style:normal;color:var(--yellow);}
-  .callout-band p{font-size:1rem;color:rgba(255,255,255,.7);line-height:1.85;font-weight:600;}
-  .callout-float{position:absolute;border-radius:50%;border:2.5px solid rgba(255,255,255,.15);}
+  .callout-band h2 em{font-style:normal;color:var(--orange);}
+  .callout-band p{font-size:1rem;color:rgba(255,255,255,.75);line-height:1.85;font-weight:600;}
+  .callout-float{position:absolute;border-radius:50%;background:rgba(255,255,255,.06);}
 
-  #donations{background:var(--sky);border-top:3px solid var(--black);padding:6rem 3rem;position:relative;overflow:hidden;}
+  #donations{background:var(--stone);border-top:3px solid var(--stone-dk);padding:6rem 3rem;position:relative;overflow:hidden;}
   .donations-inner{max-width:1100px;margin:0 auto;}
   .donations-top{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:3.5rem;flex-wrap:wrap;gap:2rem;}
-  .donations-top p{max-width:340px;font-size:.95rem;color:#444;line-height:1.8;font-weight:600;}
+  .donations-top p{max-width:340px;font-size:.95rem;color:var(--muted);line-height:1.8;font-weight:600;}
   .accept-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;}
-  .accept-card{background:#fff;border:2.5px solid var(--black);border-radius:18px;padding:1.8rem;box-shadow:4px 4px 0 var(--black);transition:transform .2s,box-shadow .2s;position:relative;overflow:hidden;}
-  .accept-card:hover{transform:translateY(-4px) translateX(-2px);box-shadow:6px 6px 0 var(--black);}
-  .accept-card.no{background:#f5f5f5;box-shadow:none;border-color:#ccc;opacity:.55;}
+  .accept-card{background:var(--white);border:2.5px solid var(--stone-dk);border-radius:18px;padding:1.8rem;box-shadow:4px 4px 0 var(--stone-dk);transition:transform .2s,box-shadow .2s;position:relative;overflow:hidden;}
+  .accept-card:hover{transform:translateY(-4px) translateX(-2px);box-shadow:6px 6px 0 var(--stone-dk);}
+  .accept-card.no{background:var(--stone-md);box-shadow:none;border-color:var(--stone-dk);opacity:.55;}
   .card-status{font-size:.62rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;margin-bottom:.75rem;display:flex;align-items:center;gap:.4rem;}
-  .card-status.yes{color:var(--orange);}
-  .card-status.no-txt{color:#aaa;}
-  .accept-card h4{font-family:'Fredoka One',cursive;font-size:1.5rem;color:var(--black);margin-bottom:.4rem;}
-  .accept-card p{font-size:.85rem;color:#666;line-height:1.7;font-weight:600;}
-  .card-corner{position:absolute;bottom:-16px;right:-16px;width:60px;height:60px;border-radius:50%;border:2.5px solid var(--black);opacity:.2;}
+  .card-status.yes{color:var(--green);}
+  .card-status.no-txt{color:var(--muted);}
+  .accept-card h4{font-family:'Fredoka One',cursive;font-size:1.5rem;color:var(--ink);margin-bottom:.4rem;}
+  .accept-card p{font-size:.85rem;color:var(--muted);line-height:1.7;font-weight:600;}
+  .corner{position:absolute;bottom:-16px;right:-16px;width:60px;height:60px;border-radius:50%;opacity:.18;}
+  .corner-o{background:var(--orange);}
+  .corner-b{background:var(--blue);}
+  .corner-g{background:var(--green);}
 
-  #events{background:var(--white);padding:6rem 3rem;position:relative;overflow:hidden;}
-  .events-inner{max-width:1100px;margin:0 auto;}
-  .events-top{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:3.5rem;flex-wrap:wrap;gap:1rem;}
-  .events-follow{font-size:.78rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#888;text-decoration:none;border-bottom:2px solid #ddd;padding-bottom:.15rem;transition:color .2s,border-color .2s;}
-  .events-follow:hover{color:var(--orange);border-color:var(--orange);}
-  .events-grid{display:flex;flex-direction:column;gap:1px;background:#eee;}
-  .event-row{background:var(--white);display:grid;grid-template-columns:auto 1fr auto;gap:2rem;align-items:center;padding:1.8rem 2rem;transition:background .2s;}
-  .event-row:hover{background:#FFF5F0;}
-  .event-badge{width:64px;height:64px;background:var(--orange);border:2.5px solid var(--black);border-radius:14px;box-shadow:3px 3px 0 var(--black);display:flex;flex-direction:column;align-items:center;justify-content:center;flex-shrink:0;}
-  .event-badge .mo{font-size:.55rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.8);line-height:1;margin-bottom:2px;}
-  .event-badge .dy{font-family:'Fredoka One',cursive;font-size:1.9rem;color:#fff;line-height:1;}
-  .event-info h4{font-family:'Fredoka One',cursive;font-size:1.2rem;color:var(--black);margin-bottom:.2rem;}
-  .event-info span{font-size:.82rem;color:#888;font-weight:700;}
-  .event-caret{font-size:.72rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#ddd;transition:color .2s;}
-  .event-row:hover .event-caret{color:var(--orange);}
-
-  #about{background:var(--lavender);border-top:3px solid var(--black);padding:6rem 3rem;position:relative;overflow:hidden;}
+  #about{background:var(--white);border-top:3px solid var(--stone-dk);padding:6rem 3rem;position:relative;overflow:hidden;}
   .about-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center;}
-  .about-text p{font-size:.97rem;color:#444;line-height:1.9;font-weight:600;margin-bottom:1rem;}
-  .about-text a{font-size:.8rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--orange);text-decoration:none;border-bottom:2px solid var(--orange);padding-bottom:.15rem;display:inline-block;margin-top:1rem;transition:opacity .2s;}
+  .about-text p{font-size:.97rem;color:var(--muted);line-height:1.9;font-weight:600;margin-bottom:1rem;}
+  .about-text a{font-size:.8rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);text-decoration:none;border-bottom:2px solid var(--blue);padding-bottom:.15rem;display:inline-block;margin-top:1rem;transition:opacity .2s;}
   .about-text a:hover{opacity:.65;}
   .stats-grid{display:flex;flex-direction:column;gap:1rem;}
-  .stat-card{background:#fff;border:2.5px solid var(--black);border-radius:16px;padding:1.4rem 1.6rem;box-shadow:4px 4px 0 var(--black);display:flex;align-items:center;gap:1.25rem;transition:transform .2s;}
+  .stat-card{background:var(--stone);border:2.5px solid var(--stone-dk);border-radius:16px;padding:1.4rem 1.6rem;box-shadow:4px 4px 0 var(--stone-dk);display:flex;align-items:center;gap:1.25rem;transition:transform .2s;}
   .stat-card:hover{transform:translateX(4px);}
-  .stat-num{font-family:'Fredoka One',cursive;font-size:2.5rem;color:var(--orange);line-height:1;flex-shrink:0;}
-  .stat-lbl{font-size:.82rem;font-weight:800;color:#666;line-height:1.4;}
+  .stat-num{font-family:'Fredoka One',cursive;font-size:2.5rem;line-height:1;flex-shrink:0;}
+  .stat-lbl{font-size:.82rem;font-weight:800;color:var(--muted);line-height:1.4;}
+  .c-orange{color:var(--orange);} .c-blue{color:var(--blue);} .c-green{color:var(--green);}
 
-  /* ── SHOP SECTION ── */
-  #shop{background:var(--lime);border-top:3px solid var(--black);border-bottom:3px solid var(--black);padding:6rem 3rem;position:relative;overflow:hidden;}
+  #shop{background:var(--green-lt);border-top:3px solid var(--green);border-bottom:3px solid var(--green);padding:6rem 3rem;position:relative;overflow:hidden;}
   .shop-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:3.5rem;align-items:center;}
-
-  /* Floating blobs — right side cluster */
-  .shop-blob{position:absolute;border-radius:50%;border:3px solid var(--black);pointer-events:none;}
-  .shop-blob-1{width:110px;height:110px;background:var(--orange);top:40px;right:10%;animation:float1 6s ease-in-out infinite;}
-  .shop-blob-2{width:70px;height:70px;background:var(--pink);top:120px;right:22%;animation:float2 5s ease-in-out infinite .5s;}
-  .shop-blob-3{width:55px;height:55px;background:var(--sky);bottom:60px;right:14%;animation:float1 7s ease-in-out infinite 1s;}
-  .shop-blob-4{width:85px;height:85px;background:var(--lavender);bottom:30px;right:28%;animation:float2 4.5s ease-in-out infinite 1.5s;}
-
-  /* Photo/placeholder card — fixed small size */
-  .shop-visual{width:200px;height:200px;flex-shrink:0;background:var(--white);border:2.5px solid var(--black);border-radius:20px;box-shadow:5px 5px 0 var(--black);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;z-index:1;}
+  .shop-blob{position:absolute;border-radius:50%;pointer-events:none;}
+  .shop-blob-1{width:110px;height:110px;background:var(--white);border:3px solid var(--stone-dk);top:40px;right:10%;animation:float1 6s ease-in-out infinite;}
+  .shop-blob-2{width:70px;height:70px;background:var(--green);border:3px solid var(--green-dk);opacity:.22;top:120px;right:22%;animation:float2 5s ease-in-out infinite .5s;}
+  .shop-blob-3{width:55px;height:55px;background:var(--white);border:3px solid var(--stone-dk);bottom:60px;right:14%;animation:float1 7s ease-in-out infinite 1s;}
+  .shop-blob-4{width:85px;height:85px;background:var(--orange);border:3px solid var(--orange-dk);opacity:.16;bottom:30px;right:28%;animation:float2 4.5s ease-in-out infinite 1.5s;}
+  .shop-visual{width:200px;height:200px;flex-shrink:0;background:var(--white);border:2.5px solid var(--green);border-radius:20px;box-shadow:5px 5px 0 var(--green);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;z-index:1;}
   .shop-visual.has-photo img{width:100%;height:100%;object-fit:cover;display:block;border-radius:18px;}
-
-  /* Placeholder mode — small centred paw + label */
   .shop-placeholder{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.75rem;width:100%;padding:1.25rem;}
-  .shop-paw-sm{width:44px;height:44px;opacity:.18;flex-shrink:0;}
-  .shop-label{font-family:'Fredoka One',cursive;font-size:1rem;color:var(--orange);text-align:center;line-height:1.3;}
+  .shop-paw-sm{width:44px;height:44px;opacity:.22;flex-shrink:0;}
+  .shop-label{font-family:'Fredoka One',cursive;font-size:1rem;color:var(--green);text-align:center;line-height:1.3;}
 
-  footer{background:var(--black);padding:4rem 3rem 2.5rem;}
-  .foot-top{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:4rem;padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:2rem;}
+  footer{background:var(--ink);padding:4rem 3rem 2.5rem;}
+  .foot-top{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:4rem;padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,.1);margin-bottom:2rem;}
   .foot-brand-name{font-family:'Fredoka One',cursive;font-size:1.6rem;color:#fff;display:block;margin-bottom:.75rem;}
   .foot-brand-name span{color:var(--orange);}
-  .foot-brand p{font-size:.82rem;color:rgba(255,255,255,.35);line-height:1.9;}
+  .foot-brand p{font-size:.82rem;color:rgba(255,255,255,.4);line-height:1.9;}
   .foot-brand a{color:var(--orange);text-decoration:none;}
-  .foot-col h5{font-size:.62rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.25);margin-bottom:1.2rem;}
+  .foot-col h5{font-size:.62rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.28);margin-bottom:1.2rem;}
   .foot-col ul{list-style:none;}
   .foot-col li{margin-bottom:.5rem;}
-  .foot-col a{font-size:.88rem;color:rgba(255,255,255,.5);text-decoration:none;font-weight:700;transition:color .2s;}
+  .foot-col a{font-size:.88rem;color:rgba(255,255,255,.52);text-decoration:none;font-weight:700;transition:color .2s;}
   .foot-col a:hover{color:#fff;}
   .foot-bottom{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
-  .foot-bottom p{font-size:.75rem;color:rgba(255,255,255,.2);}
+  .foot-bottom p{font-size:.75rem;color:rgba(255,255,255,.22);}
   .foot-social{display:flex;gap:.5rem;}
-  .foot-social a{width:34px;height:34px;border:1px solid rgba(255,255,255,.12);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.65rem;font-weight:800;color:rgba(255,255,255,.4);text-decoration:none;transition:background .2s,color .2s,border-color .2s;}
+  .foot-social a{width:34px;height:34px;border:1px solid rgba(255,255,255,.16);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.65rem;font-weight:800;color:rgba(255,255,255,.45);text-decoration:none;transition:background .2s,color .2s,border-color .2s;}
   .foot-social a:hover{background:var(--orange);color:#fff;border-color:var(--orange);}
 
   .reveal{opacity:0;transform:translateY(28px);transition:opacity .65s ease,transform .65s ease;}
@@ -315,14 +243,13 @@ const css = `
   @media(max-width:860px){
     nav{padding:0 1.25rem;}
     #hero{padding:90px 1.5rem 4rem;}
-    #hours,#donations,#events,#about,#shop{padding:4rem 1.5rem;}
+    #hours,#donations,#about,#shop{padding:4rem 1.5rem;}
     .callout-band{padding:3.5rem 1.5rem;}
     footer{padding:3rem 1.5rem 2rem;}
     .hours-inner,.callout-band-inner,.about-inner,.shop-inner{grid-template-columns:1fr;gap:3rem;}
     .accept-grid{grid-template-columns:1fr 1fr;}
     .foot-top{grid-template-columns:1fr;gap:2.5rem;}
     .donations-top{flex-direction:column;}
-    .event-row{grid-template-columns:auto 1fr;}.event-caret{display:none;}
     .hero-h1{font-size:clamp(2.4rem,10vw,4rem);}
     .blob-3,.blob-4,.blob-5{display:none;}
     .spin-star{display:none;}
@@ -336,76 +263,49 @@ const css = `
 document.head.insertAdjacentHTML('beforeend', `<style>${css}</style>`);
 document.title = CONFIG.storeName + ' — Bend, Oregon';
 
-/* ── Build HTML from CONFIG ── */
-
 const hoursHTML = CONFIG.hours.map(h => `
   <div class="hour-row">
     <span class="hour-day">${h.day}</span>
     <span class="hour-time">${h.time}${h.best ? ' <span class="best-pill">Best Day</span>' : ''}</span>
   </div>`).join('');
 
-const cardAccents = ['var(--yellow)','var(--orange)','var(--mint)','var(--pink)','var(--lavender)','var(--sky)'];
+const corners = ['corner corner-o','corner corner-b','corner corner-g'];
 const donationHTML = CONFIG.donationItems.map((item, i) => `
   <div class="accept-card${item.accepted ? '' : ' no'} reveal r${(i%3)+1}">
     <div class="card-status ${item.accepted ? 'yes' : 'no-txt'}">${item.accepted ? '✦ Accepted' : '✕ Not Accepted'}</div>
     <h4>${item.title}</h4>
     <p>${item.desc}</p>
-    ${item.accepted ? `<div class="card-corner" style="background:${cardAccents[i % cardAccents.length]};"></div>` : ''}
-  </div>`).join('');
-
-const eventsHTML = CONFIG.events.map(e => `
-  <div class="event-row">
-    <div class="event-badge"><span class="mo">${e.month}</span><span class="dy">${e.day}</span></div>
-    <div class="event-info"><h4>${e.title}</h4><span>${e.meta}</span></div>
-    <span class="event-caret">${e.link ? `<a href="${e.link}" target="_blank" style="color:inherit;text-decoration:none;">Details →</a>` : 'Details →'}</span>
+    ${item.accepted ? `<div class="${corners[i%3]}"></div>` : ''}
   </div>`).join('');
 
 const marqueeItems = [...CONFIG.marqueeItems, ...CONFIG.marqueeItems].map(item =>
   `<span class="marquee-item">${item} <span class="marquee-sep">✦</span></span>`).join('');
 
-const marquee2Items = CONFIG.events.map(e =>
-  `<span class="marquee-item" style="color:#fff;">${e.title} — ${e.month} ${e.day} <span class="marquee-sep" style="color:var(--yellow);">✦</span></span>`
-).join('').repeat(4);
-
-/* split callout headline — last word gets yellow em treatment */
 const calloutWords = CONFIG.calloutHeadline.split(' ');
-const calloutLast = calloutWords.pop();
-const calloutRest = calloutWords.join(' ');
-const calloutH2 = `${calloutRest}<br><em>${calloutLast}</em>`;
+const calloutH2 = `${calloutWords.slice(0,-1).join(' ')}<br><em>${calloutWords.at(-1)}</em>`;
 
-/* split hours headline — last word gets orange em treatment */
 const hoursWords = CONFIG.hoursHeadline.split(' ');
-const hoursLast = hoursWords.pop();
-const hoursRest = hoursWords.join(' ');
-const hoursH2 = `${hoursRest}<br><em>${hoursLast}</em>`;
+const hoursH2 = `${hoursWords.slice(0,-1).join(' ')}<br><em class="blue">${hoursWords.at(-1)}</em>`;
 
-/* split about headline */
 const aboutParts = CONFIG.aboutHeadline.split('.');
-const aboutH2 = aboutParts.filter(p => p.trim()).map((p, i) =>
-  i === 0 ? p.trim() + '.' : `<em>${p.trim()}.</em>`).join('<br>');
+const aboutH2 = aboutParts.filter(p=>p.trim()).map((p,i) =>
+  i===0 ? p.trim()+'.' : `<em class="green">${p.trim()}.</em>`).join('<br>');
 
-/* split shop headline — last word gets em */
 const shopWords = CONFIG.shopHeadline.split(' ');
-const shopLast = shopWords.pop();
-const shopH2 = `${shopWords.join(' ')}<br><em>${shopLast}</em>`;
+const shopH2 = `${shopWords.slice(0,-1).join(' ')}<br><em class="green">${shopWords.at(-1)}</em>`;
 
-/* shop visual — photo if provided, paw placeholder otherwise */
 const shopVisualHTML = CONFIG.shopPhoto
-  ? `<div class="shop-visual has-photo reveal">
-       <img src="${CONFIG.shopPhoto}" alt="${CONFIG.shopPhotoAlt}">
-     </div>`
-  : `<div class="shop-visual reveal">
-       <div class="shop-placeholder">
-         <svg class="shop-paw-sm" viewBox="0 0 100 100" fill="var(--black)" xmlns="http://www.w3.org/2000/svg">
-           <ellipse cx="50" cy="66" rx="24" ry="20"/>
-           <ellipse cx="24" cy="42" rx="9" ry="11"/>
-           <ellipse cx="40" cy="34" rx="9" ry="11"/>
-           <ellipse cx="60" cy="34" rx="9" ry="11"/>
-           <ellipse cx="76" cy="42" rx="9" ry="11"/>
-         </svg>
-         <div class="shop-label">Shop our<br>online store!</div>
-       </div>
-     </div>`;
+  ? `<div class="shop-visual has-photo reveal"><img src="${CONFIG.shopPhoto}" alt="${CONFIG.shopPhotoAlt}"></div>`
+  : `<div class="shop-visual reveal"><div class="shop-placeholder">
+       <svg class="shop-paw-sm" viewBox="0 0 100 100" fill="var(--green)" xmlns="http://www.w3.org/2000/svg">
+         <ellipse cx="50" cy="66" rx="24" ry="20"/><ellipse cx="24" cy="42" rx="9" ry="11"/>
+         <ellipse cx="40" cy="34" rx="9" ry="11"/><ellipse cx="60" cy="34" rx="9" ry="11"/>
+         <ellipse cx="76" cy="42" rx="9" ry="11"/>
+       </svg>
+       <div class="shop-label">Shop our<br>online store!</div>
+     </div></div>`;
+
+const statCols = ['c-orange','c-blue','c-green','c-blue'];
 
 document.body.innerHTML = `
 <nav>
@@ -413,32 +313,26 @@ document.body.innerHTML = `
   <ul class="nav-links">
     <li><a href="#hours">Hours</a></li>
     <li><a href="#donations">Donate</a></li>
-    ${CONFIG.showEvents ? '<li><a href="#events">Events</a></li>' : ''}
     <li><a href="#about">Mission</a></li>
     <li><a href="#shop">Shop Online</a></li>
   </ul>
 </nav>
 
 <section id="hero">
-  <div class="blob blob-1"></div>
-  <div class="blob blob-2"></div>
-  <div class="blob blob-3"></div>
-  <div class="blob blob-4"></div>
-  <div class="blob blob-5"></div>
+  <div class="blob blob-1"></div><div class="blob blob-2"></div><div class="blob blob-3"></div>
+  <div class="blob blob-4"></div><div class="blob blob-5"></div>
   <svg class="spin-star" viewBox="0 0 70 70" fill="none">
-    <path d="M35 5 L38 28 L60 15 L45 33 L68 35 L45 37 L60 55 L38 42 L35 65 L32 42 L10 55 L25 37 L2 35 L25 33 L10 15 L32 28 Z" fill="#fff" stroke="var(--black)" stroke-width="2"/>
+    <path d="M35 5 L38 28 L60 15 L45 33 L68 35 L45 37 L60 55 L38 42 L35 65 L32 42 L10 55 L25 37 L2 35 L25 33 L10 15 L32 28 Z" fill="rgba(255,255,255,.22)" stroke="rgba(255,255,255,.4)" stroke-width="2"/>
   </svg>
   <div class="hero-tag"><span class="tag-dot"></span>${CONFIG.heroOpenLabel} · ${CONFIG.city}</div>
   <div class="hero-h1">
-    <span class="outline">Second</span><br>
-    Hand,<br>
-    <span class="yellow-word">Four</span><br>
-    Paws.
+    <span class="outline">Second</span><br>Hand,<br>
+    <span class="blue-word">Four</span><br>Paws.
   </div>
-  <p class="hero-sub">${CONFIG.heroDesc.replace('every dollar', '<strong>every dollar</strong>')}</p>
+  <p class="hero-sub">${CONFIG.heroDesc.replace('every dollar','<strong>every dollar</strong>')}</p>
   <div class="hero-btns">
     <a href="#shop" class="btn btn-white">${CONFIG.heroBtnShop}</a>
-    <a href="#hours" class="btn btn-dark">${CONFIG.heroBtnHours}</a>
+    <a href="#hours" class="btn btn-blue">${CONFIG.heroBtnHours}</a>
   </div>
 </section>
 
@@ -447,20 +341,17 @@ document.body.innerHTML = `
 </div>
 
 <section id="hours">
-  <div class="shape-blob" style="width:200px;height:200px;background:var(--yellow);opacity:.25;top:-60px;right:-40px;animation:float1 8s ease-in-out infinite;"></div>
-  <div class="shape-blob" style="width:100px;height:100px;background:var(--pink);opacity:.3;bottom:60px;left:5%;animation:float2 6s ease-in-out infinite 1s;"></div>
+  <div class="shape-blob" style="width:200px;height:200px;background:var(--blue-lt);top:-60px;right:-40px;animation:float1 8s ease-in-out infinite;"></div>
+  <div class="shape-blob" style="width:100px;height:100px;background:var(--orange-lt);bottom:60px;left:5%;animation:float2 6s ease-in-out infinite 1s;"></div>
   <div class="hours-inner">
     <div class="reveal">
-      <div class="section-eyebrow"><span class="eyebrow-pill">Store Hours</span></div>
+      <div class="section-eyebrow"><span class="pill pill-blue">Store Hours</span></div>
       <h2 class="section-h2">${hoursH2}</h2>
       <p class="section-desc">${CONFIG.hoursDesc}</p>
       <div class="location-card">
-        <p>
-          <strong>${CONFIG.address}</strong><br>
-          ${CONFIG.addressLine2}<br><br>
-          <a href="mailto:${CONFIG.email}">${CONFIG.email}</a><br>
-          <a href="${CONFIG.instagramLink}" target="_blank">${CONFIG.instagramHandle}</a>
-        </p>
+        <p><strong>${CONFIG.address}</strong><br>${CONFIG.addressLine2}<br><br>
+        <a href="mailto:${CONFIG.email}">${CONFIG.email}</a><br>
+        <a href="${CONFIG.instagramLink}" target="_blank">${CONFIG.instagramHandle}</a></p>
       </div>
     </div>
     <div class="hours-rows reveal r1">${hoursHTML}</div>
@@ -468,8 +359,8 @@ document.body.innerHTML = `
 </section>
 
 <div class="callout-band">
-  <div class="callout-float" style="width:200px;height:200px;background:var(--orange);opacity:.15;top:-60px;right:-40px;animation:float1 7s ease-in-out infinite;"></div>
-  <div class="callout-float" style="width:100px;height:100px;background:var(--yellow);opacity:.12;bottom:-30px;right:40%;animation:float2 5s ease-in-out infinite 1s;"></div>
+  <div class="callout-float" style="width:200px;height:200px;top:-60px;right:-40px;animation:float1 7s ease-in-out infinite;"></div>
+  <div class="callout-float" style="width:100px;height:100px;bottom:-30px;right:40%;animation:float2 5s ease-in-out infinite 1s;"></div>
   <div class="callout-band-inner">
     <h2 class="reveal">${calloutH2}</h2>
     <p class="reveal r1">${CONFIG.calloutBody}</p>
@@ -477,12 +368,12 @@ document.body.innerHTML = `
 </div>
 
 <section id="donations">
-  <div class="shape-blob" style="width:160px;height:160px;background:var(--orange);opacity:.15;top:40px;right:5%;animation:float1 7s ease-in-out infinite;"></div>
+  <div class="shape-blob" style="width:160px;height:160px;background:var(--orange-lt);top:40px;right:5%;animation:float1 7s ease-in-out infinite;"></div>
   <div class="donations-inner">
     <div class="donations-top reveal">
       <div>
-        <div class="section-eyebrow"><span class="eyebrow-pill">Donation Policy</span></div>
-        <h2 class="section-h2">${CONFIG.donationsHeadline.replace('.', '.<br>').replace('accept', '<em>accept</em>')}</h2>
+        <div class="section-eyebrow"><span class="pill pill-orange">Donation Policy</span></div>
+        <h2 class="section-h2">${CONFIG.donationsHeadline.replace('.','.<br>').replace('accept','<em>accept</em>')}</h2>
       </div>
       <p>${CONFIG.donationsDesc}</p>
     </div>
@@ -490,55 +381,34 @@ document.body.innerHTML = `
   </div>
 </section>
 
-${CONFIG.showEvents ? `
-<div class="marquee-wrap-2">
-  <div class="marquee-track-2">${marquee2Items}</div>
-</div>
-
-<section id="events">
-  <div class="shape-blob" style="width:140px;height:140px;background:var(--coral);opacity:.2;top:60px;right:8%;animation:float2 6s ease-in-out infinite;"></div>
-  <div class="events-inner">
-    <div class="events-top reveal">
-      <div>
-        <div class="section-eyebrow"><span class="eyebrow-pill">Upcoming Events</span></div>
-        <h2 class="section-h2">${CONFIG.eventsHeadline.replace('out', '<em>out.</em>').replace('.', '')}</h2>
-      </div>
-      <a href="${CONFIG.instagramLink}" target="_blank" class="events-follow">${CONFIG.eventsFollowText}</a>
-    </div>
-    <div class="events-grid reveal r1">${eventsHTML}</div>
-  </div>
-</section>` : ''}
-
 <section id="about">
-  <div class="shape-blob" style="width:180px;height:180px;background:var(--orange);opacity:.15;bottom:-40px;right:-30px;animation:float1 9s ease-in-out infinite;"></div>
+  <div class="shape-blob" style="width:180px;height:180px;background:var(--green-lt);bottom:-40px;right:-30px;animation:float1 9s ease-in-out infinite;"></div>
   <div class="about-inner">
     <div class="about-text reveal">
-      <div class="section-eyebrow" style="margin-bottom:1rem;"><span class="eyebrow-pill">The Mission</span></div>
+      <div class="section-eyebrow" style="margin-bottom:1rem;"><span class="pill pill-green">The Mission</span></div>
       <h2 class="section-h2">${aboutH2}</h2>
       <p>${CONFIG.aboutBody1}</p>
       <p>${CONFIG.aboutBody2}</p>
       <a href="${CONFIG.mainSiteLink}" target="_blank">${CONFIG.aboutLinkText}</a>
     </div>
     <div class="stats-grid reveal r1">
-      <div class="stat-card"><span class="stat-num">${CONFIG.stat1Number}</span><span class="stat-lbl">${CONFIG.stat1Label}</span></div>
-      <div class="stat-card"><span class="stat-num">${CONFIG.stat2Number}</span><span class="stat-lbl">${CONFIG.stat2Label}</span></div>
-      <div class="stat-card"><span class="stat-num">${CONFIG.stat3Number}</span><span class="stat-lbl">${CONFIG.stat3Label}</span></div>
-      <div class="stat-card"><span class="stat-num">${CONFIG.stat4Number}</span><span class="stat-lbl">${CONFIG.stat4Label}</span></div>
+      <div class="stat-card"><span class="stat-num ${statCols[0]}">${CONFIG.stat1Number}</span><span class="stat-lbl">${CONFIG.stat1Label}</span></div>
+      <div class="stat-card"><span class="stat-num ${statCols[1]}">${CONFIG.stat2Number}</span><span class="stat-lbl">${CONFIG.stat2Label}</span></div>
+      <div class="stat-card"><span class="stat-num ${statCols[2]}">${CONFIG.stat3Number}</span><span class="stat-lbl">${CONFIG.stat3Label}</span></div>
+      <div class="stat-card"><span class="stat-num ${statCols[3]}">${CONFIG.stat4Number}</span><span class="stat-lbl">${CONFIG.stat4Label}</span></div>
     </div>
   </div>
 </section>
 
 <section id="shop">
-  <div class="shop-blob shop-blob-1"></div>
-  <div class="shop-blob shop-blob-2"></div>
-  <div class="shop-blob shop-blob-3"></div>
-  <div class="shop-blob shop-blob-4"></div>
+  <div class="shop-blob shop-blob-1"></div><div class="shop-blob shop-blob-2"></div>
+  <div class="shop-blob shop-blob-3"></div><div class="shop-blob shop-blob-4"></div>
   <div class="shop-inner">
     <div class="reveal">
-      <div class="section-eyebrow" style="margin-bottom:1rem;"><span class="eyebrow-pill">Online Store</span></div>
+      <div class="section-eyebrow" style="margin-bottom:1rem;"><span class="pill pill-green">Online Store</span></div>
       <h2 class="section-h2">${shopH2}</h2>
       <p class="section-desc">${CONFIG.shopDesc}</p>
-      <a href="${CONFIG.poshmarkLink}" target="_blank" class="btn btn-dark">${CONFIG.shopBtnText}</a>
+      <a href="${CONFIG.poshmarkLink}" target="_blank" class="btn btn-ink">${CONFIG.shopBtnText}</a>
     </div>
     ${shopVisualHTML}
   </div>
@@ -548,19 +418,16 @@ ${CONFIG.showEvents ? `
   <div class="foot-top">
     <div class="foot-brand">
       <span class="foot-brand-name">Furry Freight <span>Thrift</span></span>
-      <p>
-        ${CONFIG.footerTagline} Located in ${CONFIG.city}.<br>
-        All proceeds benefit Furry Freight Shelter Transport.<br>
-        Oregon-registered 501(c)(3) · EIN: ${CONFIG.ein}<br>
-        ${CONFIG.poBox} · <a href="mailto:${CONFIG.email}">${CONFIG.email}</a>
-      </p>
+      <p>${CONFIG.footerTagline} Located in ${CONFIG.city}.<br>
+      All proceeds benefit Furry Freight Shelter Transport.<br>
+      Oregon-registered 501(c)(3) · EIN: ${CONFIG.ein}<br>
+      ${CONFIG.poBox} · <a href="mailto:${CONFIG.email}">${CONFIG.email}</a></p>
     </div>
     <div class="foot-col">
       <h5>Quick Links</h5>
       <ul>
         <li><a href="#hours">Hours &amp; Location</a></li>
         <li><a href="#donations">Donation Policy</a></li>
-        ${CONFIG.showEvents ? '<li><a href="#events">Upcoming Events</a></li>' : ''}
         <li><a href="#about">About the Mission</a></li>
         <li><a href="#shop">Shop Poshmark</a></li>
       </ul>
@@ -589,7 +456,7 @@ ${CONFIG.showEvents ? `
 const revs = document.querySelectorAll('.reveal');
 function check(){
   const vh = window.innerHeight;
-  revs.forEach(el => { if(el.getBoundingClientRect().top < vh - 60) el.classList.add('on'); });
+  revs.forEach(el=>{ if(el.getBoundingClientRect().top < vh-60) el.classList.add('on'); });
 }
 window.addEventListener('scroll', check, {passive:true});
 check();
