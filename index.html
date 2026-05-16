@@ -42,11 +42,11 @@ const CONFIG = {
     { day: "Sunday",    time: "11am – 5pm", best: false },
   ],
   calloutHeadline: "Your stuff saves lives.",
-  calloutBody:     "Every item you donate, every purchase you make goes directly to Furry Freight life saving shelter transports and no/low cost spay + neuter surgeries. Every dollar makes a real difference for animals who need it most.",
-  calloutPhoto:    "https://raw.githubusercontent.com/obrumwell/furryfreight-thrift/main/dogtile1.jpg",
+  calloutBody:     "Every item you donate, every purchase you make goes directly to Furry Freight transport runs and spay/neuter surgeries. Every dollar makes a real difference for animals who need it most.",
+  calloutPhoto:    "https://raw.githubusercontent.com/obrumwell/furryfreight-thrift/main/rich.jpg",
   calloutPhotoAlt: "A dog saved by Furry Freight Shelter Transport",
   donationsHeadline: "What we accept.",
-  donationsDesc:     "Drop-offs welcome during store hours. Items should be clean and in sellable condition.",
+  donationsDesc:     "Drop-offs welcome any time during store hours. Items should be clean and in sellable condition.",
   donationItems: [
     { title: "Clothing",      desc: "All seasons, all sizes. Clean and wearable — gently used is great.",               accepted: true  },
     { title: "Outdoor Gear",  desc: "Jackets, packs, boots, small camp accessories.",                                   accepted: true  },
@@ -57,17 +57,17 @@ const CONFIG = {
   notAcceptedItems: [
     { title: "Large Furniture & Sofas",   desc: "We can't take sofas, sectionals, or large upholstered pieces at this time." },
     { title: "Mattresses & Box Springs",  desc: "No mattresses of any size, box springs, or bed frames." },
-    { title: "Large Fitness Equipment & Helmets ",   desc: "Treadmills, weight benches, ellipticals, and similar large items. We do not accept used helemts" },
+    { title: "Large Fitness Equipment",   desc: "Treadmills, weight benches, ellipticals, and similar large items." },
     { title: "Office Electronics",        desc: "Printers, copiers, fax machines, scanners, and monitors." },
     { title: "Baby Gear",                 desc: "Car seats, cribs, high chairs, strollers, and other infant safety items." },
     { title: "Broken or Stained Items",   desc: "Items that are damaged, heavily worn, stained, or not in sellable condition." },
   ],
   // EDIT THIS TEXT — shown below "What we can't take right now"
-  notAcceptedNote: "We appreciate every donation offer! But, some items just don't work for our space. If you're unsure about something, send us a DM or email.",
+  notAcceptedNote: "We appreciate every donation offer — these items just don't work for our space or resale model. If you're unsure about something, drop us a line before bringing it in.",
   showEvents: false,
   events: [],
   aboutHeadline: "Saving shelter pets. One sale at a time.",
-  aboutBody1:    "Furry Freight Thrift is the mission sustaining retail operation of Furry Freight Shelter Transport — a volunteer-run 501(c)(3) based in Bend that moves at-risk shelter animals from under-resourced, overpopulated shelters to Pacific Northwest adoption partners.",
+  aboutBody1:    "Furry Freight Thrift is the retail arm of Furry Freight Shelter Transport — a volunteer-run 501(c)(3) based in Bend that moves at-risk shelter animals from under-resourced, overpopulated shelters to Pacific Northwest adoption partners.",
   aboutBody2:    "When you shop here or drop off a donation, you are directly funding life-saving transport trips and no/low cost spay + neuter surgeries for animals in overpopulated sheters, or low resource areas.",
   aboutLinkText: "Visit furryfreight.org →",
   stat1Number: "1,709+",    stat1Label: "Animals Saved",
@@ -77,13 +77,9 @@ const CONFIG = {
   shopHeadline: "Can't make it in?",
   shopDesc:     "Browse our curated Poshmark store for handpicked finds shipped anywhere in the US. Updated regularly with the best of what comes through the door.",
   shopBtnText:  "Shop Poshmark →",
-  // THREE shop photos — paste raw GitHub URLs. Leave empty "" to show placeholder for that slot.
-  shopPhoto1:    "https://raw.githubusercontent.com/obrumwell/furryfreight-thrift/main/dogtile3.jpg",
-  shopPhoto1Alt: "Inside the Furry Freight Thrift store",
-  shopPhoto2:    "",
-  shopPhoto2Alt: "Furry Freight Thrift finds or an amimal saved by furry freight",
-  shopPhoto3:    "",
-  shopPhoto3Alt: "More great finds at Furry Freight Thrift",
+  // CUTOUT PHOTO — paste a raw GitHub URL to a PNG with background removed. It floats freely on the section.
+  shopCutout:    "https://raw.githubusercontent.com/obrumwell/furryfreight-thrift/main/dogtile3.jpg",
+  shopCutoutAlt: "A dog saved by Furry Freight",
   poshmarkLink: "https://poshmark.com/closet/ffthriftstore",
   instagramHandle: "@furryfreightthrift",
   instagramLink:   "https://www.instagram.com/furryfreightthrift/",
@@ -215,7 +211,8 @@ const css = `
   .callout-band h2{font-family:'Fredoka One',cursive;font-size:clamp(3rem,6vw,6rem);line-height:.92;color:#fff;}
   .callout-band h2 em{font-style:normal;color:var(--orange);}
   .callout-no-break{white-space:nowrap;}
-  .callout-band p{font-size:1rem;color:rgba(255,255,255,.8);line-height:1.85;font-weight:600;}
+  .callout-band h2{margin-bottom:2rem;}
+  .callout-band p{font-size:1.2rem;color:rgba(255,255,255,.8);line-height:1.9;font-weight:600;}
   .callout-float{position:absolute;border-radius:50%;background:rgba(255,255,255,.05);}
   /* CHANGE 2: taller callout photo */
   .callout-photo-wrap{display:flex;justify-content:center;align-items:center;}
@@ -289,25 +286,18 @@ const css = `
   .stat-lbl{font-size:.82rem;font-weight:800;color:var(--muted);line-height:1.4;}
   .c-orange{color:var(--orange);}.c-blue{color:var(--blue);}.c-green{color:var(--green);}
 
-  /* ── SHOP — CHANGE 4: three photos ── */
-  #shop{background:var(--green-lt);border-top:3px solid var(--green);border-bottom:3px solid var(--green);padding:6rem 3rem;position:relative;overflow:hidden;}
-  .shop-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:center;}
+  /* ── SHOP — floating cutout ── */
+  #shop{background:var(--green-lt);border-top:3px solid var(--green);border-bottom:3px solid var(--green);padding:5rem 3rem 0;position:relative;overflow:hidden;}
+  .shop-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:flex-end;}
   .shop-blob{position:absolute;border-radius:50%;pointer-events:none;}
   .shop-blob-1{width:110px;height:110px;background:var(--white);border:3px solid var(--stone-dk);top:40px;right:10%;animation:float1 6s ease-in-out infinite;}
   .shop-blob-2{width:70px;height:70px;background:var(--green);border:3px solid var(--green-dk);opacity:.22;top:120px;right:22%;animation:float2 5s ease-in-out infinite .5s;}
   .shop-blob-3{width:55px;height:55px;background:var(--white);border:3px solid var(--stone-dk);bottom:60px;right:14%;animation:float1 7s ease-in-out infinite 1s;}
-  .shop-photos{display:flex;flex-direction:column;gap:.85rem;position:relative;z-index:1;}
-  .shop-photo-item{
-    width:100%;height:160px;
-    border-radius:16px;overflow:hidden;
-    border:2.5px solid var(--green);
-    box-shadow:4px 4px 0 var(--green);
-    background:var(--white);
-    display:flex;align-items:center;justify-content:center;
-  }
-  .shop-photo-item img{width:100%;height:100%;object-fit:cover;display:block;}
-  .shop-photo-placeholder{display:flex;align-items:center;justify-content:center;width:100%;height:100%;}
-  .shop-label{font-family:'Fredoka One',cursive;font-size:.95rem;color:var(--green);text-align:center;line-height:1.3;padding:1rem;}
+  .shop-text-col{padding-bottom:5rem;}
+  .shop-cutout-col{display:flex;justify-content:center;align-items:flex-end;position:relative;z-index:1;}
+  .shop-cutout{width:340px;display:block;object-fit:contain;object-position:bottom;filter:drop-shadow(0 12px 32px rgba(78,125,98,.25));animation:float1 6s ease-in-out infinite;}
+  .shop-cutout-placeholder{width:280px;height:320px;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding-bottom:1rem;gap:.5rem;}
+  .shop-cutout-placeholder p{font-family:'Fredoka One',cursive;font-size:1rem;color:var(--green);text-align:center;line-height:1.4;}
 
   /* ── FOOTER ── */
   footer{background:var(--ink);padding:4rem 3rem 2.5rem;}
@@ -349,14 +339,13 @@ const css = `
     .blob-3,.blob-4,.blob-5{display:none;}
     .spin-star{display:none;}
     .callout-photo-frame{max-width:260px;}
-    .shop-photos{flex-direction:row;flex-wrap:wrap;}
-    .shop-photo-item{flex:1 1 calc(33% - .85rem);min-width:120px;}
+    .shop-cutout{width:220px;}
+    .shop-text-col{padding-bottom:3rem;}
   }
   @media(max-width:560px){
     .accept-grid,.not-accepted-grid{grid-template-columns:1fr;}
     .nav-links{display:none;}
-    .shop-photos{flex-direction:column;}
-    .shop-photo-item{height:200px;}
+    .shop-cutout{width:180px;}
   }
 
   /* ── FOCUS GLOBAL FALLBACK ── */
@@ -410,17 +399,16 @@ const aboutH2 = aboutParts.filter(p=>p.trim()).map((p,i) =>
 const shopWords = CONFIG.shopHeadline.split(' ');
 const shopH2 = `${shopWords.slice(0,-1).join(' ')}<br><em class="green">${shopWords.at(-1)}</em>`;
 
-// CHANGE 4: three shop photos
-const makeShopPhoto = (url, alt, index) => url
-  ? `<div class="shop-photo-item"><img src="${url}" alt="${alt}"></div>`
-  : `<div class="shop-photo-item"><div class="shop-photo-placeholder"><span class="shop-label">Add photo ${index}<br>in CONFIG</span></div></div>`;
-
-const shopPhotosHTML = `
-  <div class="shop-photos reveal">
-    ${makeShopPhoto(CONFIG.shopPhoto1, CONFIG.shopPhoto1Alt, 1)}
-    ${makeShopPhoto(CONFIG.shopPhoto2, CONFIG.shopPhoto2Alt, 2)}
-    ${makeShopPhoto(CONFIG.shopPhoto3, CONFIG.shopPhoto3Alt, 3)}
-  </div>`;
+// Floating cutout photo for shop section
+const shopCutoutHTML = CONFIG.shopCutout
+  ? `<div class="shop-cutout-col reveal r1">
+       <img class="shop-cutout" src="${CONFIG.shopCutout}" alt="${CONFIG.shopCutoutAlt}">
+     </div>`
+  : `<div class="shop-cutout-col reveal r1">
+       <div class="shop-cutout-placeholder">
+         <p>Paste your cutout photo URL into CONFIG.shopCutout</p>
+       </div>
+     </div>`;
 
 // Hero photo (optional)
 const heroPhotoHTML = CONFIG.heroPhoto
@@ -567,13 +555,13 @@ document.body.innerHTML = `
   <div class="shop-blob shop-blob-2" aria-hidden="true"></div>
   <div class="shop-blob shop-blob-3" aria-hidden="true"></div>
   <div class="shop-inner">
-    <div class="reveal">
+    <div class="shop-text-col reveal">
       <div class="section-eyebrow" style="margin-bottom:1rem;"><span class="pill pill-green">Online Store</span></div>
       <h2 class="section-h2" id="shop-heading">${shopH2}</h2>
       <p class="section-desc">${CONFIG.shopDesc}</p>
       <a href="${CONFIG.poshmarkLink}" target="_blank" rel="noopener noreferrer" class="btn btn-ink" aria-label="Shop Furry Freight on Poshmark (opens in new tab)">${CONFIG.shopBtnText}</a>
     </div>
-    ${shopPhotosHTML}
+    ${shopCutoutHTML}
   </div>
 </section>
 
