@@ -146,10 +146,7 @@ const css = `
   .tag-dot{width:8px;height:8px;border-radius:50%;background:#fff;animation:pulse 1.5s ease-in-out infinite;flex-shrink:0;}
   @keyframes pulse{0%,100%{transform:scale(1);}50%{transform:scale(1.4);}}
   .hero-h1{font-family:'Fredoka One',cursive;font-size:clamp(2.8rem,6vw,6rem);line-height:.94;color:#fff;letter-spacing:-.01em;position:relative;z-index:1;margin-bottom:1.5rem;}
-  .hero-h1 .outline{
-    -webkit-text-stroke:3px var(--blue-dk);
-    color:transparent;
-  }
+  .hero-h1 .outline{-webkit-text-stroke:3px var(--blue-dk);color:transparent;}
   .hero-h1 .blue-word{color:var(--blue-lt);display:inline-block;animation:bounce-word 2s ease-in-out infinite;}
   @keyframes bounce-word{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
   .hero-sub{font-size:1rem;font-weight:700;color:rgba(255,255,255,.9);max-width:460px;line-height:1.75;position:relative;z-index:1;margin-bottom:1.75rem;}
@@ -207,14 +204,11 @@ const css = `
   /* ── CALLOUT BAND ── */
   .callout-band{background:var(--blue);border-top:3px solid var(--blue-dk);border-bottom:3px solid var(--blue-dk);padding:5rem 3rem;position:relative;overflow:hidden;}
   .callout-band-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;}
-  /* CHANGE 1: "saves lives" on same line — h2 is nowrap on last two words */
-  .callout-band h2{font-family:'Fredoka One',cursive;font-size:clamp(3rem,6vw,6rem);line-height:.92;color:#fff;}
+  .callout-band h2{font-family:'Fredoka One',cursive;font-size:clamp(3rem,6vw,6rem);line-height:.92;color:#fff;margin-bottom:2rem;}
   .callout-band h2 em{font-style:normal;color:var(--orange);}
   .callout-no-break{white-space:nowrap;}
-  .callout-band h2{margin-bottom:2rem;}
   .callout-band p{font-size:1.2rem;color:rgba(255,255,255,.8);line-height:1.9;font-weight:600;}
   .callout-float{position:absolute;border-radius:50%;background:rgba(255,255,255,.05);}
-  /* CHANGE 2: taller callout photo */
   .callout-photo-wrap{display:flex;justify-content:center;align-items:center;}
   .callout-photo-frame{
     width:100%;max-width:340px;
@@ -228,15 +222,8 @@ const css = `
     position:relative;z-index:1;
   }
   .callout-photo-frame img{width:100%;height:100%;object-fit:cover;display:block;}
-  .callout-photo-placeholder{
-    width:100%;height:100%;
-    display:flex;flex-direction:column;align-items:center;justify-content:center;
-    gap:.75rem;padding:2rem;
-  }
-  .callout-photo-placeholder p{
-    font-family:'Fredoka One',cursive;font-size:1rem;color:rgba(255,255,255,.5);
-    text-align:center;line-height:1.4;
-  }
+  .callout-photo-placeholder{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.75rem;padding:2rem;}
+  .callout-photo-placeholder p{font-family:'Fredoka One',cursive;font-size:1rem;color:rgba(255,255,255,.5);text-align:center;line-height:1.4;}
   address{font-style:normal;}
 
   /* ── DONATIONS ── */
@@ -257,15 +244,9 @@ const css = `
   .corner-b{background:var(--blue);}
   .corner-g{background:var(--green);}
 
-  /* ── NOT ACCEPTED SECTION — CHANGE 3: larger heading ── */
+  /* ── NOT ACCEPTED SECTION ── */
   .not-accepted-section{border-top:2px dashed var(--stone-dk);padding-top:2.5rem;}
-  .not-accepted-heading{
-    font-family:'Fredoka One',cursive;
-    font-size:clamp(2rem,4vw,3rem);
-    color:var(--muted);
-    margin-bottom:1rem;
-    letter-spacing:-.01em;
-  }
+  .not-accepted-heading{font-family:'Fredoka One',cursive;font-size:clamp(2rem,4vw,3rem);color:var(--muted);margin-bottom:1rem;letter-spacing:-.01em;}
   .not-accepted-note{font-size:.9rem;font-weight:700;color:var(--muted);margin-bottom:2rem;max-width:520px;line-height:1.7;}
   .not-accepted-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;}
   .no-card{background:var(--stone-md);border:2px solid var(--stone-dk);border-radius:14px;padding:1.4rem 1.5rem;}
@@ -287,15 +268,15 @@ const css = `
   .c-orange{color:var(--orange);}.c-blue{color:var(--blue);}.c-green{color:var(--green);}
 
   /* ── SHOP — floating cutout ── */
-  #shop{background:var(--green-lt);border-top:3px solid var(--green);border-bottom:3px solid var(--green);padding:5rem 3rem 0;position:relative;overflow:hidden;}
+  #shop{background:var(--green-lt);border-top:3px solid var(--green);border-bottom:3px solid var(--green);padding:5rem 3rem 0;position:relative;overflow:visible;}
   .shop-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:flex-end;}
   .shop-blob{position:absolute;border-radius:50%;pointer-events:none;}
   .shop-blob-1{width:110px;height:110px;background:var(--white);border:3px solid var(--stone-dk);top:40px;right:10%;animation:float1 6s ease-in-out infinite;}
   .shop-blob-2{width:70px;height:70px;background:var(--green);border:3px solid var(--green-dk);opacity:.22;top:120px;right:22%;animation:float2 5s ease-in-out infinite .5s;}
   .shop-blob-3{width:55px;height:55px;background:var(--white);border:3px solid var(--stone-dk);bottom:60px;right:14%;animation:float1 7s ease-in-out infinite 1s;}
   .shop-text-col{padding-bottom:5rem;}
-  .shop-cutout-col{display:flex;justify-content:center;align-items:flex-end;position:relative;z-index:1;}
-  .shop-cutout{width:340px;display:block;object-fit:contain;object-position:bottom;filter:drop-shadow(0 12px 32px rgba(78,125,98,.25));animation:float1 6s ease-in-out infinite;}
+  .shop-cutout-col{display:flex;justify-content:center;align-items:flex-end;position:relative;z-index:1;overflow:visible;}
+  .shop-cutout{width:100%;max-width:380px;display:block;object-fit:contain;object-position:bottom;filter:drop-shadow(0 12px 32px rgba(78,125,98,.3));animation:float1 6s ease-in-out infinite;}
   .shop-cutout-placeholder{width:280px;height:320px;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding-bottom:1rem;gap:.5rem;}
   .shop-cutout-placeholder p{font-family:'Fredoka One',cursive;font-size:1rem;color:var(--green);text-align:center;line-height:1.4;}
 
@@ -327,7 +308,8 @@ const css = `
   @media(max-width:860px){
     nav{padding:0 1.25rem;}
     #hero{padding:90px 1.5rem 4rem;}
-    #hours,#donations,#about,#shop{padding:4rem 1.5rem;}
+    #hours,#donations,#about{padding:4rem 1.5rem;}
+    #shop{padding:4rem 1.5rem 0;}
     .callout-band{padding:3.5rem 1.5rem;}
     footer{padding:3rem 1.5rem 2rem;}
     .hero-layout{grid-template-columns:1fr;}
@@ -339,13 +321,13 @@ const css = `
     .blob-3,.blob-4,.blob-5{display:none;}
     .spin-star{display:none;}
     .callout-photo-frame{max-width:260px;}
-    .shop-cutout{width:220px;}
+    .shop-cutout{max-width:260px;}
     .shop-text-col{padding-bottom:3rem;}
   }
   @media(max-width:560px){
     .accept-grid,.not-accepted-grid{grid-template-columns:1fr;}
     .nav-links{display:none;}
-    .shop-cutout{width:180px;}
+    .shop-cutout{max-width:200px;}
   }
 
   /* ── FOCUS GLOBAL FALLBACK ── */
@@ -381,7 +363,6 @@ const notAcceptedHTML = CONFIG.notAcceptedItems.map((item, i) => `
 const marqueeItems = [...CONFIG.marqueeItems, ...CONFIG.marqueeItems].map(item =>
   `<span class="marquee-item">${item} <span class="marquee-sep" aria-hidden="true">✦</span></span>`).join('');
 
-// CHANGE 1: "saves lives." stays on one line using nowrap span
 const calloutHeadlineHTML = (() => {
   const words = CONFIG.calloutHeadline.trim().replace(/\.$/, '').split(' ');
   const lastTwo = words.slice(-2).join(' ') + '.';
@@ -399,7 +380,6 @@ const aboutH2 = aboutParts.filter(p=>p.trim()).map((p,i) =>
 const shopWords = CONFIG.shopHeadline.split(' ');
 const shopH2 = `${shopWords.slice(0,-1).join(' ')}<br><em class="green">${shopWords.at(-1)}</em>`;
 
-// Floating cutout photo for shop section
 const shopCutoutHTML = CONFIG.shopCutout
   ? `<div class="shop-cutout-col reveal r1">
        <img class="shop-cutout" src="${CONFIG.shopCutout}" alt="${CONFIG.shopCutoutAlt}">
@@ -410,7 +390,6 @@ const shopCutoutHTML = CONFIG.shopCutout
        </div>
      </div>`;
 
-// Hero photo (optional)
 const heroPhotoHTML = CONFIG.heroPhoto
   ? `<div class="hero-photo-wrap reveal r2">
        <div class="hero-photo-frame">
@@ -557,11 +536,11 @@ document.body.innerHTML = `
   <div class="shop-inner">
     <div class="shop-text-col reveal">
       <div class="section-eyebrow" style="margin-bottom:1rem;"><span class="pill pill-green">Online Store</span></div>
-      <h2 class="section-h2" id="shop-heading">${shopH2}</h2>
+      <h2 class="section-h2" id="shop-heading">\${shopH2}</h2>
       <p class="section-desc">${CONFIG.shopDesc}</p>
       <a href="${CONFIG.poshmarkLink}" target="_blank" rel="noopener noreferrer" class="btn btn-ink" aria-label="Shop Furry Freight on Poshmark (opens in new tab)">${CONFIG.shopBtnText}</a>
     </div>
-    ${shopCutoutHTML}
+    \${shopCutoutHTML}
   </div>
 </section>
 
@@ -610,7 +589,7 @@ document.body.innerHTML = `
 <style>
   .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
 </style>
-`;
+\`;
 
 // Reveal on scroll
 const revs = document.querySelectorAll('.reveal');
