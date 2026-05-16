@@ -18,6 +18,7 @@ const CONFIG = {
   email:       "info" + "@" + "furryfreight.org",
   ein:         "82-4423390",
   poBox:       "PO Box 93, Bend OR 97709",
+  mapsLink:    "https://maps.google.com/?q=725+NE+Greenwood+Ave+Suite+1+Bend+OR+97701",
   heroOpenLabel: "Open Now",
   heroDesc:    "We are a well-stocked thrift store in Bend where every dollar goes towards shelter pets — life-saving transports, spay and neuter programs, and second chances.",
   heroBtnShop: "Shop Online →",
@@ -433,7 +434,7 @@ document.body.innerHTML = `
       <p class="section-desc">${CONFIG.hoursDesc}</p>
       <address class="location-card">
         <p>
-          <a href="https://maps.google.com/?q=759+NE+Greenwood+Ave+Suite+1+Bend+OR+97701" target="_blank" rel="noopener noreferrer" aria-label="Get directions to ${CONFIG.address}, ${CONFIG.addressLine2} on Google Maps (opens in new tab)" class="address-link"><strong>${CONFIG.address}</strong><br>${CONFIG.addressLine2}</a><br><br>
+          <a href="${CONFIG.mapsLink}" target="_blank" rel="noopener noreferrer" aria-label="Get directions to ${CONFIG.address}, ${CONFIG.addressLine2} on Google Maps (opens in new tab)" class="address-link"><strong>${CONFIG.address}</strong><br>${CONFIG.addressLine2}</a><br><br>
           <a href="mailto:${CONFIG.email}">${CONFIG.email}</a><br>
           <a href="${CONFIG.instagramLink}" target="_blank" rel="noopener noreferrer" aria-label="Furry Freight Thrift on Instagram (opens in new tab)">${CONFIG.instagramHandle}</a>
         </p>
