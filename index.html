@@ -135,9 +135,9 @@ const css = `
   .hero-h1 .outline{
     -webkit-text-stroke:3px var(--blue-dk);
     color:transparent;
-    display:block;
   }
-  .hero-h1 .blue-word{color:var(--blue-lt);display:inline-block;}
+  .hero-h1 .blue-word{color:var(--blue-lt);display:inline-block;animation:bounce-word 2s ease-in-out infinite;}
+  @keyframes bounce-word{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
   .hero-sub{font-size:1rem;font-weight:700;color:rgba(255,255,255,.9);max-width:460px;line-height:1.75;position:relative;z-index:1;margin-bottom:1.75rem;}
   .hero-btns{display:flex;gap:1rem;flex-wrap:wrap;position:relative;z-index:1;}
 
