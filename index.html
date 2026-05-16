@@ -21,6 +21,9 @@ const CONFIG = {
   mapsLink:    "https://maps.google.com/?q=759+NE+Greenwood+Ave+Suite+1+Bend+OR+97701",
   heroOpenLabel: "Open Now",
   heroDesc:    "We are a well-stocked thrift store in Bend where every dollar goes towards shelter pets — life-saving transports, spay and neuter programs, and second chances.",
+  // HERO PHOTO — paste a raw GitHub URL to show a photo, or leave empty "" for no photo
+  heroPhoto:   "",
+  heroPhotoAlt: "Inside the Furry Freight Thrift store",
   heroBtnShop: "Shop Online →",
   heroBtnHours:"Hours & Info",
   marqueeItems: [
@@ -39,12 +42,11 @@ const CONFIG = {
     { day: "Sunday",    time: "11am – 5pm", best: false },
   ],
   calloutHeadline: "Your stuff saves lives.",
-  calloutBody:     "Every item you donate, every purchase you make goes directly to Furry Freight transport runs and spay/neuter surgeries. Every dollar makes a real difference for animals who need it most.",
-  // To add a photo: paste your GitHub raw URL, e.g. https://raw.githubusercontent.com/USERNAME/REPOSITORY/main/your-photo.jpg
+  calloutBody:     "Every item you donate, every purchase you make goes directly to Furry Freight life saving shelter transports and no/low cost spay + neuter surgeries. Every dollar makes a real difference for animals who need it most.",
   calloutPhoto:    "https://raw.githubusercontent.com/obrumwell/furryfreight-thrift/main/dogtile1.jpg",
   calloutPhotoAlt: "A dog saved by Furry Freight Shelter Transport",
   donationsHeadline: "What we accept.",
-  donationsDesc:     "Drop-offs welcome any time during store hours. Items should be clean and in sellable condition.",
+  donationsDesc:     "Drop-offs welcome during store hours. Items should be clean and in sellable condition.",
   donationItems: [
     { title: "Clothing",      desc: "All seasons, all sizes. Clean and wearable — gently used is great.",               accepted: true  },
     { title: "Outdoor Gear",  desc: "Jackets, packs, boots, small camp accessories.",                                   accepted: true  },
@@ -55,15 +57,17 @@ const CONFIG = {
   notAcceptedItems: [
     { title: "Large Furniture & Sofas",   desc: "We can't take sofas, sectionals, or large upholstered pieces at this time." },
     { title: "Mattresses & Box Springs",  desc: "No mattresses of any size, box springs, or bed frames." },
-    { title: "Large Fitness Equipment",   desc: "Treadmills, weight benches, ellipticals, and similar large items." },
+    { title: "Large Fitness Equipment & Helmets ",   desc: "Treadmills, weight benches, ellipticals, and similar large items. We do not accept used helemts" },
     { title: "Office Electronics",        desc: "Printers, copiers, fax machines, scanners, and monitors." },
     { title: "Baby Gear",                 desc: "Car seats, cribs, high chairs, strollers, and other infant safety items." },
     { title: "Broken or Stained Items",   desc: "Items that are damaged, heavily worn, stained, or not in sellable condition." },
   ],
+  // EDIT THIS TEXT — shown below "What we can't take right now"
+  notAcceptedNote: "We appreciate every donation offer! But, some items just don't work for our space. If you're unsure about something, send us a DM or email.",
   showEvents: false,
   events: [],
   aboutHeadline: "Saving shelter pets. One sale at a time.",
-  aboutBody1:    "Furry Freight Thrift is the retail arm of Furry Freight Shelter Transport — a volunteer-run 501(c)(3) based in Bend that moves at-risk shelter animals from under-resourced, overpopulated shelters to Pacific Northwest adoption partners.",
+  aboutBody1:    "Furry Freight Thrift is the mission sustaining retail operation of Furry Freight Shelter Transport — a volunteer-run 501(c)(3) based in Bend that moves at-risk shelter animals from under-resourced, overpopulated shelters to Pacific Northwest adoption partners.",
   aboutBody2:    "When you shop here or drop off a donation, you are directly funding life-saving transport trips and no/low cost spay + neuter surgeries for animals in overpopulated sheters, or low resource areas.",
   aboutLinkText: "Visit furryfreight.org →",
   stat1Number: "1,709+",    stat1Label: "Animals Saved",
@@ -73,8 +77,13 @@ const CONFIG = {
   shopHeadline: "Can't make it in?",
   shopDesc:     "Browse our curated Poshmark store for handpicked finds shipped anywhere in the US. Updated regularly with the best of what comes through the door.",
   shopBtnText:  "Shop Poshmark →",
-  shopPhoto:    "https://raw.githubusercontent.com/obrumwell/furryfreight-thrift/main/dogtile3.jpg",
-  shopPhotoAlt: "Inside the Furry Freight Thrift store",
+  // THREE shop photos — paste raw GitHub URLs. Leave empty "" to show placeholder for that slot.
+  shopPhoto1:    "https://raw.githubusercontent.com/obrumwell/furryfreight-thrift/main/dogtile3.jpg",
+  shopPhoto1Alt: "Inside the Furry Freight Thrift store",
+  shopPhoto2:    "",
+  shopPhoto2Alt: "Furry Freight Thrift finds or an amimal saved by furry freight",
+  shopPhoto3:    "",
+  shopPhoto3Alt: "More great finds at Furry Freight Thrift",
   poshmarkLink: "https://poshmark.com/closet/ffthriftstore",
   instagramHandle: "@furryfreightthrift",
   instagramLink:   "https://www.instagram.com/furryfreightthrift/",
@@ -121,7 +130,12 @@ const css = `
 
   /* ── HERO ── */
   #hero{min-height:100vh;background:var(--orange);border-bottom:3px solid var(--orange-dk);padding:80px 3rem 3rem;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:center;}
-  .hero-content{display:flex;flex-direction:column;justify-content:center;position:relative;z-index:2;}
+  .hero-layout{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;position:relative;z-index:2;}
+  .hero-layout.no-photo{grid-template-columns:1fr;max-width:640px;}
+  .hero-content{display:flex;flex-direction:column;justify-content:center;}
+  .hero-photo-wrap{display:flex;justify-content:center;align-items:center;}
+  .hero-photo-frame{width:100%;max-width:420px;aspect-ratio:3/4;border-radius:24px;overflow:hidden;border:3px solid rgba(255,255,255,.3);box-shadow:8px 8px 0 rgba(0,0,0,.18);background:rgba(255,255,255,.1);}
+  .hero-photo-frame img{width:100%;height:100%;object-fit:cover;display:block;}
   .blob{position:absolute;border-radius:50%;pointer-events:none;}
   .blob-1{width:180px;height:180px;background:rgba(255,255,255,.16);border:3px solid rgba(255,255,255,.28);top:70px;right:6%;animation:float1 6s ease-in-out infinite;}
   .blob-2{width:130px;height:130px;background:var(--blue);border:3px solid var(--blue-dk);opacity:.6;bottom:80px;right:18%;animation:float2 5s ease-in-out infinite;}
@@ -145,7 +159,7 @@ const css = `
   .hero-sub{font-size:1rem;font-weight:700;color:rgba(255,255,255,.9);max-width:460px;line-height:1.75;position:relative;z-index:1;margin-bottom:1.75rem;}
   .hero-btns{display:flex;gap:1rem;flex-wrap:wrap;position:relative;z-index:1;}
 
-    /* ── BUTTONS ── */
+  /* ── BUTTONS ── */
   .btn{font-family:'Nunito',sans-serif;font-weight:800;font-size:.88rem;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;padding:.75rem 1.8rem;border-radius:30px;transition:transform .2s,box-shadow .2s;display:inline-block;cursor:pointer;}
   .btn:hover{transform:translateY(-3px);}
   .btn:focus-visible{outline:3px solid var(--blue-dk);outline-offset:3px;}
@@ -183,7 +197,7 @@ const css = `
   .location-card a:hover,.location-card a:focus-visible{text-decoration:underline;}
   .address-link{color:var(--ink) !important;display:inline-block;}
 
-  /* ── HOURS ROWS (larger, darker day labels) ── */
+  /* ── HOURS ROWS ── */
   .hours-rows{display:flex;flex-direction:column;}
   .hour-row{display:flex;justify-content:space-between;align-items:center;padding:1.1rem 0;border-bottom:2px solid var(--stone-md);}
   .hour-row:first-child{border-top:2px solid var(--stone-md);}
@@ -197,15 +211,17 @@ const css = `
   /* ── CALLOUT BAND ── */
   .callout-band{background:var(--blue);border-top:3px solid var(--blue-dk);border-bottom:3px solid var(--blue-dk);padding:5rem 3rem;position:relative;overflow:hidden;}
   .callout-band-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;}
+  /* CHANGE 1: "saves lives" on same line — h2 is nowrap on last two words */
   .callout-band h2{font-family:'Fredoka One',cursive;font-size:clamp(3rem,6vw,6rem);line-height:.92;color:#fff;}
   .callout-band h2 em{font-style:normal;color:var(--orange);}
+  .callout-no-break{white-space:nowrap;}
   .callout-band p{font-size:1rem;color:rgba(255,255,255,.8);line-height:1.85;font-weight:600;}
   .callout-float{position:absolute;border-radius:50%;background:rgba(255,255,255,.05);}
-  /* callout photo */
+  /* CHANGE 2: taller callout photo */
   .callout-photo-wrap{display:flex;justify-content:center;align-items:center;}
   .callout-photo-frame{
     width:100%;max-width:340px;
-    aspect-ratio:4/3;
+    aspect-ratio:3/4;
     border-radius:22px;
     overflow:hidden;
     border:3px solid rgba(255,255,255,.25);
@@ -224,10 +240,7 @@ const css = `
     font-family:'Fredoka One',cursive;font-size:1rem;color:rgba(255,255,255,.5);
     text-align:center;line-height:1.4;
   }
-
-  /* location card — no italics on address tag */
   address{font-style:normal;}
-
 
   /* ── DONATIONS ── */
   #donations{background:var(--stone);border-top:3px solid var(--stone-dk);padding:6rem 3rem;position:relative;overflow:hidden;}
@@ -247,10 +260,15 @@ const css = `
   .corner-b{background:var(--blue);}
   .corner-g{background:var(--green);}
 
-  /* ── NOT ACCEPTED SECTION ── */
+  /* ── NOT ACCEPTED SECTION — CHANGE 3: larger heading ── */
   .not-accepted-section{border-top:2px dashed var(--stone-dk);padding-top:2.5rem;}
-  .not-accepted-label{display:inline-flex;align-items:center;gap:.5rem;font-size:.7rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:1.5rem;}
-  .not-accepted-label::before{content:'';display:inline-block;width:12px;height:12px;border-radius:50%;background:var(--stone-dk);}
+  .not-accepted-heading{
+    font-family:'Fredoka One',cursive;
+    font-size:clamp(2rem,4vw,3rem);
+    color:var(--muted);
+    margin-bottom:1rem;
+    letter-spacing:-.01em;
+  }
   .not-accepted-note{font-size:.9rem;font-weight:700;color:var(--muted);margin-bottom:2rem;max-width:520px;line-height:1.7;}
   .not-accepted-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;}
   .no-card{background:var(--stone-md);border:2px solid var(--stone-dk);border-radius:14px;padding:1.4rem 1.5rem;}
@@ -271,18 +289,25 @@ const css = `
   .stat-lbl{font-size:.82rem;font-weight:800;color:var(--muted);line-height:1.4;}
   .c-orange{color:var(--orange);}.c-blue{color:var(--blue);}.c-green{color:var(--green);}
 
-  /* ── SHOP ── */
+  /* ── SHOP — CHANGE 4: three photos ── */
   #shop{background:var(--green-lt);border-top:3px solid var(--green);border-bottom:3px solid var(--green);padding:6rem 3rem;position:relative;overflow:hidden;}
   .shop-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:center;}
-  .shop-inner > div:last-child{display:flex;justify-content:center;}
   .shop-blob{position:absolute;border-radius:50%;pointer-events:none;}
   .shop-blob-1{width:110px;height:110px;background:var(--white);border:3px solid var(--stone-dk);top:40px;right:10%;animation:float1 6s ease-in-out infinite;}
   .shop-blob-2{width:70px;height:70px;background:var(--green);border:3px solid var(--green-dk);opacity:.22;top:120px;right:22%;animation:float2 5s ease-in-out infinite .5s;}
   .shop-blob-3{width:55px;height:55px;background:var(--white);border:3px solid var(--stone-dk);bottom:60px;right:14%;animation:float1 7s ease-in-out infinite 1s;}
-  .shop-visual{width:200px;height:200px;flex-shrink:0;background:var(--white);border:2.5px solid var(--green);border-radius:20px;box-shadow:5px 5px 0 var(--green);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;z-index:1;}
-  .shop-visual.has-photo img{width:100%;height:100%;object-fit:cover;display:block;border-radius:18px;}
-  .shop-placeholder{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.75rem;width:100%;padding:1.25rem;}
-  .shop-label{font-family:'Fredoka One',cursive;font-size:1rem;color:var(--green);text-align:center;line-height:1.3;}
+  .shop-photos{display:flex;flex-direction:column;gap:.85rem;position:relative;z-index:1;}
+  .shop-photo-item{
+    width:100%;height:160px;
+    border-radius:16px;overflow:hidden;
+    border:2.5px solid var(--green);
+    box-shadow:4px 4px 0 var(--green);
+    background:var(--white);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .shop-photo-item img{width:100%;height:100%;object-fit:cover;display:block;}
+  .shop-photo-placeholder{display:flex;align-items:center;justify-content:center;width:100%;height:100%;}
+  .shop-label{font-family:'Fredoka One',cursive;font-size:.95rem;color:var(--green);text-align:center;line-height:1.3;padding:1rem;}
 
   /* ── FOOTER ── */
   footer{background:var(--ink);padding:4rem 3rem 2.5rem;}
@@ -315,6 +340,7 @@ const css = `
     #hours,#donations,#about,#shop{padding:4rem 1.5rem;}
     .callout-band{padding:3.5rem 1.5rem;}
     footer{padding:3rem 1.5rem 2rem;}
+    .hero-layout{grid-template-columns:1fr;}
     .hours-inner,.callout-band-inner,.about-inner,.shop-inner{grid-template-columns:1fr;gap:3rem;}
     .accept-grid,.not-accepted-grid{grid-template-columns:1fr 1fr;}
     .foot-top{grid-template-columns:1fr;gap:2.5rem;}
@@ -323,10 +349,14 @@ const css = `
     .blob-3,.blob-4,.blob-5{display:none;}
     .spin-star{display:none;}
     .callout-photo-frame{max-width:260px;}
+    .shop-photos{flex-direction:row;flex-wrap:wrap;}
+    .shop-photo-item{flex:1 1 calc(33% - .85rem);min-width:120px;}
   }
   @media(max-width:560px){
     .accept-grid,.not-accepted-grid{grid-template-columns:1fr;}
     .nav-links{display:none;}
+    .shop-photos{flex-direction:column;}
+    .shop-photo-item{height:200px;}
   }
 
   /* ── FOCUS GLOBAL FALLBACK ── */
@@ -355,15 +385,20 @@ const donationHTML = CONFIG.donationItems.map((item, i) => `
 const notAcceptedHTML = CONFIG.notAcceptedItems.map((item, i) => `
   <article class="no-card reveal r${(i%3)+1}" aria-label="${item.title} — not accepted">
     <span class="no-badge" aria-hidden="true">Not Accepted</span>
-    <h3>${item.title}</h3>
+    <h5>${item.title}</h5>
     <p>${item.desc}</p>
   </article>`).join('');
 
 const marqueeItems = [...CONFIG.marqueeItems, ...CONFIG.marqueeItems].map(item =>
   `<span class="marquee-item">${item} <span class="marquee-sep" aria-hidden="true">✦</span></span>`).join('');
 
-const calloutWords = CONFIG.calloutHeadline.split(' ');
-const calloutH2 = `${calloutWords.slice(0,-1).join(' ')}<br><em>${calloutWords.at(-1)}</em>`;
+// CHANGE 1: "saves lives." stays on one line using nowrap span
+const calloutHeadlineHTML = (() => {
+  const words = CONFIG.calloutHeadline.trim().replace(/\.$/, '').split(' ');
+  const lastTwo = words.slice(-2).join(' ') + '.';
+  const rest = words.slice(0, -2).join(' ');
+  return `${rest}<br><em><span class="callout-no-break">${lastTwo}</span></em>`;
+})();
 
 const hoursWords = CONFIG.hoursHeadline.split(' ');
 const hoursH2 = `${hoursWords.slice(0,-1).join(' ')}<br><em class="blue">${hoursWords.at(-1)}</em>`;
@@ -375,9 +410,26 @@ const aboutH2 = aboutParts.filter(p=>p.trim()).map((p,i) =>
 const shopWords = CONFIG.shopHeadline.split(' ');
 const shopH2 = `${shopWords.slice(0,-1).join(' ')}<br><em class="green">${shopWords.at(-1)}</em>`;
 
-const shopVisualHTML = CONFIG.shopPhoto
-  ? `<div class="shop-visual has-photo reveal"><img src="${CONFIG.shopPhoto}" alt="${CONFIG.shopPhotoAlt}"></div>`
-  : `<div class="shop-visual reveal" role="img" aria-label="Shop our online Poshmark store"><div class="shop-placeholder"><div class="shop-label">Shop our<br>online store!</div></div></div>`;
+// CHANGE 4: three shop photos
+const makeShopPhoto = (url, alt, index) => url
+  ? `<div class="shop-photo-item"><img src="${url}" alt="${alt}"></div>`
+  : `<div class="shop-photo-item"><div class="shop-photo-placeholder"><span class="shop-label">Add photo ${index}<br>in CONFIG</span></div></div>`;
+
+const shopPhotosHTML = `
+  <div class="shop-photos reveal">
+    ${makeShopPhoto(CONFIG.shopPhoto1, CONFIG.shopPhoto1Alt, 1)}
+    ${makeShopPhoto(CONFIG.shopPhoto2, CONFIG.shopPhoto2Alt, 2)}
+    ${makeShopPhoto(CONFIG.shopPhoto3, CONFIG.shopPhoto3Alt, 3)}
+  </div>`;
+
+// Hero photo (optional)
+const heroPhotoHTML = CONFIG.heroPhoto
+  ? `<div class="hero-photo-wrap reveal r2">
+       <div class="hero-photo-frame">
+         <img src="${CONFIG.heroPhoto}" alt="${CONFIG.heroPhotoAlt}">
+       </div>
+     </div>`
+  : '';
 
 const statCols = ['c-orange','c-blue','c-green','c-blue'];
 
@@ -406,20 +458,23 @@ document.body.innerHTML = `
     <path d="M35 5 L38 28 L60 15 L45 33 L68 35 L45 37 L60 55 L38 42 L35 65 L32 42 L10 55 L25 37 L2 35 L25 33 L10 15 L32 28 Z" fill="rgba(255,255,255,.22)" stroke="rgba(255,255,255,.4)" stroke-width="2"/>
   </svg>
 
-  <div class="hero-content">
-    <div class="hero-tag" aria-label="Now open in ${CONFIG.city}">
-      <span class="tag-dot" aria-hidden="true"></span>${CONFIG.heroOpenLabel} · ${CONFIG.city}
+  <div class="hero-layout${CONFIG.heroPhoto ? '' : ' no-photo'}">
+    <div class="hero-content reveal">
+      <div class="hero-tag" aria-label="Now open in ${CONFIG.city}">
+        <span class="tag-dot" aria-hidden="true"></span>${CONFIG.heroOpenLabel} · ${CONFIG.city}
+      </div>
+      <h1 class="hero-h1" id="hero-heading">
+        <span class="outline">Second</span><br>Hand,<br>
+        <span class="blue-word">Four</span><br>Paws.
+      </h1>
+      <p class="hero-sub">${CONFIG.heroDesc}</p>
+      <div class="hero-btns">
+        <a href="#shop" class="btn btn-white">${CONFIG.heroBtnShop}</a>
+        <a href="#hours" class="btn btn-blue">${CONFIG.heroBtnHours}</a>
+        <a href="${CONFIG.mainSiteLink}" target="_blank" rel="noopener noreferrer" class="btn btn-ink" aria-label="Learn more about Furry Freight (opens in new tab)">Learn More About Furry Freight →</a>
+      </div>
     </div>
-    <h1 class="hero-h1" id="hero-heading">
-      <span class="outline">Second</span><br>Hand,<br>
-      <span class="blue-word">Four</span><br>Paws.
-    </h1>
-    <p class="hero-sub">${CONFIG.heroDesc}</p>
-    <div class="hero-btns">
-      <a href="#shop" class="btn btn-white">${CONFIG.heroBtnShop}</a>
-      <a href="#hours" class="btn btn-blue">${CONFIG.heroBtnHours}</a>
-      <a href="${CONFIG.mainSiteLink}" target="_blank" rel="noopener noreferrer" class="btn btn-ink" aria-label="Learn more about Furry Freight (opens in new tab)">Learn More About Furry Freight →</a>
-    </div>
+    ${heroPhotoHTML}
   </div>
 </section>
 
@@ -454,7 +509,7 @@ document.body.innerHTML = `
   <div class="callout-float" style="width:100px;height:100px;bottom:-30px;right:40%;animation:float2 5s ease-in-out infinite 1s;" aria-hidden="true"></div>
   <div class="callout-band-inner">
     <div>
-      <h2 class="reveal">${calloutH2}</h2>
+      <h2 class="reveal">${calloutHeadlineHTML}</h2>
       <p class="reveal r1">${CONFIG.calloutBody}</p>
     </div>
     <div class="callout-photo-wrap reveal r2">
@@ -481,8 +536,8 @@ document.body.innerHTML = `
     <div class="accept-grid" role="list" aria-label="Items we accept">${donationHTML}</div>
 
     <div class="not-accepted-section" aria-labelledby="not-accepted-heading">
-      <div class="not-accepted-label" id="not-accepted-heading" aria-level="3" role="heading">What we can't take right now</div>
-      <p class="not-accepted-note">We appreciate every donation offer — these items just don't work for our space or resale model. If you're unsure about something, drop us a line before bringing it in.</p>
+      <h3 class="not-accepted-heading" id="not-accepted-heading">What we can't take right now</h3>
+      <p class="not-accepted-note">${CONFIG.notAcceptedNote}</p>
       <div class="not-accepted-grid" role="list" aria-label="Items we do not accept">${notAcceptedHTML}</div>
     </div>
   </div>
@@ -518,7 +573,7 @@ document.body.innerHTML = `
       <p class="section-desc">${CONFIG.shopDesc}</p>
       <a href="${CONFIG.poshmarkLink}" target="_blank" rel="noopener noreferrer" class="btn btn-ink" aria-label="Shop Furry Freight on Poshmark (opens in new tab)">${CONFIG.shopBtnText}</a>
     </div>
-    ${shopVisualHTML}
+    ${shopPhotosHTML}
   </div>
 </section>
 
