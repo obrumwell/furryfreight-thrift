@@ -13,12 +13,12 @@ const CONFIG = {
   storeName:   "Furry Freight Thrift",
   tagline:     "Second Hand. Four Paws.",
   city:        "Bend, Oregon",
-  address:     "725 NE Greenwood Ave Suite #1",
+  address:     "759 NE Greenwood Ave Suite #1",
   addressLine2:"Bend, OR 97701",
   email:       "info" + "@" + "furryfreight.org",
   ein:         "82-4423390",
   poBox:       "PO Box 93, Bend OR 97709",
-  mapsLink:    "https://maps.google.com/?q=725+NE+Greenwood+Ave+Suite+1+Bend+OR+97701",
+  mapsLink:    "https://maps.google.com/?q=759+NE+Greenwood+Ave+Suite+1+Bend+OR+97701",
   heroOpenLabel: "Open Now",
   heroDesc:    "We are a well-stocked thrift store in Bend where every dollar goes towards shelter pets — life-saving transports, spay and neuter programs, and second chances.",
   heroBtnShop: "Shop Online →",
@@ -40,6 +40,9 @@ const CONFIG = {
   ],
   calloutHeadline: "Your stuff saves lives.",
   calloutBody:     "Every item you donate, every purchase you make goes directly to Furry Freight transport runs and spay/neuter surgeries. Every dollar makes a real difference for animals who need it most.",
+  // To add a photo: paste your GitHub raw URL, e.g. https://raw.githubusercontent.com/USERNAME/REPOSITORY/main/your-photo.jpg
+  calloutPhoto:    "https://raw.githubusercontent.com/obrumwell/furryfreight-thrift/main/dogtile1.jpg",
+  calloutPhotoAlt: "A dog saved by Furry Freight Shelter Transport",
   donationsHeadline: "What we accept.",
   donationsDesc:     "Drop-offs welcome any time during store hours. Items should be clean and in sellable condition.",
   donationItems: [
@@ -70,7 +73,7 @@ const CONFIG = {
   shopHeadline: "Can't make it in?",
   shopDesc:     "Browse our curated Poshmark store for handpicked finds shipped anywhere in the US. Updated regularly with the best of what comes through the door.",
   shopBtnText:  "Shop Poshmark →",
-  shopPhoto:    "",
+  shopPhoto:    "https://raw.githubusercontent.com/obrumwell/furryfreight-thrift/main/dogtile3.jpg",
   shopPhotoAlt: "Inside the Furry Freight Thrift store",
   poshmarkLink: "https://poshmark.com/closet/ffthriftstore",
   instagramHandle: "@furryfreightthrift",
@@ -455,10 +458,11 @@ document.body.innerHTML = `
       <p class="reveal r1">${CONFIG.calloutBody}</p>
     </div>
     <div class="callout-photo-wrap reveal r2">
-      <div class="callout-photo-frame" role="img" aria-label="Add a photo here — your dog photos go great in this spot">
-        <div class="callout-photo-placeholder">
-          <p>Add a photo here</p>
-        </div>
+      <div class="callout-photo-frame" role="img" aria-label="${CONFIG.calloutPhoto ? CONFIG.calloutPhotoAlt : 'Add a photo here'}">
+        ${CONFIG.calloutPhoto
+          ? `<img src="${CONFIG.calloutPhoto}" alt="${CONFIG.calloutPhotoAlt}">`
+          : `<div class="callout-photo-placeholder"><p>Add a photo here</p></div>`
+        }
       </div>
     </div>
   </div>
