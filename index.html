@@ -269,14 +269,14 @@ const css = `
 
   /* ── SHOP — floating cutout ── */
   #shop{background:var(--green-lt);border-top:3px solid var(--green);border-bottom:3px solid var(--green);padding:5rem 3rem 0;position:relative;overflow:visible;}
-  .shop-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:flex-end;}
+  .shop-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1.2fr;gap:1.5rem;align-items:flex-end;}
   .shop-blob{position:absolute;border-radius:50%;pointer-events:none;}
   .shop-blob-1{width:110px;height:110px;background:var(--white);border:3px solid var(--stone-dk);top:40px;right:10%;animation:float1 6s ease-in-out infinite;}
   .shop-blob-2{width:70px;height:70px;background:var(--green);border:3px solid var(--green-dk);opacity:.22;top:120px;right:22%;animation:float2 5s ease-in-out infinite .5s;}
   .shop-blob-3{width:55px;height:55px;background:var(--white);border:3px solid var(--stone-dk);bottom:60px;right:14%;animation:float1 7s ease-in-out infinite 1s;}
   .shop-text-col{padding-bottom:5rem;}
-  .shop-cutout-col{display:flex;justify-content:center;align-items:flex-end;position:relative;z-index:1;overflow:visible;}
-  .shop-cutout{width:100%;max-width:380px;display:block;object-fit:contain;object-position:bottom;filter:drop-shadow(0 12px 32px rgba(78,125,98,.3));animation:float1 6s ease-in-out infinite;}
+  .shop-cutout-col{display:flex;justify-content:flex-start;align-items:flex-end;position:relative;z-index:1;overflow:visible;margin-left:-4rem;}
+  .shop-cutout{width:100%;max-width:520px;display:block;object-fit:contain;object-position:bottom;filter:drop-shadow(0 12px 32px rgba(78,125,98,.3));animation:float1 6s ease-in-out infinite;}
   .shop-cutout-placeholder{width:280px;height:320px;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding-bottom:1rem;gap:.5rem;}
   .shop-cutout-placeholder p{font-family:'Fredoka One',cursive;font-size:1rem;color:var(--green);text-align:center;line-height:1.4;}
 
@@ -321,8 +321,9 @@ const css = `
     .blob-3,.blob-4,.blob-5{display:none;}
     .spin-star{display:none;}
     .callout-photo-frame{max-width:260px;}
-    .shop-cutout{max-width:260px;}
+    .shop-cutout{max-width:300px;}
     .shop-text-col{padding-bottom:3rem;}
+    .shop-cutout-col{margin-left:0;}
   }
   @media(max-width:560px){
     .accept-grid,.not-accepted-grid{grid-template-columns:1fr;}
