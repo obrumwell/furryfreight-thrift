@@ -21,10 +21,8 @@ const CONFIG = {
   mapsLink:    "https://maps.google.com/?q=759+NE+Greenwood+Ave+Suite+1+Bend+OR+97701",
   heroOpenLabel: "Open Now",
   heroDesc:    "We are a well-stocked thrift store in Bend where every dollar goes towards shelter pets! Life-saving transports, spay and neuter programs, second chances, and happy endings.",
-  // HERO PHOTO — paste a raw GitHub URL to show a photo, or leave empty "" for no photo
   heroPhoto:   "https://raw.githubusercontent.com/obrumwell/furryfreight-thrift/main/dogtile1.jpg",
   heroPhotoAlt: "Inside the Furry Freight Thrift store",
-  heroBtnShop: "Shop Online →",
   heroBtnHours:"Hours & Info",
   marqueeItems: [
     "Open 5 Days","Bend, Oregon","Every Dollar Saves At-risk Shelter Pets",
@@ -49,20 +47,19 @@ const CONFIG = {
   donationsDesc:     "Drop-offs welcome during store hours. Items should be clean and in sellable condition.",
   donationItems: [
     { title: "Clothing",      desc: "All seasons, all sizes. Clean and wearable. Gently used is great.",               accepted: true  },
-    { title: "Sports + Outdoor Gear",  desc: "Small sport equiptment, packs, boots, small camp accessories.",                                   accepted: true  },
+    { title: "Sports + Outdoor Gear",  desc: "Small sport equiptment, packs, boots, small camp accessories.",           accepted: true  },
     { title: "Housewares",    desc: "Kitchen items, décor, small appliances, glassware, linens.",                       accepted: true  },
     { title: "Books & Media", desc: "Books, vinyl, DVDs, games, and puzzles.",                                          accepted: true  },
-    { title: "Kids",   desc: "Toys, games, and accessories. Clean and in working condition.",                   accepted: true  },
+    { title: "Kids",   desc: "Toys, games, and accessories. Clean and in working condition.",                           accepted: true  },
   ],
   notAcceptedItems: [
     { title: "Large Furniture & Sofas",   desc: "We can't take sofas, sectionals, or large upholstered pieces at this time." },
     { title: "Mattresses & Box Springs",  desc: "No mattresses of any size, box springs, or bed frames." },
-    { title: "Large Fitness Equipment + Helmets",   desc: "Treadmills, weight benches, ellipticals, and similar large items. We do not accept used helmets." },
+    { title: "Large Fitness Equipment + Helmets", desc: "Treadmills, weight benches, ellipticals, and similar large items. We do not accept used helmets." },
     { title: "Office Electronics",        desc: "Printers, copiers, fax machines, scanners, and monitors." },
     { title: "Baby Gear",                 desc: "Car seats, cribs, high chairs, strollers, and other infant safety items." },
     { title: "Broken or Stained Items",   desc: "Items that are damaged, heavily worn, stained, or not in sellable condition." },
   ],
-  // EDIT THIS TEXT — shown below "What we can't take right now"
   notAcceptedNote: "We appreciate every donation offer! But some items just don't work for our space. If you're unsure about something, send us a DM or email before bringing it in.",
   showEvents: false,
   events: [],
@@ -77,7 +74,6 @@ const CONFIG = {
   shopHeadline: "Can't make it in?",
   shopDesc:     "Browse our curated Poshmark store for handpicked finds shipped anywhere in the US. Updated regularly with the best of what comes through the door.",
   shopBtnText:  "Shop Poshmark →",
-  // CUTOUT PHOTO — paste a raw GitHub URL to a PNG with background removed. It floats freely on the section.
   shopCutout:    "https://raw.githubusercontent.com/obrumwell/furryfreight-thrift/main/Pollynobackground.png",
   shopCutoutAlt: "A dog saved by Furry Freight",
   poshmarkLink: "https://poshmark.com/closet/ffthriftstore",
@@ -113,11 +109,9 @@ const css = `
   html{scroll-behavior:smooth;}
   body{font-family:'Nunito',sans-serif;background:var(--white);color:var(--ink);overflow-x:hidden;}
 
-  /* ── SKIP NAV (ADA) ── */
   .skip-nav{position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:9999;background:var(--orange);color:#fff;font-weight:800;font-size:.9rem;padding:.5rem 1.2rem;border-radius:0 0 8px 8px;text-decoration:none;}
   .skip-nav:focus{left:1rem;top:0;width:auto;height:auto;outline:3px solid var(--blue-dk);}
 
-  /* ── NAV ── */
   nav{position:fixed;top:0;left:0;right:0;z-index:200;height:58px;background:var(--orange);display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;border-bottom:3px solid var(--orange-dk);}
   .nav-logo{font-family:'Fredoka One',cursive;font-size:1.3rem;color:#fff;text-decoration:none;letter-spacing:.02em;}
   .nav-logo:focus-visible{outline:3px solid #fff;outline-offset:3px;border-radius:4px;}
@@ -125,7 +119,6 @@ const css = `
   .nav-links a{font-size:.75rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.85);text-decoration:none;padding:.35rem .75rem;border-radius:20px;transition:background .2s,color .2s;}
   .nav-links a:hover,.nav-links a:focus-visible{background:rgba(255,255,255,.2);color:#fff;outline:none;}
 
-  /* ── HERO ── */
   #hero{min-height:100vh;background:var(--orange);border-bottom:3px solid var(--orange-dk);padding:80px 3rem 3rem;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:center;}
   .hero-layout{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;position:relative;z-index:2;}
   .hero-layout.no-photo{grid-template-columns:1fr;max-width:640px;}
@@ -153,7 +146,6 @@ const css = `
   .hero-sub{font-size:1rem;font-weight:700;color:rgba(255,255,255,.9);max-width:460px;line-height:1.75;position:relative;z-index:1;margin-bottom:1.75rem;}
   .hero-btns{display:flex;gap:1rem;flex-wrap:wrap;position:relative;z-index:1;}
 
-  /* ── BUTTONS ── */
   .btn{font-family:'Nunito',sans-serif;font-weight:800;font-size:.88rem;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;padding:.75rem 1.8rem;border-radius:30px;transition:transform .2s,box-shadow .2s;display:inline-block;cursor:pointer;}
   .btn:hover{transform:translateY(-3px);}
   .btn:focus-visible{outline:3px solid var(--blue-dk);outline-offset:3px;}
@@ -163,10 +155,7 @@ const css = `
   .btn-blue:hover{box-shadow:4px 4px 0 var(--blue-dk);}
   .btn-ink{background:var(--ink);color:#fff;border:2.5px solid var(--blue-dk);}
   .btn-ink:hover{box-shadow:4px 4px 0 var(--blue-dk);}
-  .btn-green{background:var(--green);color:#fff;border:2.5px solid var(--green-dk);display:inline-block;}
-  .btn-green:hover{box-shadow:4px 4px 0 var(--green-dk);}
 
-  /* ── MARQUEE ── */
   .marquee-wrap{overflow:hidden;background:var(--blue);border-top:3px solid var(--blue-dk);border-bottom:3px solid var(--blue-dk);padding:.65rem 0;}
   .marquee-wrap[aria-hidden="true"]{pointer-events:none;}
   .marquee-track{display:flex;width:max-content;animation:marquee 20s linear infinite;}
@@ -174,7 +163,6 @@ const css = `
   .marquee-sep{color:var(--orange);margin:0 .25rem;}
   @keyframes marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
 
-  /* ── HOURS ── */
   #hours{background:var(--white);padding:6rem 3rem;position:relative;overflow:hidden;}
   .hours-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1.3fr;gap:5rem;align-items:start;}
   .section-eyebrow{font-size:.7rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;display:inline-flex;align-items:center;gap:.5rem;margin-bottom:1rem;}
@@ -193,7 +181,6 @@ const css = `
   .location-card a:hover,.location-card a:focus-visible{text-decoration:underline;}
   .address-link{color:var(--ink) !important;display:inline-block;}
 
-  /* ── HOURS ROWS ── */
   .hours-rows{display:flex;flex-direction:column;}
   .hour-row{display:flex;justify-content:space-between;align-items:center;padding:1.1rem 0;border-bottom:2px solid var(--stone-md);}
   .hour-row:first-child{border-top:2px solid var(--stone-md);}
@@ -204,7 +191,6 @@ const css = `
   .shape-blob{position:absolute;border-radius:50%;pointer-events:none;z-index:0;}
   #hours .reveal,#hours .hours-rows,#donations .donations-inner,#about .about-inner{position:relative;z-index:1;}
 
-  /* ── CALLOUT BAND ── */
   .callout-band{background:var(--blue);border-top:3px solid var(--blue-dk);border-bottom:3px solid var(--blue-dk);padding:5rem 3rem;position:relative;overflow:hidden;}
   .callout-band-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;}
   .callout-band h2{font-family:'Fredoka One',cursive;font-size:clamp(3rem,6vw,6rem);line-height:.92;color:#fff;margin-bottom:2rem;}
@@ -213,23 +199,12 @@ const css = `
   .callout-band p{font-size:1.2rem;color:rgba(255,255,255,.8);line-height:1.9;font-weight:600;}
   .callout-float{position:absolute;border-radius:50%;background:rgba(255,255,255,.05);}
   .callout-photo-wrap{display:flex;justify-content:center;align-items:center;}
-  .callout-photo-frame{
-    width:100%;max-width:340px;
-    aspect-ratio:3/4;
-    border-radius:22px;
-    overflow:hidden;
-    border:3px solid rgba(255,255,255,.25);
-    box-shadow:6px 6px 0 rgba(0,0,0,.2);
-    background:rgba(255,255,255,.1);
-    display:flex;align-items:center;justify-content:center;
-    position:relative;z-index:1;
-  }
+  .callout-photo-frame{width:100%;max-width:340px;aspect-ratio:3/4;border-radius:22px;overflow:hidden;border:3px solid rgba(255,255,255,.25);box-shadow:6px 6px 0 rgba(0,0,0,.2);background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;position:relative;z-index:1;}
   .callout-photo-frame img{width:100%;height:100%;object-fit:cover;display:block;}
   .callout-photo-placeholder{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.75rem;padding:2rem;}
   .callout-photo-placeholder p{font-family:'Fredoka One',cursive;font-size:1rem;color:rgba(255,255,255,.5);text-align:center;line-height:1.4;}
   address{font-style:normal;}
 
-  /* ── DONATIONS ── */
   #donations{background:var(--stone);border-top:3px solid var(--stone-dk);padding:6rem 3rem;position:relative;overflow:hidden;}
   .donations-inner{max-width:1100px;margin:0 auto;}
   .donations-top{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:3.5rem;flex-wrap:wrap;gap:2rem;}
@@ -239,15 +214,11 @@ const css = `
   .accept-card:hover{transform:translateY(-4px) translateX(-2px);box-shadow:6px 6px 0 var(--stone-dk);}
   .card-status{font-size:.62rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;margin-bottom:.75rem;display:flex;align-items:center;gap:.4rem;}
   .card-status.yes{color:var(--green);}
-  .card-status.no-txt{color:var(--muted);}
   .accept-card h4{font-family:'Fredoka One',cursive;font-size:1.5rem;color:var(--ink);margin-bottom:.4rem;}
   .accept-card p{font-size:.85rem;color:var(--muted);line-height:1.7;font-weight:600;}
   .corner{position:absolute;bottom:-16px;right:-16px;width:60px;height:60px;border-radius:50%;opacity:.18;}
-  .corner-o{background:var(--orange);}
-  .corner-b{background:var(--blue);}
-  .corner-g{background:var(--green);}
+  .corner-o{background:var(--orange);}.corner-b{background:var(--blue);}.corner-g{background:var(--green);}
 
-  /* ── NOT ACCEPTED SECTION ── */
   .not-accepted-section{border-top:2px dashed var(--stone-dk);padding-top:2.5rem;}
   .not-accepted-heading{font-family:'Fredoka One',cursive;font-size:clamp(2rem,4vw,3rem);color:var(--muted);margin-bottom:1rem;letter-spacing:-.01em;}
   .not-accepted-note{font-size:.9rem;font-weight:700;color:var(--muted);margin-bottom:2rem;max-width:520px;line-height:1.7;}
@@ -257,7 +228,6 @@ const css = `
   .no-card p{font-size:.8rem;color:var(--muted);opacity:.8;line-height:1.65;font-weight:600;}
   .no-card .no-badge{font-size:.58rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);opacity:.65;margin-bottom:.6rem;display:block;}
 
-  /* ── ABOUT ── */
   #about{background:var(--white);border-top:3px solid var(--stone-dk);padding:6rem 3rem;position:relative;overflow:hidden;}
   .about-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center;}
   .about-text p{font-size:.97rem;color:var(--muted);line-height:1.9;font-weight:600;margin-bottom:1rem;}
@@ -270,7 +240,6 @@ const css = `
   .stat-lbl{font-size:.82rem;font-weight:800;color:var(--muted);line-height:1.4;}
   .c-orange{color:var(--orange);}.c-blue{color:var(--blue);}.c-green{color:var(--green);}
 
-  /* ── SHOP — floating cutout ── */
   #shop{background:var(--green-lt);border-top:3px solid var(--green);border-bottom:3px solid var(--green);padding:5rem 3rem 0;position:relative;overflow:visible;}
   .shop-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1.2fr;gap:1.5rem;align-items:flex-end;}
   .shop-blob{position:absolute;border-radius:50%;pointer-events:none;}
@@ -283,7 +252,6 @@ const css = `
   .shop-cutout-placeholder{width:280px;height:320px;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding-bottom:1rem;gap:.5rem;}
   .shop-cutout-placeholder p{font-family:'Fredoka One',cursive;font-size:1rem;color:var(--green);text-align:center;line-height:1.4;}
 
-  /* ── FOOTER ── */
   footer{background:var(--ink);padding:4rem 3rem 2.5rem;}
   .foot-top{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:4rem;padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,.1);margin-bottom:2rem;}
   .foot-brand-name{font-family:'Fredoka One',cursive;font-size:1.6rem;color:#fff;display:block;margin-bottom:.75rem;}
@@ -302,12 +270,10 @@ const css = `
   .foot-social a{width:34px;height:34px;border:1px solid rgba(255,255,255,.18);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.65rem;font-weight:800;color:rgba(255,255,255,.45);text-decoration:none;transition:background .2s,color .2s,border-color .2s;}
   .foot-social a:hover,.foot-social a:focus-visible{background:var(--orange);color:#fff;border-color:var(--orange);outline:none;}
 
-  /* ── REVEAL ANIMATION ── */
   .reveal{opacity:0;transform:translateY(28px);transition:opacity .65s ease,transform .65s ease;}
   .reveal.on{opacity:1;transform:none;}
   .r1{transition-delay:.1s;}.r2{transition-delay:.2s;}.r3{transition-delay:.3s;}
 
-  /* ── RESPONSIVE ── */
   @media(max-width:860px){
     nav{padding:0 1.25rem;}
     #hero{padding:90px 1.5rem 4rem;}
@@ -334,7 +300,6 @@ const css = `
     .shop-cutout{max-width:200px;}
   }
 
-  /* ── FOCUS GLOBAL FALLBACK ── */
   :focus-visible{outline:3px solid var(--blue);outline-offset:2px;}
   a:focus-visible,button:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:4px;}
 `;
@@ -440,8 +405,8 @@ document.body.innerHTML = `
       </h1>
       <p class="hero-sub">${CONFIG.heroDesc}</p>
       <div class="hero-btns">
-        <a href="#shop" class="btn btn-white">${CONFIG.heroBtnShop}</a>
-        <a href="#hours" class="btn btn-blue">${CONFIG.heroBtnHours}</a>
+        <a href="#hours" class="btn btn-white" aria-label="Hours and store info">${CONFIG.heroBtnHours}</a>
+        <a href="${CONFIG.volunteerFormLink}" target="_blank" rel="noopener noreferrer" class="btn btn-blue" aria-label="Sign up to volunteer (opens in new tab)">Volunteer With Us →</a>
         <a href="${CONFIG.mainSiteLink}" target="_blank" rel="noopener noreferrer" class="btn btn-ink" aria-label="Learn more about Furry Freight (opens in new tab)">Learn More About Furry Freight →</a>
       </div>
     </div>
@@ -463,7 +428,7 @@ document.body.innerHTML = `
       <p class="section-desc">${CONFIG.hoursDesc}</p>
       <address class="location-card">
         <p>
-          <a href="${CONFIG.mapsLink}" target="_blank" rel="noopener noreferrer" aria-label="Get directions to ${CONFIG.address}, ${CONFIG.addressLine2} on Google Maps (opens in new tab)" class="address-link"><strong>${CONFIG.address}</strong><br>${CONFIG.addressLine2}</a><br><br>
+          <a href="${CONFIG.mapsLink}" target="_blank" rel="noopener noreferrer" aria-label="Get directions on Google Maps (opens in new tab)" class="address-link"><strong>${CONFIG.address}</strong><br>${CONFIG.addressLine2}</a><br><br>
           <a href="mailto:${CONFIG.email}">${CONFIG.email}</a><br>
           <a href="${CONFIG.instagramLink}" target="_blank" rel="noopener noreferrer" aria-label="Furry Freight Thrift on Instagram (opens in new tab)">${CONFIG.instagramHandle}</a>
         </p>
@@ -505,7 +470,6 @@ document.body.innerHTML = `
       <p>${CONFIG.donationsDesc}</p>
     </div>
     <div class="accept-grid" role="list" aria-label="Items we accept">${donationHTML}</div>
-
     <div class="not-accepted-section" aria-labelledby="not-accepted-heading">
       <h3 class="not-accepted-heading" id="not-accepted-heading">What we can't take right now</h3>
       <p class="not-accepted-note">${CONFIG.notAcceptedNote}</p>
@@ -523,7 +487,6 @@ document.body.innerHTML = `
       <p>${CONFIG.aboutBody1}</p>
       <p>${CONFIG.aboutBody2}</p>
       <a href="${CONFIG.mainSiteLink}" target="_blank" rel="noopener noreferrer" aria-label="Visit the main Furry Freight website (opens in new tab)">${CONFIG.aboutLinkText}</a>
-      ${CONFIG.volunteerFormLink ? `<a href="${CONFIG.volunteerFormLink}" target="_blank" rel="noopener noreferrer" class="btn btn-green" style="margin-top:1.5rem;" aria-label="Sign up to volunteer at Furry Freight Thrift (opens in new tab)">Volunteer With Us →</a>` : ''}
     </div>
     <div class="stats-grid reveal r1" role="list" aria-label="Impact statistics">
       <div class="stat-card" role="listitem"><span class="stat-num ${statCols[0]}" aria-hidden="true">${CONFIG.stat1Number}</span><span class="stat-lbl"><span class="sr-only">${CONFIG.stat1Number} </span>${CONFIG.stat1Label}</span></div>
