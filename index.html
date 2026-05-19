@@ -142,7 +142,7 @@ const css = `
   .tag-dot{width:8px;height:8px;border-radius:50%;background:#fff;animation:pulse 1.5s ease-in-out infinite;flex-shrink:0;}
   @keyframes pulse{0%,100%{transform:scale(1);}50%{transform:scale(1.4);}}
   .hero-h1{font-family:'Fredoka One',cursive;font-size:clamp(2.8rem,6vw,6rem);line-height:.94;color:#fff;letter-spacing:-.01em;position:relative;z-index:1;margin-bottom:1.5rem;}
-  .hero-h1 .outline{color:var(--blue-dk);}
+  .hero-h1 .outline{color:#fff;}
   .hero-h1 .blue-word{color:var(--blue-lt);display:inline-block;animation:bounce-word 2s ease-in-out infinite;}
   @keyframes bounce-word{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
   .hero-sub{font-size:1rem;font-weight:700;color:rgba(255,255,255,.9);max-width:460px;line-height:1.75;position:relative;z-index:1;margin-bottom:1.75rem;}
@@ -223,7 +223,8 @@ const css = `
   .donations-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:2rem;flex-wrap:wrap;gap:1rem;}
   .donations-top p{max-width:560px;font-size:.95rem;color:var(--muted);line-height:1.8;font-weight:600;margin-top:.5rem;}
 
-  .accept-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-bottom:1.25rem;}
+  /* ── ACCEPT GRID 5 cards + caveat in same grid ── */
+  .accept-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-bottom:3rem;}
   .accept-card{background:var(--white);border:2.5px solid var(--stone-dk);border-radius:18px;padding:1.8rem;box-shadow:4px 4px 0 var(--stone-dk);transition:transform .2s,box-shadow .2s;position:relative;overflow:hidden;}
   .accept-card:hover{transform:translateY(-4px) translateX(-2px);box-shadow:6px 6px 0 var(--stone-dk);}
   .card-status{font-size:.62rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;margin-bottom:.75rem;display:flex;align-items:center;gap:.4rem;}
@@ -232,11 +233,7 @@ const css = `
   .accept-card p{font-size:.85rem;color:var(--muted);line-height:1.7;font-weight:600;}
   .corner{position:absolute;bottom:-16px;right:-16px;width:60px;height:60px;border-radius:50%;opacity:.18;}
   .corner-o{background:var(--orange);}.corner-b{background:var(--blue);}.corner-g{background:var(--green);}
-
-  /* ── CAVEAT ROW ── */
-  .donations-caveat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-bottom:2rem;}
-  .donations-caveat-spacer{grid-column:span 2;}
-  .donations-caveat{display:flex;align-items:flex-start;gap:.5rem;padding:.75rem 1rem;background:var(--stone-md);border-radius:12px;border:1.5px dashed var(--stone-dk);}
+  .donations-caveat{display:flex;align-items:flex-start;gap:.5rem;padding:.75rem 1rem;background:var(--stone-md);border-radius:12px;border:1.5px dashed var(--stone-dk);height:100%;}
   .donations-caveat-star{font-size:1rem;flex-shrink:0;margin-top:.1rem;}
   .donations-caveat p{font-size:.78rem;font-weight:700;color:var(--muted);line-height:1.6;}
 
@@ -304,8 +301,7 @@ const css = `
     footer{padding:3rem 1.5rem 2rem;}
     .hero-layout{grid-template-columns:1fr;}
     .hours-inner,.callout-band-inner,.about-inner,.shop-inner{grid-template-columns:1fr;gap:3rem;}
-    .accept-grid,.not-accepted-grid,.donations-caveat-row{grid-template-columns:1fr 1fr;}
-    .donations-caveat-spacer{grid-column:span 1;display:none;}
+    .accept-grid,.not-accepted-grid{grid-template-columns:1fr 1fr;}
     .foot-top{grid-template-columns:1fr;gap:2.5rem;}
     .donations-top{flex-direction:column;}
     .hero-h1{font-size:clamp(2.4rem,10vw,4rem);}
@@ -317,8 +313,7 @@ const css = `
     .shop-cutout-col{margin-left:0;}
   }
   @media(max-width:560px){
-    .accept-grid,.not-accepted-grid,.donations-caveat-row{grid-template-columns:1fr;}
-    .donations-caveat-spacer{display:none;}
+    .accept-grid,.not-accepted-grid{grid-template-columns:1fr;}
     .nav-links{display:none;}
     .shop-cutout{max-width:200px;}
   }
@@ -499,10 +494,9 @@ document.body.innerHTML = `
       </div>
       <p>${CONFIG.donationsDesc}</p>
     </div>
-    <div class="accept-grid" role="list" aria-label="Items we accept">${donationHTML}</div>
-    <div class="donations-caveat-row" aria-label="Donation caveat">
-      <div class="donations-caveat-spacer" aria-hidden="true"></div>
-      <div class="donations-caveat">
+    <div class="accept-grid" role="list" aria-label="Items we accept">
+      ${donationHTML}
+      <div class="donations-caveat" aria-label="Donation note">
         <span class="donations-caveat-star" aria-hidden="true">✦</span>
         <p>${CONFIG.donationsCaveat}</p>
       </div>
