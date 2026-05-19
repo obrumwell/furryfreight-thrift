@@ -29,54 +29,55 @@ const CONFIG = {
     "Drop Off Donations During Open Hours","Shop Online","Volunteer With Us","501(c)(3) Nonprofit",
   ],
   hoursHeadline: "Here We Are!",
-  hoursDesc:     "Find us on Greenwood Ave • a few doors down from Planet Fitness. Stop in to shop or drop off donations any day we're open.",
+  hoursDesc:     "Find us on Greenwood Ave \u2022 a few doors down from Planet Fitness. Stop in to shop or drop off donations any day we're open.",
   hours: [
     { day: "Monday",    time: "CLOSED",     best: false },
     { day: "Tuesday",   time: "CLOSED",     best: false },
-    { day: "Wednesday", time: "11am – 6pm", best: false },
-    { day: "Thursday",  time: "11am – 6pm", best: false },
-    { day: "Friday",    time: "11am – 6pm", best: false },
-    { day: "Saturday",  time: "10am – 7pm",  best: false  },
-    { day: "Sunday",    time: "10am – 5pm", best: false },
+    { day: "Wednesday", time: "11am \u2013 6pm", best: false },
+    { day: "Thursday",  time: "11am \u2013 6pm", best: false },
+    { day: "Friday",    time: "11am \u2013 6pm", best: false },
+    { day: "Saturday",  time: "10am \u2013 7pm", best: false },
+    { day: "Sunday",    time: "10am \u2013 5pm", best: false },
   ],
   calloutHeadline: "Your stuff saves lives.",
   calloutBody:     "Every item you donate, every purchase you make goes directly to Furry Freight transport trips and no/low cost spay + neuter surgeries. Every dollar makes a real difference for animals who need it most.",
   calloutPhoto:    "https://raw.githubusercontent.com/obrumwell/furryfreight-thrift/main/rich.jpg",
   calloutPhotoAlt: "A dog saved by Furry Freight Shelter Transport",
   donationsHeadline: "What we accept.",
-  donationsDesc:     "Drop-offs welcome during store hours. We ask that donated items be clean and in sellable condition. Broken or soiled items take meaningful funds away from our mission due to the costs of disposal. We may close the donation door early or limit donations per person depending on storage capacity or staffing.",
+  donationsDesc:     "Drop-offs welcome during store hours. We ask that donated items be clean and in sellable condition. Broken or soiled items take meaningful funds away from our mission due to the costs of disposal.",
+  donationsCaveat:   "We may close the donation door early or limit donations per person depending on storage capacity or staffing.",
   donationItems: [
-    { title: "Clothing",      desc: "All seasons, all sizes. Clean and wearable. Gently used is great.",               accepted: true  },
-    { title: "Sports + Outdoor Gear",  desc: "Small sport equiptment, packs, boots, small camp accessories.",           accepted: true  },
-    { title: "Housewares",    desc: "Kitchen items, décor, small appliances, glassware, linens.",                       accepted: true  },
-    { title: "Books & Media", desc: "Books, vinyl, DVDs, games, and puzzles.",                                          accepted: true  },
-    { title: "Kids + Pets",   desc: "Toys, games, leashes, collars, pet apparel and accessories. Clean and in working condition.",  accepted: true  },
+    { title: "Clothing",           desc: "All seasons, all sizes. Clean and wearable. Gently used is great.",                                             accepted: true },
+    { title: "Sports + Outdoor Gear", desc: "Small sport equipment, packs, boots, small camp accessories.",                                              accepted: true },
+    { title: "Housewares",         desc: "Kitchen items, d\u00e9cor, small appliances, glassware, linens.",                                              accepted: true },
+    { title: "Books & Media",      desc: "Books, vinyl, DVDs, games, and puzzles.",                                                                      accepted: true },
+    { title: "Kids + Pets",        desc: "Toys, games, leashes, collars, pet apparel and accessories. Clean and in working condition.",                  accepted: true },
   ],
   notAcceptedItems: [
-    { title: "Large Furniture & Sofas",   desc: "We can't take sofas, sectionals, or large upholstered pieces at this time." },
-    { title: "Mattresses & Box Springs",  desc: "No mattresses of any size, box springs, or bed frames." },
-    { title: "Large Fitness Equipment + Helmets", desc: "Treadmills, weight benches, ellipticals, and similar large items. We do not accept used helmets." },
-    { title: "Office Electronics",        desc: "Printers, copiers, fax machines, scanners, and monitors." },
-    { title: "Baby Gear",                 desc: "Car seats, cribs, high chairs, strollers, and other infant safety items." },
-    { title: "Broken or Stained Items",   desc: "Items that are damaged, heavily worn, stained, or not in sellable condition." },
+    { title: "Large Furniture & Sofas",          desc: "We can't take sofas, sectionals, or large upholstered pieces at this time." },
+    { title: "Mattresses & Box Springs",         desc: "No mattresses of any size, box springs, or bed frames." },
+    { title: "Large Fitness Equipment + Helmets",desc: "Treadmills, weight benches, ellipticals, and similar large items. We do not accept used helmets." },
+    { title: "Office Electronics",               desc: "Printers, copiers, fax machines, scanners, and monitors." },
+    { title: "Baby Gear",                        desc: "Car seats, cribs, high chairs, strollers, and other infant safety items." },
+    { title: "Broken or Stained Items",          desc: "Items that are damaged, heavily worn, stained, or not in sellable condition." },
   ],
   notAcceptedNote: "We appreciate every donation offer! But some items just don't work for our space. If you're unsure about something, send us a DM or email before bringing it in.",
   showEvents: false,
   events: [],
   aboutHeadline: "Saving shelter pets. One sale at a time.",
-  aboutBody1:    "Furry Freight Thrift is the mission sustaining retail operation of Furry Freight Shelter Transport • a volunteer-run 501(c)(3) based in Bend that moves at-risk shelter animals from under-resourced, overpopulated shelters to Pacific Northwest adoption partners.",
+  aboutBody1:    "Furry Freight Thrift is the mission sustaining retail operation of Furry Freight Shelter Transport \u2022 a volunteer-run 501(c)(3) based in Bend that moves at-risk shelter animals from under-resourced, overpopulated shelters to Pacific Northwest adoption partners.",
   aboutBody2:    "When you shop here or drop off a donation, you are directly funding life-saving transport trips and no/low cost spay + neuter surgeries for animals in overpopulated shelters, or low resource areas.",
-  aboutLinkText: "Visit furryfreight.org →",
-  stat1Number: "1,709+",    stat1Label: "Animals Saved",
-  stat2Number: "Volunteer Run",      stat2Label: "",
-  stat3Number: "$80",       stat3Label: "Sponsors a Spay/Neuter Surgery",
-  stat4Number: "Since '18", stat4Label: "On the Road",
+  aboutLinkText: "Visit furryfreight.org \u2192",
+  stat1Number: "1,709+",       stat1Label: "Animals Saved",
+  stat2Number: "Volunteer Run", stat2Label: "",
+  stat3Number: "$80",           stat3Label: "Sponsors a Spay/Neuter Surgery",
+  stat4Number: "Since \u201918", stat4Label: "On the Road",
   shopHeadline: "Can't make it in?",
   shopDesc:     "Browse our curated Poshmark store for handpicked finds shipped anywhere in the US. Updated regularly with <em>some</em> of the best that comes through the door.",
-  shopBtnText:  "Shop Poshmark →",
+  shopBtnText:  "Shop Poshmark \u2192",
   shopCutout:    "https://raw.githubusercontent.com/obrumwell/furryfreight-thrift/main/Pollynobackground.png",
   shopCutoutAlt: "A dog saved by Furry Freight",
-  poshmarkLink: "https://poshmark.com/closet/ffthriftstore",
+  poshmarkLink:    "https://poshmark.com/closet/ffthriftstore",
   instagramHandle: "@furryfreightthrift",
   instagramLink:   "https://www.instagram.com/furryfreightthrift/",
   facebookLink:    "https://facebook.com",
@@ -84,7 +85,7 @@ const CONFIG = {
   mainSiteLink:    "https://furryfreight.org",
   volunteerFormLink: "https://forms.gle/RgyJgNprQsWPz2ndA",
   footerTagline:   "A thrift store with a mission.",
-  footerCopyright: "© 2018–2026 Furry Freight Shelter Transport. Saving shelter pets, one road trip at a time.",
+  footerCopyright: "\u00a9 2018\u20132026 Furry Freight Shelter Transport. Saving shelter pets, one road trip at a time.",
 };
 
 const css = `
@@ -112,6 +113,7 @@ const css = `
   .skip-nav{position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:9999;background:var(--orange);color:#fff;font-weight:800;font-size:.9rem;padding:.5rem 1.2rem;border-radius:0 0 8px 8px;text-decoration:none;}
   .skip-nav:focus{left:1rem;top:0;width:auto;height:auto;outline:3px solid var(--blue-dk);}
 
+  /* ── NAV — store name left, links right ── */
   nav{position:fixed;top:0;left:0;right:0;z-index:200;height:58px;background:var(--orange);display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;border-bottom:3px solid var(--orange-dk);}
   .nav-logo{font-family:'Fredoka One',cursive;font-size:1.3rem;color:#fff;text-decoration:none;letter-spacing:.02em;}
   .nav-logo:focus-visible{outline:3px solid #fff;outline-offset:3px;border-radius:4px;}
@@ -140,7 +142,7 @@ const css = `
   .tag-dot{width:8px;height:8px;border-radius:50%;background:#fff;animation:pulse 1.5s ease-in-out infinite;flex-shrink:0;}
   @keyframes pulse{0%,100%{transform:scale(1);}50%{transform:scale(1.4);}}
   .hero-h1{font-family:'Fredoka One',cursive;font-size:clamp(2.8rem,6vw,6rem);line-height:.94;color:#fff;letter-spacing:-.01em;position:relative;z-index:1;margin-bottom:1.5rem;}
-  .hero-h1 .outline{-webkit-text-stroke:3px var(--blue-dk);color:transparent;}
+  .hero-h1 .outline{color:var(--blue-dk);}
   .hero-h1 .blue-word{color:var(--blue-lt);display:inline-block;animation:bounce-word 2s ease-in-out infinite;}
   @keyframes bounce-word{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
   .hero-sub{font-size:1rem;font-weight:700;color:rgba(255,255,255,.9);max-width:460px;line-height:1.75;position:relative;z-index:1;margin-bottom:1.75rem;}
@@ -175,11 +177,20 @@ const css = `
   .section-h2 em.blue {color:var(--blue);}
   .section-h2 em.green{color:var(--green);}
   .section-desc{font-size:.97rem;color:var(--muted);line-height:1.85;font-weight:600;margin-bottom:2rem;max-width:340px;}
+
+  /* ── LOCATION CARD with social icons ── */
   .location-card{background:var(--blue-lt);border:2.5px solid var(--blue);border-radius:18px;padding:1.5rem 1.75rem;box-shadow:5px 5px 0 var(--blue);}
   .location-card p{font-size:.92rem;font-weight:700;line-height:2;color:var(--ink);}
   .location-card a{color:var(--blue);text-decoration:none;text-underline-offset:3px;}
   .location-card a:hover,.location-card a:focus-visible{text-decoration:underline;}
   .address-link{color:var(--ink) !important;display:inline-block;}
+  .location-socials{display:flex;gap:1.25rem;margin-top:1.25rem;padding-top:1.1rem;border-top:2px solid var(--blue);justify-content:flex-start;}
+  .loc-social-item{display:flex;flex-direction:column;align-items:center;gap:.3rem;text-decoration:none;color:var(--blue-dk);}
+  .loc-social-item:hover{color:var(--orange);}
+  .loc-social-icon{width:38px;height:38px;border-radius:10px;background:var(--blue);display:flex;align-items:center;justify-content:center;transition:background .2s;}
+  .loc-social-item:hover .loc-social-icon{background:var(--orange);}
+  .loc-social-icon svg{width:20px;height:20px;fill:#fff;}
+  .loc-social-handle{font-size:.65rem;font-weight:800;letter-spacing:.06em;color:var(--muted);}
 
   .hours-rows{display:flex;flex-direction:column;}
   .hour-row{display:flex;justify-content:space-between;align-items:center;padding:1.1rem 0;border-bottom:2px solid var(--stone-md);}
@@ -207,9 +218,12 @@ const css = `
 
   #donations{background:var(--stone);border-top:3px solid var(--stone-dk);padding:6rem 3rem;position:relative;overflow:hidden;}
   .donations-inner{max-width:1100px;margin:0 auto;}
-  .donations-top{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:3.5rem;flex-wrap:wrap;gap:2rem;}
-  .donations-top p{max-width:340px;font-size:.95rem;color:var(--muted);line-height:1.8;font-weight:600;}
-  .accept-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-bottom:3rem;}
+
+  /* ── DONATIONS TOP: desc closer to title, full width ── */
+  .donations-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:2rem;flex-wrap:wrap;gap:1rem;}
+  .donations-top p{max-width:560px;font-size:.95rem;color:var(--muted);line-height:1.8;font-weight:600;margin-top:.5rem;}
+
+  .accept-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-bottom:1.25rem;}
   .accept-card{background:var(--white);border:2.5px solid var(--stone-dk);border-radius:18px;padding:1.8rem;box-shadow:4px 4px 0 var(--stone-dk);transition:transform .2s,box-shadow .2s;position:relative;overflow:hidden;}
   .accept-card:hover{transform:translateY(-4px) translateX(-2px);box-shadow:6px 6px 0 var(--stone-dk);}
   .card-status{font-size:.62rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;margin-bottom:.75rem;display:flex;align-items:center;gap:.4rem;}
@@ -218,6 +232,13 @@ const css = `
   .accept-card p{font-size:.85rem;color:var(--muted);line-height:1.7;font-weight:600;}
   .corner{position:absolute;bottom:-16px;right:-16px;width:60px;height:60px;border-radius:50%;opacity:.18;}
   .corner-o{background:var(--orange);}.corner-b{background:var(--blue);}.corner-g{background:var(--green);}
+
+  /* ── CAVEAT ROW ── */
+  .donations-caveat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-bottom:2rem;}
+  .donations-caveat-spacer{grid-column:span 2;}
+  .donations-caveat{display:flex;align-items:flex-start;gap:.5rem;padding:.75rem 1rem;background:var(--stone-md);border-radius:12px;border:1.5px dashed var(--stone-dk);}
+  .donations-caveat-star{font-size:1rem;flex-shrink:0;margin-top:.1rem;}
+  .donations-caveat p{font-size:.78rem;font-weight:700;color:var(--muted);line-height:1.6;}
 
   .not-accepted-section{border-top:2px dashed var(--stone-dk);padding-top:2.5rem;}
   .not-accepted-heading{font-family:'Fredoka One',cursive;font-size:clamp(2rem,4vw,3rem);color:var(--muted);margin-bottom:1rem;letter-spacing:-.01em;}
@@ -283,7 +304,8 @@ const css = `
     footer{padding:3rem 1.5rem 2rem;}
     .hero-layout{grid-template-columns:1fr;}
     .hours-inner,.callout-band-inner,.about-inner,.shop-inner{grid-template-columns:1fr;gap:3rem;}
-    .accept-grid,.not-accepted-grid{grid-template-columns:1fr 1fr;}
+    .accept-grid,.not-accepted-grid,.donations-caveat-row{grid-template-columns:1fr 1fr;}
+    .donations-caveat-spacer{grid-column:span 1;display:none;}
     .foot-top{grid-template-columns:1fr;gap:2.5rem;}
     .donations-top{flex-direction:column;}
     .hero-h1{font-size:clamp(2.4rem,10vw,4rem);}
@@ -295,7 +317,8 @@ const css = `
     .shop-cutout-col{margin-left:0;}
   }
   @media(max-width:560px){
-    .accept-grid,.not-accepted-grid{grid-template-columns:1fr;}
+    .accept-grid,.not-accepted-grid,.donations-caveat-row{grid-template-columns:1fr;}
+    .donations-caveat-spacer{display:none;}
     .nav-links{display:none;}
     .shop-cutout{max-width:200px;}
   }
@@ -350,24 +373,19 @@ const shopWords = CONFIG.shopHeadline.split(' ');
 const shopH2 = `${shopWords.slice(0,-1).join(' ')}<br><em class="green">${shopWords.at(-1)}</em>`;
 
 const shopCutoutHTML = CONFIG.shopCutout
-  ? `<div class="shop-cutout-col reveal r1">
-       <img class="shop-cutout" src="${CONFIG.shopCutout}" alt="${CONFIG.shopCutoutAlt}">
-     </div>`
-  : `<div class="shop-cutout-col reveal r1">
-       <div class="shop-cutout-placeholder">
-         <p>Paste your cutout photo URL into CONFIG.shopCutout</p>
-       </div>
-     </div>`;
+  ? `<div class="shop-cutout-col reveal r1"><img class="shop-cutout" src="${CONFIG.shopCutout}" alt="${CONFIG.shopCutoutAlt}"></div>`
+  : `<div class="shop-cutout-col reveal r1"><div class="shop-cutout-placeholder"><p>Paste your cutout photo URL into CONFIG.shopCutout</p></div></div>`;
 
 const heroPhotoHTML = CONFIG.heroPhoto
-  ? `<div class="hero-photo-wrap reveal r2">
-       <div class="hero-photo-frame">
-         <img src="${CONFIG.heroPhoto}" alt="${CONFIG.heroPhotoAlt}">
-       </div>
-     </div>`
+  ? `<div class="hero-photo-wrap reveal r2"><div class="hero-photo-frame"><img src="${CONFIG.heroPhoto}" alt="${CONFIG.heroPhotoAlt}"></div></div>`
   : '';
 
 const statCols = ['c-orange','c-blue','c-green','c-blue'];
+
+// SVG icons for social links in location card
+const igIcon = `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>`;
+const ttIcon = `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.75a4.85 4.85 0 01-1.01-.06z"/></svg>`;
+const emailIcon = `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>`;
 
 document.body.innerHTML = `
 <a href="#main-content" class="skip-nav">Skip to main content</a>
@@ -393,7 +411,6 @@ document.body.innerHTML = `
   <svg class="spin-star" viewBox="0 0 70 70" fill="none" aria-hidden="true">
     <path d="M35 5 L38 28 L60 15 L45 33 L68 35 L45 37 L60 55 L38 42 L35 65 L32 42 L10 55 L25 37 L2 35 L25 33 L10 15 L32 28 Z" fill="rgba(255,255,255,.22)" stroke="rgba(255,255,255,.4)" stroke-width="2"/>
   </svg>
-
   <div class="hero-layout${CONFIG.heroPhoto ? '' : ' no-photo'}">
     <div class="hero-content reveal">
       <div class="hero-tag" aria-label="Now open in ${CONFIG.city}">
@@ -429,9 +446,22 @@ document.body.innerHTML = `
       <address class="location-card">
         <p>
           <a href="${CONFIG.mapsLink}" target="_blank" rel="noopener noreferrer" aria-label="Get directions on Google Maps (opens in new tab)" class="address-link"><strong>${CONFIG.address}</strong><br>${CONFIG.addressLine2}</a><br><br>
-          <a href="mailto:${CONFIG.email}">${CONFIG.email}</a><br>
-          <a href="${CONFIG.instagramLink}" target="_blank" rel="noopener noreferrer" aria-label="Furry Freight Thrift on Instagram (opens in new tab)">${CONFIG.instagramHandle}</a>
+          <a href="mailto:${CONFIG.email}">${CONFIG.email}</a>
         </p>
+        <nav class="location-socials" aria-label="Find us on social media">
+          <a href="${CONFIG.instagramLink}" target="_blank" rel="noopener noreferrer" class="loc-social-item" aria-label="Furry Freight Thrift on Instagram (opens in new tab)">
+            <span class="loc-social-icon">${igIcon}</span>
+            <span class="loc-social-handle">Instagram</span>
+          </a>
+          <a href="mailto:${CONFIG.email}" class="loc-social-item" aria-label="Email Furry Freight Thrift">
+            <span class="loc-social-icon">${emailIcon}</span>
+            <span class="loc-social-handle">Email Us</span>
+          </a>
+          <a href="${CONFIG.tiktokLink}" target="_blank" rel="noopener noreferrer" class="loc-social-item" aria-label="Furry Freight on TikTok (opens in new tab)">
+            <span class="loc-social-icon">${ttIcon}</span>
+            <span class="loc-social-handle">TikTok</span>
+          </a>
+        </nav>
       </address>
     </div>
     <div class="hours-rows reveal r1" role="table" aria-label="Store hours by day">
@@ -470,6 +500,13 @@ document.body.innerHTML = `
       <p>${CONFIG.donationsDesc}</p>
     </div>
     <div class="accept-grid" role="list" aria-label="Items we accept">${donationHTML}</div>
+    <div class="donations-caveat-row" aria-label="Donation caveat">
+      <div class="donations-caveat-spacer" aria-hidden="true"></div>
+      <div class="donations-caveat">
+        <span class="donations-caveat-star" aria-hidden="true">✦</span>
+        <p>${CONFIG.donationsCaveat}</p>
+      </div>
+    </div>
     <div class="not-accepted-section" aria-labelledby="not-accepted-heading">
       <h3 class="not-accepted-heading" id="not-accepted-heading">What we can't take right now</h3>
       <p class="not-accepted-note">${CONFIG.notAcceptedNote}</p>
@@ -489,10 +526,10 @@ document.body.innerHTML = `
       <a href="${CONFIG.mainSiteLink}" target="_blank" rel="noopener noreferrer" aria-label="Visit the main Furry Freight website (opens in new tab)">${CONFIG.aboutLinkText}</a>
     </div>
     <div class="stats-grid reveal r1" role="list" aria-label="Impact statistics">
-      <div class="stat-card" role="listitem"><span class="stat-num ${statCols[0]}" aria-hidden="true">${CONFIG.stat1Number}</span><span class="stat-lbl"><span class="sr-only">${CONFIG.stat1Number} </span>${CONFIG.stat1Label}</span></div>
-      <div class="stat-card" role="listitem"><span class="stat-num ${statCols[1]}" aria-hidden="true">${CONFIG.stat2Number}</span><span class="stat-lbl"><span class="sr-only">${CONFIG.stat2Number} </span>${CONFIG.stat2Label}</span></div>
-      <div class="stat-card" role="listitem"><span class="stat-num ${statCols[2]}" aria-hidden="true">${CONFIG.stat3Number}</span><span class="stat-lbl"><span class="sr-only">${CONFIG.stat3Number} </span>${CONFIG.stat3Label}</span></div>
-      <div class="stat-card" role="listitem"><span class="stat-num ${statCols[3]}" aria-hidden="true">${CONFIG.stat4Number}</span><span class="stat-lbl"><span class="sr-only">${CONFIG.stat4Number} </span>${CONFIG.stat4Label}</span></div>
+      <div class="stat-card" role="listitem"><span class="stat-num ${statCols[0]}" aria-hidden="true">${CONFIG.stat1Number}</span><span class="stat-lbl">${CONFIG.stat1Label}</span></div>
+      <div class="stat-card" role="listitem"><span class="stat-num ${statCols[1]}" aria-hidden="true">${CONFIG.stat2Number}</span><span class="stat-lbl">${CONFIG.stat2Label}</span></div>
+      <div class="stat-card" role="listitem"><span class="stat-num ${statCols[2]}" aria-hidden="true">${CONFIG.stat3Number}</span><span class="stat-lbl">${CONFIG.stat3Label}</span></div>
+      <div class="stat-card" role="listitem"><span class="stat-num ${statCols[3]}" aria-hidden="true">${CONFIG.stat4Number}</span><span class="stat-lbl">${CONFIG.stat4Label}</span></div>
     </div>
   </div>
 </section>
@@ -537,9 +574,9 @@ document.body.innerHTML = `
       <h5>Furry Freight</h5>
       <ul>
         <li><a href="${CONFIG.mainSiteLink}" target="_blank" rel="noopener noreferrer">Main Website</a></li>
-        <li><a href="${CONFIG.instagramLink}" target="_blank" rel="noopener noreferrer" aria-label="Instagram (opens in new tab)">Instagram</a></li>
-        <li><a href="${CONFIG.tiktokLink}" target="_blank" rel="noopener noreferrer" aria-label="TikTok (opens in new tab)">TikTok</a></li>
-        <li><a href="${CONFIG.facebookLink}" target="_blank" rel="noopener noreferrer" aria-label="Facebook (opens in new tab)">Facebook</a></li>
+        <li><a href="${CONFIG.instagramLink}" target="_blank" rel="noopener noreferrer" aria-label="Instagram">Instagram</a></li>
+        <li><a href="${CONFIG.tiktokLink}" target="_blank" rel="noopener noreferrer" aria-label="TikTok">TikTok</a></li>
+        <li><a href="${CONFIG.facebookLink}" target="_blank" rel="noopener noreferrer" aria-label="Facebook">Facebook</a></li>
       </ul>
     </div>
   </div>
@@ -547,9 +584,9 @@ document.body.innerHTML = `
     <p>${CONFIG.footerCopyright}</p>
     <nav aria-label="Social media links">
       <div class="foot-social">
-        <a href="${CONFIG.facebookLink}" target="_blank" rel="noopener noreferrer" aria-label="Facebook (opens in new tab)">FB</a>
-        <a href="${CONFIG.instagramLink}" target="_blank" rel="noopener noreferrer" aria-label="Instagram (opens in new tab)">IG</a>
-        <a href="${CONFIG.tiktokLink}" target="_blank" rel="noopener noreferrer" aria-label="TikTok (opens in new tab)">TT</a>
+        <a href="${CONFIG.facebookLink}" target="_blank" rel="noopener noreferrer" aria-label="Facebook">FB</a>
+        <a href="${CONFIG.instagramLink}" target="_blank" rel="noopener noreferrer" aria-label="Instagram">IG</a>
+        <a href="${CONFIG.tiktokLink}" target="_blank" rel="noopener noreferrer" aria-label="TikTok">TT</a>
       </div>
     </nav>
   </div>
@@ -560,7 +597,6 @@ document.body.innerHTML = `
 </style>
 `;
 
-// Reveal on scroll
 const revs = document.querySelectorAll('.reveal');
 function check(){
   const vh = window.innerHeight;
@@ -569,7 +605,6 @@ function check(){
 window.addEventListener('scroll', check, {passive:true});
 check();
 
-// Respect prefers-reduced-motion
 if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){
   document.querySelectorAll('.marquee-track').forEach(el=>el.style.animation='none');
   document.querySelectorAll('.blob,.shape-blob,.callout-float,.shop-blob,.tag-dot,.spin-star').forEach(el=>el.style.animation='none');
