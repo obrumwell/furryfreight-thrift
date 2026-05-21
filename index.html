@@ -21,7 +21,7 @@ const CONFIG = {
   mapsLink:    "https://maps.google.com/?q=759+NE+Greenwood+Ave+Suite+1+Bend+OR+97701",
   heroOpenLabel: "Opening Soon",
 
-  // ── POPUP — set popupShow: false to disable
+  // ── POPUP — set popupShow: false to disable ──
   popupShow:    true,
   popupHeading: "We're opening soon",
   popupBody:    "Furry Freight Thrift is almost ready to open our doors in Bend, Oregon. Check back shortly for more info on our opening day.",
@@ -76,7 +76,7 @@ const CONFIG = {
   aboutBody2:    "When you shop here or drop off a donation, you are directly funding life-saving transport trips and no/low cost spay + neuter surgeries for animals in overpopulated shelters, or low resource areas.",
   aboutLinkText: "Visit furryfreight.org \u2192",
   stat1Number: "1,709+",       stat1Label: "Animals Saved",
-  stat2Number: "850+", stat2Label: "Surgeries Funded",
+  stat2Number: "Volunteer Run", stat2Label: "",
   stat3Number: "$80",           stat3Label: "Sponsors a Spay/Neuter Surgery",
   stat4Number: "Since \u201918", stat4Label: "On the Road",
   shopHeadline: "Can't make it in?",
@@ -242,9 +242,9 @@ const css = `
   .accept-card p{font-size:.9rem;color:var(--muted);line-height:1.7;font-weight:600;}
   .corner{position:absolute;bottom:-16px;right:-16px;width:60px;height:60px;border-radius:50%;opacity:.18;}
   .corner-o{background:var(--orange);}.corner-b{background:var(--blue);}.corner-g{background:var(--green);}
-  .donations-caveat{display:flex;align-items:flex-start;gap:.5rem;padding:.75rem 1rem;background:var(--stone-md);border-radius:12px;border:1.5px dashed var(--stone-dk);height:100%;}
-  .donations-caveat-star{font-size:1rem;flex-shrink:0;margin-top:.1rem;}
-  .donations-caveat p{font-size:.78rem;font-weight:700;color:var(--muted);line-height:1.6;}
+  .donations-caveat{display:flex;align-items:flex-start;gap:.5rem;padding:.65rem .85rem;background:var(--stone-md);border-radius:12px;border:1.5px dashed var(--stone-dk);align-self:flex-start;}
+  .donations-caveat-star{font-size:.9rem;flex-shrink:0;margin-top:.15rem;}
+  .donations-caveat p{font-size:.88rem;font-weight:800;color:var(--ink);line-height:1.55;}
 
   .not-accepted-section{border-top:2px dashed var(--stone-dk);padding-top:2.5rem;}
   .not-accepted-heading{font-family:'Fredoka One',cursive;font-size:clamp(2rem,4vw,3rem);color:var(--muted);margin-bottom:1rem;letter-spacing:-.01em;}
